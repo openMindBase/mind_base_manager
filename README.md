@@ -1,16 +1,9 @@
 # mind_base_manager
-![](germany_math_graph.png)
-A picture of mapped topic for the german math school curriculum.
+## We are mapping knowledge.
+A map is only as good as the added value it provides. We develop a very specific kind of map. A map made of learning goals and hard dependencies. It provides a clear answer to the question: "What **needs** to be learned so that something else **can** be learned?"
+![](images/germany_math_graph.png)
+This is a picture of our theme map, which we have mapped until 20 March 2023. The theme is school mathematics in Germany.
 
-## Getting Started
+## To be continued...
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

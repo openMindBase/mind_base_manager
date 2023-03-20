@@ -1,6 +1,7 @@
 ##### Hard-Dependents
-[[Berechnen - x-Wert in Geradengleichung einsetzten]]
+[[Berechnen - x-Wert in Geradengleichung einsetzen]]
 ##### Tags
+#abiturAnalysis
 #lineareGleichungen 
 ##### Metadata
 isCollectionGoal=false

@@ -1,7 +1,9 @@
 ##### Hard-Dependents
-[[Auflösen - Lineare Gleichungen]]
-[[Berechnen - Punktprobe]]
+[[Berechnen - etwas zu einer Gleichung addieren]]
+[[Berechnen - eine Gleichung durch etwas dividieren]]
+[[Berechnen - x-Wert in Geradengleichung einsetzen]]
 ##### Tags
+#abiturAnalysis
 #lineareGleichungen 
 ##### Metadata
 isCollectionGoal=false
@@ -9,7 +11,7 @@ isOrGateway=false
 shouldTest=true
 singleExercise=false
 ## Description
-z.B. von \(g(x)=-2x+6\) und \(h(x)=2x+2\)
+z.B. von $g(x)=-2x+6$ und $h(x)=2x+2$
 ## Exercises
 ### 0
 #### Question

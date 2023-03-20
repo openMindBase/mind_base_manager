@@ -1,15 +1,15 @@
 ##### Hard-Dependents
-[[Berechnen - x-Wert in Geradengleichung einsetzten]]
+[[Berechnen - x-Wert in Geradengleichung einsetzen]]
 [[Zeichnen - Koordinatensystem]]
 ##### Tags
-#lineareGleichungen 
+#abiturAnalysis
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
 ## Description
-z.B. \(g(x)=-x+3\) 
+z.B. $g(x)=-x+3$ 
 ## Exercises
 ### 0
 #### Question

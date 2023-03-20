@@ -1,13 +1,14 @@
 ##### Hard-Dependents
 ##### Tags
-#lineareGleichungen
+#abiturAnalysis
+#lineareGleichungen 
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
 ## Description
-z.B. \(5x+2=25 \) mit \(3\) 
+z.B. $5x+2=25 $ mit $3$ 
 ## Exercises
 ### 0
 #### Question

@@ -1,11 +1,13 @@
 ##### Hard-Dependents
-[[Bestimmen - Wertetabelle zu einer Geraden]]
+[[Berechnen - Operationen mit Gleichungen]]
 [[Bestimmen - Schnittpunkt von zwei Geraden (rechnerisch)]]
+[[Bestimmen - Wertetabelle zu einer Geraden]]
 [[Bestimmen - Schnittpunkt von zwei Geraden grafisch]]
+[[Berechnen - Punktprobe]]
 [[Bestimmen - Geradengleichung anhand von 2 Punkten (2D)]]
 ##### Tags
+#abiturAnalysis
 #lineareGleichungen 
-#root
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false

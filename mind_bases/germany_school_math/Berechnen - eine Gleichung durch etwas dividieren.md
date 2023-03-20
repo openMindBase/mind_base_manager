@@ -1,13 +1,16 @@
 ##### Hard-Dependents
 ##### Tags
+#abiturAnalysis
 #lineareGleichungen 
+#abiturIntegrale
+#analysisVollständigeKurvendiskussionPolynom
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
 ## Description
-z.B. \(50x+50=200\) durch  \(50\) dividieren 
+z.B. $50x+50=200$ durch  $50$ dividieren 
 ## Exercises
 ### 0
 #### Question

@@ -1,6 +1,6 @@
 ##### Hard-Dependents
 ##### Tags
-#lineareGleichungen 
+#abiturAnalysis
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false

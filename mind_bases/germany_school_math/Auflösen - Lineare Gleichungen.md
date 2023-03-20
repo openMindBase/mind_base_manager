@@ -1,14 +1,16 @@
 ##### Hard-Dependents
 [[Berechnen - Operationen mit Gleichungen]]
 ##### Tags
+#abiturAnalysis
 #lineareGleichungen 
+#analysisVollständigeKurvendiskussionPolynom
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
 ## Description
-z.B. \(3x-5=-14+4x\) 
+z.B. $3x-5=-14+4x$ 
 ## Exercises
 ### 0
 #### Question

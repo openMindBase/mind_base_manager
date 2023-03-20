@@ -1,6 +1,7 @@
 ##### Hard-Dependents
-[[Berechnen - x-Wert in Geradengleichung einsetzten]]
+[[Berechnen - x-Wert in Geradengleichung einsetzen]]
 ##### Tags
+#abiturAnalysis
 #lineareGleichungen 
 ##### Metadata
 isCollectionGoal=false
@@ -8,7 +9,7 @@ isOrGateway=false
 shouldTest=true
 singleExercise=false
 ## Description
-z.B. zu  \(g(x)=3x-2\) 
+z.B. zu  $g(x)=3x-2$ 
 ## Exercises
 ### 0
 #### Question

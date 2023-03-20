@@ -1,8 +1,8 @@
 ##### Hard-Dependents
-[[Berechnen - x-Wert in Geradengleichung einsetzten]]
 [[Bestimmen - Steigung der Geraden durch zwei Punkte (2D)]]
+[[Berechnen - x-Wert in Geradengleichung einsetzen]]
 ##### Tags
-#lineareGleichungen 
+#abiturAnalysis
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false

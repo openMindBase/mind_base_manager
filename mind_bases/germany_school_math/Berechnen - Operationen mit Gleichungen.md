@@ -1,9 +1,12 @@
 ##### Hard-Dependents
-[[Berechnen - eine Gleichung durch etwas dividieren]]
 [[Berechnen - etwas zu einer Gleichung addieren]]
+[[Berechnen - eine Gleichung durch etwas dividieren]]
 [[Berechnen - eine Gleichung mit etwas multiplizieren]]
+[[Berechnen - Gleichung Subtraktion]]
 ##### Tags
+#abiturAnalysis
 #lineareGleichungen 
+#analysisVollständigeKurvendiskussionPolynom
 ##### Metadata
 isCollectionGoal=true
 isOrGateway=false

@@ -1,6 +1,7 @@
 ##### Hard-Dependents
 [[Zeichnen - Gerade in ein Koordinatensystem]]
 ##### Tags
+#abiturAnalysis
 #lineareGleichungen 
 ##### Metadata
 isCollectionGoal=false
@@ -8,7 +9,7 @@ isOrGateway=false
 shouldTest=true
 singleExercise=false
 ## Description
-z.B. von  \(g(x)=-x+3\) und \(h(x)=x+1\) 
+z.B. von  $g(x)=-x+3$ und $h(x)=x+1$ 
 ## Exercises
 ### 0
 #### Question

@@ -44,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#analytischeGeometrieAbstände",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -140,6 +140,31 @@
   },
   "active": "f4737b9d7140bdba",
   "lastOpenFiles": [
-    "Berechnen - etwas zu einer Gleichung addieren.md"
+    "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit 2 Variablen.md",
+    "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit mehreren Gleichungen.md",
+    "Bestimmen - ganzrationale Funktion anhand von Informationen (Kurvenanpassung).md",
+    "Nennen - Bedingungen der einzelnen Gleichungen bei Funktionsrekonstruktion.md",
+    "Bestimmen - Bedingung für Funktionsrekonstruktion anhand von Tangente.md",
+    "Nennen - Allgemeine Form aller Polynome nach Grad.md",
+    "Nennen - Allgemeine Form ganzrationale Funktion ersten Grades.md",
+    "Nennen - Allgemeine Form ganzrationale Funktion zweiten Grades.md",
+    "Nennen - Allgemeine Form ganzrationale Funktion dritten Grades.md",
+    "Berechnen - negative Zahl hoch 3 rechnen.md",
+    "Berechnen - negative Zahl quadrieren.md",
+    "Nennen - Bedingungen von Symmetrie ganzrationaler Funktionen.md",
+    "Bestimmen - Ableitung allgemeiner Polynome.md",
+    "Bestimmen - Ableitung von Polynomen.md",
+    "Bestimmen - Ableitung verknüpfter Polynome.md",
+    "Bestimmen - Ableitung einer Konstanten.md",
+    "Bestimmen - Ableitung von f(x)=x.md",
+    "Bestimmen - Ableitung lineare Funktion.md",
+    "Bestimmen - Ableitung von Polynom mit Faktorregel.md",
+    "Nennen - Bedingung für Sattelpunkt.md",
+    "Nennen - Notwendige & Hinreichende Bedingung Extremstelle.md",
+    "Nennen - Notwendige und Hinreichende Bedingung Wendestelle.md",
+    "Bestimmen - vollständige Kurvendiskussion anhand von Polynom.md",
+    "Untersuchen - Polynom auf Extrem- und Wendestellen.md",
+    "Untersuchen - Polynom auf Extremstellen.md",
+    "Auflösen - Lineare Gleichungen.md"
   ]
 }

@@ -4,6 +4,11 @@ A map is only as good as the added value it provides. We develop a very specific
 ![](images/germany_math_graph.png)
 This is a picture of our topic map, which we have mapped until 20 March 2023. The topic is school mathematics in Germany.
 
+## Try our old assessment software
+For better understanding you can try out old assessment-software at the following link.
+We are building a similar design in this repository for open use of the open mindBase.
+www.le-an.org
+
 ## Tech information
 For further infos about the tech lookup "paper/WhitePaper.pdf".
 

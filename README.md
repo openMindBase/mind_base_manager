@@ -1,5 +1,5 @@
 # mind_base_manager
-
+![](germany_math_graph.png)
 The Mind Base Manager
 
 ## Getting Started

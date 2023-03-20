@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "f5687281c52c6dfa",
+        "id": "b5f42b6ca9c3bfbe",
         "type": "tabs",
         "children": [
           {
-            "id": "f4737b9d7140bdba",
+            "id": "22475b3866e99b61",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {}
             }
           }
@@ -138,8 +138,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f4737b9d7140bdba",
+  "active": "22475b3866e99b61",
   "lastOpenFiles": [
+    "Untitled.md",
+    "templates/learningGoal - template.md",
+    "templates",
     "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit 2 Variablen.md",
     "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit mehreren Gleichungen.md",
     "Bestimmen - ganzrationale Funktion anhand von Informationen (Kurvenanpassung).md",
@@ -163,8 +166,6 @@
     "Nennen - Notwendige & Hinreichende Bedingung Extremstelle.md",
     "Nennen - Notwendige und Hinreichende Bedingung Wendestelle.md",
     "Bestimmen - vollständige Kurvendiskussion anhand von Polynom.md",
-    "Untersuchen - Polynom auf Extrem- und Wendestellen.md",
-    "Untersuchen - Polynom auf Extremstellen.md",
-    "Auflösen - Lineare Gleichungen.md"
+    "Untersuchen - Polynom auf Extrem- und Wendestellen.md"
   ]
 }

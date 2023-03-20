@@ -1,6 +1,6 @@
 # mind_base_manager
 ![](germany_math_graph.png)
-The Mind Base Manager
+A picture of mapped topic for the german math school curriculum.
 
 ## Getting Started
 

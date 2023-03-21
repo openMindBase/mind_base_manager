@@ -1,5 +1,5 @@
 ##### Hard-Dependents
-[[Begründe - welche ganzrationale Funktion ist punktsymmetrisch]]
+[[Nennen - Bedingung für Punktsymmetrie einer ganzrationalen Funktion]]
 [[Nennen - Bedingung für Achsensymmetrie einer ganzrationalen Funktion]]
 ##### Tags
 #abiturAnalysis

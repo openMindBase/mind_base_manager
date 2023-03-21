@@ -19,10 +19,12 @@ class LearningGoal {
       this.singleExercise = _singleExerciseDefault,
       double? controlLevel,
       List<Exercise>? exercises,
+        List<String>? dependents,
       List<String>? tags})
       : title = title ?? id,
         _controlLevel = controlLevel ?? _defaultControlLevel,
         exercises = exercises ?? [],
+        dependents = dependents ?? [],
         tags = tags ?? [];
 
   /// The unique id of the [LearningGoal].
@@ -56,6 +58,9 @@ class LearningGoal {
 
   /// A list of tags, to determine the associations with the [LearningGoal].
   final List<String> tags;
+
+  /// The learning dependents of this [LearningGoal].
+  final List<String> dependents;
 
   /// -1 = [LearningGoal] has not been tested.
   /// 0 = [LearningGoal] has been tested but is not controlled.
@@ -100,6 +105,13 @@ class LearningGoal {
 
   @override
   String toString() {
-    return 'LearningGoal{title: $title}';
+    return 'LearningGoal{id: $id, title: $title, description: $description, isCollectionGoal: $isCollectionGoal, isOrGateway: $isOrGateway, shouldTest: $shouldTest, singleExercise: $singleExercise, exercises: $exercises, tags: $tags, dependents: $dependents, _controlLevel: $_controlLevel}';
   }
+
+  // @override
+  // String toString() {
+  //   return 'LearningGoal{title: $title}';
+  // }
+
+
 }

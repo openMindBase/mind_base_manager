@@ -1,5 +1,6 @@
 // @author Matthias Weigt 21.03.23
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:mind_base_manager/database/mind_base.dart';
@@ -37,7 +38,9 @@ class LocalMindBase extends MindBase{
 
   Future<LearningGoal> _readLearningGoalFromPath(String path) async {
     File f = await openOrCreateFile(path);
-    return MindBaseMdConverter.instance.fromMd(f.readAsLinesSync(),f.path.split("/").last);
+    String s = f.path.split("/").last;
+    String id = s.substring(0,s.length-3);
+    return MindBaseMdConverter.instance.fromMd(f.readAsLinesSync(),id.replaceAll("ä", "ä").replaceAll("ö", "ö").replaceAll("ü", "ü"));
   }
 
   @override
@@ -57,5 +60,15 @@ class LocalMindBase extends MindBase{
       "per file: ${(s.elapsedMilliseconds/files.length*100).round()/100}ms"
     ], doPrint: printStats);
     return learningGoals;
+  }
+
+  @override
+  Future<Map<String,LearningGoal>> readAllLearningGoalsAsMap({bool printStats = false}) async {
+    List<LearningGoal> learningGoals = await readAllLearningGoals(printStats: printStats);
+    Map<String, LearningGoal> output = {};
+    for(var v in learningGoals) {
+        output[v.id] = v;
+    }
+    return output;
   }
 }

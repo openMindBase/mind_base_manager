@@ -44,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#analytischeGeometrieAbstände",
+                "query": "tag:#abiturAbleitungen",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -141,7 +141,13 @@
   "active": "22475b3866e99b61",
   "lastOpenFiles": [
     "Untitled.md",
+    "Bestimmen - Abstand von Punkt und Ebene in hessischer Normalenform.md",
+    "Bestimmen - Ableitung -cosinus.md",
+    "Begründe - welche ganzrationale Funktion ist punktsymmetrisch.md",
+    "Nennen - Bedingung für Punktsymmetrie einer ganzrationalen Funktion.md",
     "templates/learningGoal - template.md",
+    "Nennen - Bedingungen von Symmetrie ganzrationaler Funktionen.md",
+    "Bestimmen - vollständige Kurvendiskussion anhand von Polynom.md",
     "templates",
     "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit 2 Variablen.md",
     "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit mehreren Gleichungen.md",
@@ -154,18 +160,12 @@
     "Nennen - Allgemeine Form ganzrationale Funktion dritten Grades.md",
     "Berechnen - negative Zahl hoch 3 rechnen.md",
     "Berechnen - negative Zahl quadrieren.md",
-    "Nennen - Bedingungen von Symmetrie ganzrationaler Funktionen.md",
     "Bestimmen - Ableitung allgemeiner Polynome.md",
     "Bestimmen - Ableitung von Polynomen.md",
     "Bestimmen - Ableitung verknüpfter Polynome.md",
     "Bestimmen - Ableitung einer Konstanten.md",
     "Bestimmen - Ableitung von f(x)=x.md",
     "Bestimmen - Ableitung lineare Funktion.md",
-    "Bestimmen - Ableitung von Polynom mit Faktorregel.md",
-    "Nennen - Bedingung für Sattelpunkt.md",
-    "Nennen - Notwendige & Hinreichende Bedingung Extremstelle.md",
-    "Nennen - Notwendige und Hinreichende Bedingung Wendestelle.md",
-    "Bestimmen - vollständige Kurvendiskussion anhand von Polynom.md",
-    "Untersuchen - Polynom auf Extrem- und Wendestellen.md"
+    "Bestimmen - Ableitung von Polynom mit Faktorregel.md"
   ]
 }

@@ -1,7 +1,19 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-void main() {
-  runApp(const MyApp());
+import 'package:flutter/material.dart';
+import 'package:mind_base_manager/database/local_mind_base.dart';
+import 'package:mind_base_manager/database/mind_base.dart';
+import 'package:mind_base_manager/database/mind_base_md_converter.dart';
+import 'package:mind_base_manager/database/mind_base_md_converter_default.dart';
+import 'package:mind_base_manager/domain/use_cases/learning_goal_collection.dart';
+
+Future<void> main() async {
+  MindBase.init(LocalMindBase(
+      "/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/germany_school_math"));
+  MindBaseMdConverter.init(MindBaseMdConverterDefault());
+
+  var m = await MindBase.instance.readAllLearningGoalsAsMap();
+
 }
 
 class MyApp extends StatelessWidget {
@@ -28,6 +40,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 // test
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

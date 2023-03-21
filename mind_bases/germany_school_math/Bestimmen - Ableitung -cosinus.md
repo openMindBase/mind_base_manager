@@ -2,7 +2,6 @@
 ##### Tags
 #abiturAnalysis
 #abiturAbleitungen
-#abiturAbleitungen 
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false

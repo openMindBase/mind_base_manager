@@ -103,15 +103,15 @@ class LearningGoal {
 
   double get controlLevel => _controlLevel;
 
-  @override
-  String toString() {
-    return 'LearningGoal{id: $id, title: $title, description: $description, isCollectionGoal: $isCollectionGoal, isOrGateway: $isOrGateway, shouldTest: $shouldTest, singleExercise: $singleExercise, exercises: $exercises, tags: $tags, dependents: $dependents, _controlLevel: $_controlLevel}';
-  }
-
   // @override
   // String toString() {
-  //   return 'LearningGoal{title: $title}';
+  //   return 'LearningGoal{id: $id, title: $title, description: $description, isCollectionGoal: $isCollectionGoal, isOrGateway: $isOrGateway, shouldTest: $shouldTest, singleExercise: $singleExercise, exercises: $exercises, tags: $tags, dependents: $dependents, _controlLevel: $_controlLevel}';
   // }
+
+  @override
+  String toString() {
+    return 'LearningGoal{title: $title}';
+  }
 
 
 }

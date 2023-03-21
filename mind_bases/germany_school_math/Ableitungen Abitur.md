@@ -1,5 +1,5 @@
 ##### Hard-Dependents
-[[Bestimmen - Ableitungen alle Hauptfunktionstypen ]]
+[[Bestimmen - Ableitungen alle Hauptfunktionstypen]]
 [[Bestimmen - Ableitungen über Produkt- und Kettenregel]]
 [[Bestimmen - Ableitungen von allen Polynomen]]
 ##### Tags

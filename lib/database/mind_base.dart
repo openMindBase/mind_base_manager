@@ -26,4 +26,7 @@ abstract class MindBase{
   /// Reads all [LearningGoal]s.
   Future<List<LearningGoal>> readAllLearningGoals({bool printStats=false});
 
+  /// Reads all [LearningGoal]s.
+  Future<Map<String,LearningGoal>> readAllLearningGoalsAsMap({bool printStats=false});
+
 }

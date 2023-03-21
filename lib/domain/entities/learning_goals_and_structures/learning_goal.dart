@@ -1,7 +1,7 @@
 // @author Matthias Weigt 21.03.23
 
-import 'exercise.dart';
-import 'graphs/node.dart';
+import '../exercise.dart';
+import '../graphs/node.dart';
 
 class LearningGoal extends Node{
   static const _isCollectionGoalDefault = false;

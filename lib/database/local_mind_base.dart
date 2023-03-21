@@ -1,11 +1,10 @@
 // @author Matthias Weigt 21.03.23
 
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:mind_base_manager/database/mind_base.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter.dart';
-import 'package:mind_base_manager/domain/entities/learning_goal.dart';
+import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/learning_goal.dart';
 import 'package:mind_base_manager/domain/use_cases/stats_printer.dart';
 
 class LocalMindBase extends MindBase{

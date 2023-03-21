@@ -3,12 +3,14 @@
 import 'dart:math';
 
 
-import 'graphs/edge.dart';
+
+import '../graphs/edge.dart';
+import '../math/tuple.dart';
 import 'learning_goal.dart';
 import 'learning_tree.dart';
 import 'learning_tree_coordinates_generator.dart';
 import 'learning_tree_signature_order_generator.dart';
-import 'math/tuple.dart';
+
 
 class LearningTreeSignature{
   LearningTreeSignature.byTree(LearningTree learningTree):edges=learningTree.edges,learningGoalsByGrade=_map(learningTree);

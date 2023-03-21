@@ -1,7 +1,7 @@
 // @author Matthias Weigt 21.03.23
 
 
-import 'package:mind_base_manager/domain/entities/learning_goal.dart';
+import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/learning_goal.dart';
 
 class LearningGoalCollection {
   LearningGoalCollection(this.learningGoalMap);

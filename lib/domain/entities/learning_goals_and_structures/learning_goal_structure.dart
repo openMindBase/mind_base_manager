@@ -1,8 +1,8 @@
 // @author Matthias Weigt 27.07.2022
 // All rights reserved ©2022
 
-import 'graphs/edge.dart';
-import 'graphs/graph.dart';
+import '../graphs/edge.dart';
+import '../graphs/graph.dart';
 import 'learning_goal.dart';
 import 'learning_tree.dart';
 

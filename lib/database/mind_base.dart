@@ -1,7 +1,7 @@
 // @author Matthias Weigt 21.03.23
 
 
-import '../domain/entities/learning_goal.dart';
+import '../domain/entities/learning_goals_and_structures/learning_goal.dart';
 
 abstract class MindBase{
   static MindBase? currentMindBase;

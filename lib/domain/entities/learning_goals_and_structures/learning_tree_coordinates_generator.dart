@@ -1,9 +1,9 @@
 // @author Matthias Weigt 21.03.23
 
 import 'learning_goal.dart';
+import '../math/polar_coordinates.dart';
+import '../math/tuple.dart';
 import 'learning_tree_signature.dart';
-import 'math/polar_coordinates.dart';
-import 'math/tuple.dart';
 
 class LearningTreeCoordinatesGenerator {
   LearningTreeCoordinatesGenerator(this.learningTree,

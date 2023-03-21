@@ -2,7 +2,7 @@
 // All rights reserved ©2022
 
 
-import 'graphs/transitivity_cleaner.dart';
+import '../graphs/transitivity_cleaner.dart';
 import 'learning_goal.dart';
 import 'learning_goal_structure.dart';
 import 'learning_tree_signature.dart';

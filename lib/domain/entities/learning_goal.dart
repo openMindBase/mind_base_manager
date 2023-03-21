@@ -1,8 +1,9 @@
 // @author Matthias Weigt 21.03.23
 
 import 'exercise.dart';
+import 'graphs/node.dart';
 
-class LearningGoal {
+class LearningGoal extends Node{
   static const _isCollectionGoalDefault = false;
   static const _isOrGatewayDefault = false;
   static const _shouldTest = true;
@@ -10,7 +11,7 @@ class LearningGoal {
   static const double _defaultControlLevel = -1;
 
   LearningGoal(
-      {required this.id,
+      {required super.id,
       String? title,
       this.description,
       this.isCollectionGoal = _isCollectionGoalDefault,
@@ -27,9 +28,6 @@ class LearningGoal {
         dependents = dependents ?? [],
         tags = tags ?? [];
 
-  /// The unique id of the [LearningGoal].
-  /// [id] can be the title of the [LearningGoal] if the title is unique.
-  final String id;
 
   /// The title of the [LearningGoal].
   /// If no title is given, [id] will be the title.

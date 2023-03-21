@@ -1,8 +1,10 @@
 import graph_helper
+from networkx import transitive_reduction, DiGraph
 
 """
-checks a list of files for the cyclical property, reports if it exists
-in: list of all files as tupels with name and content of file
-"""
-def cleanTransitivity(nodesAsStrings: list[[str, str]])->None:
-    return
+cleans a list of files for the transitivity property
+in: DiGraph
+"""#TODO: check for transitve graphs
+def cleanTransitivity(Graph :DiGraph)->DiGraph:
+    print("processed " + str(len(Graph.edges)) + " edges in transitivity cleaner")
+    return transitive_reduction(Graph)

@@ -4,6 +4,7 @@ A map is only as good as the added value it provides. We develop a very specific
 To start, we have built this:
 ![](images/germany_math_graph.png)
 It shows the graph we have mapped as of March 20th 2023. The topic is school mathematics in Germany.
+You can play with this graph using obsidian by downloading the appropriate mind_base/ folder and opening it as a vault in the downloaded app
 
 ## You find what we do interesting?
 Please leave a **star** on the repository or share it anywhere you want

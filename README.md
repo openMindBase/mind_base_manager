@@ -11,7 +11,7 @@ Please leave a **star** on the repository.
 For better understanding you can try out old assessment-software at the following link.
 We are building a similar design in this repository for open use of the openMindBase.
 
-www.le-an.org
+www.le-an.org (in german)
 Info: NOT OPTIMIZED FOR MOBILE AND SAFARI ON IOS OR IPADOS
 
 ## Tech information

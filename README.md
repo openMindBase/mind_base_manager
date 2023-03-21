@@ -4,7 +4,7 @@ A map is only as good as the added value it provides. We develop a very specific
 ![](images/germany_math_graph.png)
 This is a picture of our topic map, which we have mapped until 20 March 2023. The topic is school mathematics in Germany.
 
-## You find interesting what we do?
+## You find what we do interesting?
 Please leave a **star** on the repository.
 
 ## Try our old assessment software
@@ -12,7 +12,7 @@ For better understanding you can try out old assessment-software at the followin
 We are building a similar design in this repository for open use of the openMindBase.
 
 www.le-an.org
-Info: NOT OPTIMATED FOR MOBILE AND SAFARI ON IOS OR IPADOS
+Info: NOT OPTIMIZED FOR MOBILE AND SAFARI ON IOS OR IPADOS
 
 ## Tech information
 For further infos about the tech lookup "paper/WhitePaper.pdf".

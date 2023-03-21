@@ -1,23 +1,39 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:lean_ui_kit/theming/app_theme/lean_app_theme.dart';
+import 'package:lean_ui_kit/theming/app_theme_access.dart';
 import 'package:mind_base_manager/database/local_mind_base.dart';
 import 'package:mind_base_manager/database/mind_base.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter_default.dart';
 import 'package:mind_base_manager/domain/use_cases/learning_goal_collection.dart';
+import 'package:mind_base_manager/domain/use_cases/learning_tree_builder.dart';
+import 'package:mind_base_manager/presentation/old_widgets/learning_tree_visual.dart';
+
+import 'domain/entities/learning_goals_and_structures/learning_tree.dart';
 
 Future<void> main() async {
   MindBase.init(LocalMindBase(
       "/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/germany_school_math"));
   MindBaseMdConverter.init(MindBaseMdConverterDefault());
+  AppThemeAccess.init(theme: LeanAppTheme());
 
   var m = await MindBase.instance.readAllLearningGoalsAsMap();
 
+  LearningTree l = LearningTreeBuilder.build(LearningGoalCollection(m)
+      .getAllDependentsOf(m.values
+          .firstWhere((element) => element.id == "Auflösen - Quadratische Gleichung"))
+      .values);
+
+  // print(l);
+  runApp(MyApp(learningTree: l));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.learningTree});
+
+  final LearningTree learningTree;
 
   // This widget is the root of your application.
   @override
@@ -25,6 +41,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        useMaterial3: true, brightness: Brightness.dark,
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -36,14 +53,18 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(
+          title: 'Flutter Demo Home Page', learningTree: learningTree),
     );
   }
 }
 
 // test
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage(
+      {super.key, required this.title, required this.learningTree});
+
+  final LearningTree learningTree;
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -91,32 +112,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+        child: LearningTreeVisualWidget(
+            width: 1000, height: 700, learningTree: widget.learningTree),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

@@ -83,6 +83,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.5"
+  lean_ui_kit:
+    dependency: "direct main"
+    description:
+      name: lean_ui_kit
+      sha256: "9df324dbc466d6b0559ef22194ed6c0ffd9fb9d063d373e9a1baf21dbe79ec14"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.9"
   lints:
     dependency: transitive
     description:

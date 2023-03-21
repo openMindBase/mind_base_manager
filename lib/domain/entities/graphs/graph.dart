@@ -143,7 +143,7 @@ class Graph<T extends Node> {
   /// Throws if the [Node.id] of one of the [Node]s connected by [edge] is not contained in [ids].
   void _validateEdge(Edge edge) {
     if (!contains(edge.x1) || !contains(edge.x2)) {
-      throw ArgumentError("Graph does not contain all nodes of inputted edge");
+      throw ArgumentError("Graph does not contain all nodes of inputted edge ${edge}");
     }
   }
 

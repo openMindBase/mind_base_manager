@@ -4,6 +4,7 @@
 #lineareGleichungen 
 #abiturIntegrale
 #analysisVollständigeKurvendiskussionPolynom
+#abiturFunktionsrekonstruktion
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false

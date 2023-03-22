@@ -1,6 +1,8 @@
 ##### Hard-Dependents
 ##### Tags
 #analysisVollständigeKurvendiskussionPolynom
+#abiturAnalysis 
+#abiturFunktionsrekonstruktion 
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false

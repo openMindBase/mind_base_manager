@@ -2,6 +2,7 @@
 ##### Tags
 #abiturAnalysis
 #lineareGleichungen 
+#abiturFunktionsrekonstruktion
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false

@@ -7,6 +7,7 @@
 #abiturAnalysis
 #lineareGleichungen 
 #analysisVollständigeKurvendiskussionPolynom
+#abiturFunktionsrekonstruktion
 ##### Metadata
 isCollectionGoal=true
 isOrGateway=false

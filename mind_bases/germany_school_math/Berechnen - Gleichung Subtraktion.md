@@ -1,6 +1,7 @@
 ##### Hard-Dependents
 ##### Tags
 #abiturAnalysis
+#abiturFunktionsrekonstruktion
 #lineareGleichungen 
 ##### Metadata
 isCollectionGoal=false

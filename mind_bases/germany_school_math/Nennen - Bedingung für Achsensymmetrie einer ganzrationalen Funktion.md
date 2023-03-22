@@ -2,6 +2,7 @@
 ##### Tags
 #abiturAnalysis
 #analysisVollständigeKurvendiskussionPolynom
+#abiturFunktionsrekonstruktion 
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false

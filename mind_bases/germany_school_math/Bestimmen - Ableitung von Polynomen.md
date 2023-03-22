@@ -4,6 +4,7 @@
 #abiturAnalysis
 #abiturAbleitungen 
 #analysisVollständigeKurvendiskussionPolynom
+#abiturFunktionsrekonstruktion 
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false

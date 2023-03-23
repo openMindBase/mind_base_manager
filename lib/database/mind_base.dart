@@ -2,6 +2,7 @@
 
 
 import '../domain/entities/learning_goals_and_structures/learning_goal.dart';
+import '../domain/use_cases/learning_goal_collection.dart';
 
 abstract class MindBase{
   static MindBase? currentMindBase;
@@ -28,5 +29,7 @@ abstract class MindBase{
 
   /// Reads all [LearningGoal]s.
   Future<Map<String,LearningGoal>> readAllLearningGoalsAsMap({bool printStats=false});
+
+  Future<LearningGoalCollection> readAllLearningGoalsAsLearningGoalCollection({bool printStats=false});
 
 }

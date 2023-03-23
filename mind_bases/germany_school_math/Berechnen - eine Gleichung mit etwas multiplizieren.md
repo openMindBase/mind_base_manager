@@ -3,6 +3,7 @@
 #abiturAnalysis
 #lineareGleichungen 
 #abiturFunktionsrekonstruktion
+#analysisVollständigeKurvendiskussionPolynom 
 ##### Metadata
 isCollectionGoal=false
 isOrGateway=false

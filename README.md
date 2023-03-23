@@ -20,8 +20,13 @@ Info: NOT OPTIMIZED FOR MOBILE AND SAFARI ON IOS OR IPADOS
 For further infos about the tech lookup "paper/WhitePaper.pdf".
 
 ## Project hypotheses
-- [x] test1
-- [ ] test2
+- [x] There are learning goals that can be defined very granularly and precisely.
+- [x] Hard dependencies exist between some of these learning goals.
+- [x] It is possible to create small learning goal structures manually.
+- [x] It is possible to merge n small learning goal structures to bigger ones.
+- [x] It is possible to create big learning goal structures.
+- [ ] It is possible to create big learning goal structures with a big dependency coefficient in topics other than math.
+- [ ] It is possible to efficiently work on a big learning goal structure with multiple Persons via GitHub.
 
 
 ## To be continued...

@@ -1,5 +1,6 @@
 ##### Hard-Dependents
 [[Berechnen - Operationen mit Gleichungen]]
+[[Nennen - Lösungsverfahren für Gleichungssysteme mit 2 Variablen]]
 ##### Tags
 #abiturAnalysis
 #abiturFunktionsrekonstruktion

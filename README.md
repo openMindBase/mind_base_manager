@@ -7,7 +7,7 @@ It shows the graph we have mapped as of March 20th 2023. The topic is school mat
 You can play with this graph using obsidian by downloading the appropriate mind_base/ folder and opening it as a vault in the downloaded app
 
 ## You find what we do interesting?
-Please leave a **star** on the repository or share it anywhere you want
+Please leave a **star** on the repository or share it anywhere you want.
 
 ## Try our old assessment software
 For better understanding of your individual competencies in math up until high school you can try out our old assessment-software at the following link.
@@ -18,6 +18,11 @@ Info: NOT OPTIMIZED FOR MOBILE AND SAFARI ON IOS OR IPADOS
 
 ## Tech information
 For further infos about the tech lookup "paper/WhitePaper.pdf".
+
+## Project hypotheses
+([x]) test1
+([]) test2
+
 
 ## To be continued...
 

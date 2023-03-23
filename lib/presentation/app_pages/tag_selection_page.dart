@@ -6,24 +6,25 @@ import 'package:mind_base_manager/presentation/app_pages/app_page.dart';
 import 'package:mind_base_manager/presentation/widgets/buttons/tag_selection_button.dart';
 
 class TagSelectionPage extends StatefulWidget {
-  const TagSelectionPage({super.key, required this.learningGoalCollection, required this.onTagPressed});
+  const TagSelectionPage(
+      {super.key,
+      required this.learningGoalCollection,
+      required this.onTagPressed});
 
   /// The [LearningGoalCollection] to extract the tags from.
   final LearningGoalCollection learningGoalCollection;
 
-
   /// Executed, when clicked on a tag.
-  final void Function(String string) onTagPressed;
-
+  /// [collection] is the already by [tag] filtered [LearningGoalCollection].
+  final void Function(String tag, LearningGoalCollection collection)
+      onTagPressed;
 
   @override
   State<TagSelectionPage> createState() => _TagSelectionPageState();
 }
 
 class _TagSelectionPageState extends State<TagSelectionPage> {
-
   final List<String> tags = [];
-
 
   @override
   void initState() {
@@ -34,9 +35,19 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> children = [];
-    for(var tag in tags) {
-      children.add(TagSelectionButton(tag: tag, onPressed: widget.onTagPressed));
+    for (var tag in tags) {
+      children.add(TagSelectionButton(
+        tag: tag,
+        onPressed: (tag) {
+          widget.onTagPressed(
+              tag, widget.learningGoalCollection.filterByTag(tag));
+        },
+      ));
     }
-    return AppPage(title: "tag - selection", children: children);
+    return AppPage(title: "tag - selection", children: [
+      Wrap(
+        children: children,
+      )
+    ]);
   }
 }

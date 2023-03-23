@@ -1,7 +1,7 @@
 // @author Matthias Weigt 23.03.23
 
 import 'package:flutter/material.dart';
-import 'package:mind_base_manager/presentation/app_pages/tag_selection.dart';
+import 'package:mind_base_manager/presentation/app_pages/tag_selection_page.dart';
 
 
 /// Used in [TagSelectionPage].
@@ -13,6 +13,6 @@ class TagSelectionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: () => onPressed(tag), child: Text(tag));
+    return ElevatedButton(onPressed: () => onPressed(tag), child: Text("#$tag"));
   }
 }

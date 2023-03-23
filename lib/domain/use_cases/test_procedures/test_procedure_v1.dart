@@ -10,8 +10,8 @@ import '../../entities/learning_goals_and_structures/learning_goal.dart';
 import '../../entities/learning_goals_and_structures/learning_tree.dart';
 
 /// This [TestProcedure] always tests the [LearningGoal] in [TestProcedure.learningTree] with the highest value to be tested.
-class TestProcedureV2 extends TestProcedure {
-  TestProcedureV2(LearningTree learningTree, {super.startTime})
+class TestProcedureV1 extends TestProcedure {
+  TestProcedureV1(LearningTree learningTree, {super.startTime})
       : super(learningTree) {
     assignCurrentLearningGoal(_findBestLearningGoal());
   }
@@ -24,7 +24,7 @@ class TestProcedureV2 extends TestProcedure {
 
   /// Should be called when the current [LearningGoal] was tested.
   /// Returns [true] if there is another [LearningGoal] in [TestProcedure.learningTree] to test.
-  /// Returns [false] at the end of the [TestProcedureV2].
+  /// Returns [false] at the end of the [TestProcedureV1].
   @override
   bool submitCurrentLearningGoal(double controlLevel) {
     _testsCount++;
@@ -44,7 +44,7 @@ class TestProcedureV2 extends TestProcedure {
     return learningGoal != null;
   }
 
-  /// Function to reset the [TestProcedureV2] by resetting [controlPercentage],
+  /// Function to reset the [TestProcedureV1] by resetting [controlPercentage],
   /// [_testsCount] and the [LearningGoal.controlLevel] of every [LearningGoal] in [TestProcedure.learningTree].
   @override
   void reset() {

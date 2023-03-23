@@ -4,9 +4,10 @@
 import 'package:flutter/material.dart';
 import 'package:knowledge_dependency_graph_manager/presentation/widgets/pages/rendered_tex.dart';
 
-/// This class converts latex code into a [Widget].
-class LeanTex extends StatefulWidget {
-  const LeanTex({Key? key, required this.texData,this.fontSize=25,this.height=200,this.left=false, this.color}) : super(key: key);
+/// This class converts markdown text into a [Widget].
+/// + It renders formula.
+class Markdown extends StatefulWidget {
+  const Markdown({Key? key, required this.texData,this.fontSize=25,this.height=200,this.left=false, this.color}) : super(key: key);
 
   /// The latex code.
   final String texData;
@@ -16,10 +17,10 @@ class LeanTex extends StatefulWidget {
   final Color? color;
 
   @override
-  State<LeanTex> createState() => _LeanTexState();
+  State<Markdown> createState() => _MarkdownState();
 }
 
-class _LeanTexState extends State<LeanTex> {
+class _MarkdownState extends State<Markdown> {
 
 
 

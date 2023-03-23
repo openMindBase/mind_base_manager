@@ -31,8 +31,8 @@ class TestProcedurePage extends StatelessWidget {
       title: title,
       showBackButton: true,
       children: [
-        TestProcedureWidgetV2(
-        testProcedure: TestProcedureV2(learningTree),
+        TestProcedureWidgetV1(
+        testProcedure: TestProcedureV1(learningTree),
     onTestingComplete: onTestingComplete,
     studentMetadata: studentMetadata,
     )

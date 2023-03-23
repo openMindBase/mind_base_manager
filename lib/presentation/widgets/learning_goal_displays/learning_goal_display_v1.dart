@@ -6,10 +6,10 @@ import 'package:lean_ui_kit/presentation/widgets/lean_spaced_column.dart';
 
 import '../../../domain/entities/exercise.dart';
 import '../../../domain/entities/learning_goals_and_structures/learning_goal.dart';
-import '../text/lean_tex.dart';
+import '../text/mark_down.dart';
 
-class LearningGoalDisplayV3 extends StatefulWidget {
-  const LearningGoalDisplayV3(
+class LearningGoalDisplayV1 extends StatefulWidget {
+  const LearningGoalDisplayV1(
       {super.key,
       required this.learningGoal,
       required this.width,
@@ -22,10 +22,10 @@ class LearningGoalDisplayV3 extends StatefulWidget {
   final bool showTitle;
 
   @override
-  _LearningGoalDisplayV3State createState() => _LearningGoalDisplayV3State();
+  _LearningGoalDisplayV1State createState() => _LearningGoalDisplayV1State();
 }
 
-class _LearningGoalDisplayV3State extends State<LearningGoalDisplayV3> {
+class _LearningGoalDisplayV1State extends State<LearningGoalDisplayV1> {
   bool showFront = true;
 
   String goalId = "";
@@ -56,7 +56,7 @@ class _LearningGoalDisplayV3State extends State<LearningGoalDisplayV3> {
                     )
                   : const SizedBox(),
             widget.learningGoal != null
-                ? LeanTex(
+                ? Markdown(
                     // height: widget.height!.toInt() - 40,
                     texData: _getTex(),
                   )

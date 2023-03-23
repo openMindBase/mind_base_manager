@@ -14,7 +14,7 @@ import '../../old_widgets/learning_tree_visual.dart';
 import '../../old_widgets/learning_tree_visual_theme.dart';
 import '../buttons/app_card_menu_button.dart';
 import '../buttons/floating_action_button_extended.dart';
-import '../text/lean_tex.dart';
+import '../text/mark_down.dart';
 
 class AssessmentViewWidget extends StatefulWidget {
   const AssessmentViewWidget(
@@ -123,7 +123,7 @@ class _AssessmentViewWidgetState extends State<AssessmentViewWidget> {
             child: Container(
               padding: const EdgeInsets.all(20),
               width: constraints.maxWidth * 0.9,
-              child: LeanTex(
+              child: Markdown(
                   left: true,
                   texData: _getKeyLearningGoalTex(learningTree),
                   height: learningTree.keyLearningGoals.length * 300),

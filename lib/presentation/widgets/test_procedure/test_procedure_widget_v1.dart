@@ -18,8 +18,8 @@ import '../assessments/assessment_view.dart';
 import '../buttons/test_procedure_controller_button.dart';
 import '../learning_goal_displays/learning_goal_display_v1.dart';
 
-class TestProcedureWidgetV2 extends StatefulWidget {
-  const TestProcedureWidgetV2(
+class TestProcedureWidgetV1 extends StatefulWidget {
+  const TestProcedureWidgetV1(
       {super.key,
       required this.testProcedure,
       required this.onTestingComplete,
@@ -30,10 +30,10 @@ class TestProcedureWidgetV2 extends StatefulWidget {
   final StudentMetadata studentMetadata;
 
   @override
-  _TestProcedureWidgetV2State createState() => _TestProcedureWidgetV2State();
+  _TestProcedureWidgetV1State createState() => _TestProcedureWidgetV1State();
 }
 
-class _TestProcedureWidgetV2State extends State<TestProcedureWidgetV2> {
+class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
   @override
   void initState() {
     super.initState();
@@ -92,7 +92,7 @@ class _TestProcedureWidgetV2State extends State<TestProcedureWidgetV2> {
   }
 
   Widget _learningGoalDisplay(double width, double height) {
-    return LearningGoalDisplayV3(
+    return LearningGoalDisplayV1(
       height: height,
       learningGoal: widget.testProcedure.currentLearningGoal,
       width: width,

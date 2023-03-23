@@ -36,6 +36,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   lean_ui_kit: ^1.2.9
+  flutter_tex: ^4.0.3+4
+  knowledge_dependency_graph_manager:
+    git:
+      url: https://github.com/winfryed/knowledge_dependency_graph_manager.git
 
 dev_dependencies:
   flutter_test:

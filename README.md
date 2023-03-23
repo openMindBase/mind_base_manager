@@ -20,8 +20,8 @@ Info: NOT OPTIMIZED FOR MOBILE AND SAFARI ON IOS OR IPADOS
 For further infos about the tech lookup "paper/WhitePaper.pdf".
 
 ## Project hypotheses
-([x]) test1
-([]) test2
+- [x] test1
+- [] test2
 
 
 ## To be continued...

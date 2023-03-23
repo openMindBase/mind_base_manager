@@ -6,7 +6,7 @@ To start, we have built this:
 It shows the graph we have mapped as of March 20th 2023. The topic is school mathematics in Germany.
 You can play with this graph using obsidian by downloading the appropriate mind_base/ folder and opening it as a vault in the downloaded app
 
-## You find what we do interesting?
+## You interesting what we do?
 Please leave a **star** on the repository or share it anywhere you want.
 
 ## Try our old assessment software

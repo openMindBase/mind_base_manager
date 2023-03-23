@@ -112,4 +112,15 @@ class LearningGoal extends Node{
   }
 
 
+
+
+  Exercise? randomExercise() {
+    //todo 23.03.23 17:18 von @Matthias implement me correct.
+    if(exercises.isNotEmpty) {
+      return exercises[0];
+    }
+    return null;
+  }
+
+
 }

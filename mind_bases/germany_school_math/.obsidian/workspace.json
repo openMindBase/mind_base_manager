@@ -11,12 +11,8 @@
             "id": "22475b3866e99b61",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit mehreren Gleichungen.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -65,8 +61,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -86,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit mehreren Gleichungen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit mehreren Gleichungen.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit mehreren Gleichungen.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -149,9 +140,11 @@
   },
   "active": "22475b3866e99b61",
   "lastOpenFiles": [
+    "Berechnen - Bruch mit Bruch im Zähler.md",
     "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit 2 Variablen.md",
-    "Berechnen - Operationen mit Gleichungen.md",
+    "Nennen - Lösungsverfahren für Gleichungssysteme mit 2 Variablen.md",
     "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit mehreren Gleichungen.md",
+    "Berechnen - Operationen mit Gleichungen.md",
     "Bestimmen - Steigung der Geraden durch zwei Punkte (2D).md",
     "Berechnen - eine Gleichung mit etwas multiplizieren.md",
     "templates/learningGoal - template.md",
@@ -173,8 +166,6 @@
     "Bestimmen - vollständige Kurvendiskussion anhand von Polynom.md",
     "templates",
     "Bestimmen - ganzrationale Funktion anhand von Informationen (Kurvenanpassung).md",
-    "Nennen - Bedingungen der einzelnen Gleichungen bei Funktionsrekonstruktion.md",
-    "Bestimmen - Bedingung für Funktionsrekonstruktion anhand von Tangente.md",
-    "Nennen - Allgemeine Form aller Polynome nach Grad.md"
+    "Nennen - Bedingungen der einzelnen Gleichungen bei Funktionsrekonstruktion.md"
   ]
 }

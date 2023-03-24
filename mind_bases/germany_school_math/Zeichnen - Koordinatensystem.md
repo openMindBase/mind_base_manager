@@ -1,17 +1,19 @@
-##### Hard-Dependents
-##### Tags
+##### Hard-Dependents 
+
+##### Tags 
 #abiturAnalysis
-##### Metadata
+#lineareGleichungen
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=true
-## Description
+## Description 
 du kannst ein Koordinatensystem zeichen und richtig beschriften 
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Zeichne ein Koordinatensystem.
-#### Answer
+#### Answer 
 Sind die Achsen beschriftet?
 Ist eine Skala eingezeichnet?

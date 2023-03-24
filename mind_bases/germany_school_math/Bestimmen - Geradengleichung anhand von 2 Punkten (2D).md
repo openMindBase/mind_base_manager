@@ -3,6 +3,7 @@
 [[Berechnen - x-Wert in Geradengleichung einsetzen]]
 ##### Tags 
 #abiturAnalysis
+#lineareGleichungen
 ##### Metadata 
 isCollectionGoal=false
 isOrGateway=false

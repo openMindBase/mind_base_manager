@@ -1,18 +1,21 @@
-##### Hard-Dependents
-##### Tags
+##### Hard-Dependents 
+
+##### Tags 
 #abiturAnalysis
 #abiturIntegrale
 #analysisVollständigeKurvendiskussionPolynom
-##### Metadata
+#abiturNullstellenBestimmen
+#quadratischeFunktionen
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=true
-## Description
+## Description 
  $x_{1,2}=-\frac{p}{2}\pm\sqrt{(\frac{p}{2})^2-q}$ 
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Nenne die pq-Formel.
-#### Answer
+#### Answer 
 $x_{1,2}=-\frac{p}{2}\pm\sqrt{(\frac{p}{2})^2-q}$

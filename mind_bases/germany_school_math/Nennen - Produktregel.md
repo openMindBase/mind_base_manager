@@ -1,18 +1,20 @@
-##### Hard-Dependents
-##### Tags
+##### Hard-Dependents 
+
+##### Tags 
 #abiturAnalysis
-##### Metadata
+#abiturAbleitungen
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=true
-## Description
+## Description 
  
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Nenne die Formel für die Produktregel.
-#### Answer
+#### Answer 
 $f(x)=g(x)\cdot h(x)$
 
 $f'(x)=g(x)+h'(x)\cdot g'(x)+h(x)$

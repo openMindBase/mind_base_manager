@@ -1,33 +1,35 @@
-##### Hard-Dependents
-##### Tags
+##### Hard-Dependents 
+
+##### Tags 
 #abiturAnalysis
-#bruchrechnung 
-##### Metadata
+#bruchrechnung
+#abiturNullstellenBestimmen
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
-## Description
+## Description 
  
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Berechne:
 
 $3\div\frac{1}{9}$
-#### Answer
+#### Answer 
 $27$
-### 1
-#### Question
+### 1 
+#### Question 
 Berechne:
 
 $3\div\frac{6}{7}$
-#### Answer
+#### Answer 
 $\frac{7}{2}
-### 2
-#### Question
+### 2 
+#### Question 
 Berechne:
 
 $5\div\frac{3}{5}$
-#### Answer
+#### Answer 
 $\frac{25}{3}

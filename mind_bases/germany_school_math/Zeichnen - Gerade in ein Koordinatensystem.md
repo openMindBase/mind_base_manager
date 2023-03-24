@@ -3,7 +3,6 @@
 [[Zeichnen - Koordinatensystem]]
 ##### Tags 
 #abiturAnalysis
-#lineareGleichungen
 ##### Metadata 
 isCollectionGoal=false
 isOrGateway=false

@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Nennen - Bedingungen von Symmetrie ganzrationaler Funktionen",
+                "query": "tag:#abiturAnalysis",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +70,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -149,8 +150,9 @@
   },
   "active": "fcfefa63e4622d7d",
   "lastOpenFiles": [
-    "Abitur Analytische Geometrie.md",
     "Analysis Abitur.md",
+    "Abitur Mathematik.md",
+    "Abitur Analytische Geometrie.md",
     "Potenzgesetze und Wurzelgesetze.md",
     "Nennen - Lösungsverfahren für Gleichungssysteme mit 2 Variablen.md",
     "Bestimmen - Wertetabelle zu einer Geraden.md",
@@ -174,7 +176,6 @@
     "Bestimmen - Ableitung allgemeiner Polynome.md",
     "Nennen - Bedingung für Achsensymmetrie einer ganzrationalen Funktion.md",
     "Nennen - Bedingungen von Symmetrie ganzrationaler Funktionen.md",
-    "Nennen - Bedingung für Punktsymmetrie einer ganzrationalen Funktion.md",
     "templates"
   ]
 }

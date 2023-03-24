@@ -48,28 +48,8 @@ class LearningTreeSignatureOrderGeneratorV1
         listIndex = 0;
         continue;
       }
-
-
       listIndex++;
     }
-
-
-
-
-
-    // Set<_Tripel> allOptions(LearningTreeSignature signature) {
-    //   Set<_Tripel> output={};
-    //   for(int grade in signature.learningGoalsByGrade.keys) {
-    //
-    //     List<LearningGoal> tempGoals = signature.learningGoalsByGrade[grade]!;
-    //     for(int i = 0;i<tempGoals.length;i++) {
-    //       for(int k = 0;k<tempGoals.length;k++) {
-    //
-    //       }
-    //     }
-    //     output.add(_Tripel(grade: grade, pos1: pos1, pos2: pos2))
-    //
-    //   }
   }
 
   List<LearningGoal> goalsByGrade(int grade,LearningTreeSignature signature) {

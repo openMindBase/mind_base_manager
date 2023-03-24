@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "tag:#abiturIntegrale",
   "showTags": true,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -13,10 +13,10 @@
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.54833984375,
-  "repelStrength": 15.83984375,
+  "centerStrength": 0.324788411458333,
+  "repelStrength": 20,
   "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.2777862132985445,
-  "close": true
+  "linkDistance": 500,
+  "scale": 0.5470161857693091,
+  "close": false
 }

@@ -1,16 +1,18 @@
-##### Hard-Dependents
-##### Tags
+##### Hard-Dependents 
+
+##### Tags 
 #grundlagenTrigonometrie
-##### Metadata
+#abiturAnalytischeGeometrie
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
-## Description
+## Description 
  
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Nenne den Kossinussatz für $b^2.
-#### Answer
+#### Answer 
 $b^2=a^2+c^2-2ac\cdot cos(\beta)$

@@ -14,8 +14,17 @@
               "type": "graph",
               "state": {}
             }
+          },
+          {
+            "id": "fcfefa63e4622d7d",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -138,11 +147,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "22475b3866e99b61",
+  "active": "fcfefa63e4622d7d",
   "lastOpenFiles": [
+    "Abitur Analytische Geometrie.md",
+    "Analysis Abitur.md",
+    "Potenzgesetze und Wurzelgesetze.md",
+    "Nennen - Lösungsverfahren für Gleichungssysteme mit 2 Variablen.md",
+    "Bestimmen - Wertetabelle zu einer Geraden.md",
+    "Lernziel - lineare Gleichungen.md",
+    "Bestimmen - Schnittpunkt von zwei Geraden (rechnerisch).md",
+    "Berechnen - x-Wert in Geradengleichung einsetzen.md",
+    "Berechnen - eine Gleichung durch etwas dividieren.md",
+    "Berechnen - etwas zu einer Gleichung addieren.md",
+    "Bestimmen - Geradengleichung anhand von 2 Punkten (2D).md",
+    "Bestimmen - Schnittpunkt von zwei Geraden grafisch.md",
     "Berechnen - Bruch mit Bruch im Zähler.md",
     "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit 2 Variablen.md",
-    "Nennen - Lösungsverfahren für Gleichungssysteme mit 2 Variablen.md",
     "Bestimmen - Lösungsmenge eines linearen Gleichungssystems mit mehreren Gleichungen.md",
     "Berechnen - Operationen mit Gleichungen.md",
     "Bestimmen - Steigung der Geraden durch zwei Punkte (2D).md",
@@ -155,17 +175,6 @@
     "Nennen - Bedingung für Achsensymmetrie einer ganzrationalen Funktion.md",
     "Nennen - Bedingungen von Symmetrie ganzrationaler Funktionen.md",
     "Nennen - Bedingung für Punktsymmetrie einer ganzrationalen Funktion.md",
-    "Berechnen - Gleichung Subtraktion.md",
-    "Berechnen - eine Gleichung durch etwas dividieren.md",
-    "Berechnen - etwas zu einer Gleichung addieren.md",
-    "quadratische Funktionen.md",
-    "Untitled.md",
-    "Bestimmen - Abstand von Punkt und Ebene in hessischer Normalenform.md",
-    "Bestimmen - Ableitung -cosinus.md",
-    "Begründe - welche ganzrationale Funktion ist punktsymmetrisch.md",
-    "Bestimmen - vollständige Kurvendiskussion anhand von Polynom.md",
-    "templates",
-    "Bestimmen - ganzrationale Funktion anhand von Informationen (Kurvenanpassung).md",
-    "Nennen - Bedingungen der einzelnen Gleichungen bei Funktionsrekonstruktion.md"
+    "templates"
   ]
 }

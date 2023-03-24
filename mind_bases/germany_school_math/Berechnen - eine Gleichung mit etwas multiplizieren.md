@@ -8,6 +8,7 @@
 #grundlagenTrigonometrie
 #abiturNullstellenBestimmen
 #abiturNullstellenBestimmen
+#abiturAnalytischeGeometrie
 ##### Metadata 
 isCollectionGoal=false
 isOrGateway=false

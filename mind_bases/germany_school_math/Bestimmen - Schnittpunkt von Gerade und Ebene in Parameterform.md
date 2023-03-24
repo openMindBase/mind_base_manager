@@ -1,21 +1,22 @@
-##### Hard-Dependents
+##### Hard-Dependents 
 [[Berechnen - Ebene von Parameterform in Normalenform umwandeln]]
 [[Berechnen - Ebene von Normalenform in Koordinatenform umwandeln]]
-##### Tags
+##### Tags 
 #analytischeGeometrieAbstände
-##### Metadata
+#abiturAnalytischeGeometrie
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
-## Description
+## Description 
 z.B. von $E:\vec{x}=\begin{pmatrix}2\\1\\3\end{pmatrix}+r\cdot\begin{pmatrix}-2\\1\\-1\end{pmatrix}+s\cdot\begin{pmatrix}0\\0\\1\end{pmatrix}$ und $g:\vec{x}=\begin{pmatrix}-1\\1\\3\end{pmatrix}+r\cdot\begin{pmatrix}1\\3\\-2\end{pmatrix}$ 
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Berechne:
 
 Schnittpunkt zwischen
 $E:\vec{x}=\begin{pmatrix}2\\1\\3\end{pmatrix}+r\cdot\begin{pmatrix}-2\\1\\-1\end{pmatrix}+s\cdot\begin{pmatrix}0\\0\\1\end{pmatrix}$ und $g:\vec{x}=\begin{pmatrix}-1\\1\\3\end{pmatrix}+r\cdot\begin{pmatrix}1\\3\\-2\end{pmatrix}$
-#### Answer
+#### Answer 
 $S(\frac{-4}{7}|\frac{16}{7}|\frac{15}{7})$

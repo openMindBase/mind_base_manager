@@ -11,6 +11,7 @@
 #grundlagenTrigonometrie
 #grundlagenTrigonometrie
 #abiturNullstellenBestimmen
+#abiturAnalytischeGeometrie
 ##### Metadata 
 isCollectionGoal=true
 isOrGateway=false

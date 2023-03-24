@@ -7,6 +7,7 @@
 #analysisVollständigeKurvendiskussionPolynom
 #grundlagenTrigonometrie
 #abiturNullstellenBestimmen
+#abiturAnalytischeGeometrie
 ##### Metadata 
 isCollectionGoal=false
 isOrGateway=false

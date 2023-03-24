@@ -1,13 +1,14 @@
-##### Hard-Dependents
+##### Hard-Dependents 
 [[Bestimmen - Abstand zwischen Punkt und Ebene]]
 [[Bestimmen - Abstand zwischen Gerade und Punkt]]
-##### Tags
+##### Tags 
 #analytischeGeometrieAbstände
 #root
-##### Metadata
+#abiturAnalytischeGeometrie
+##### Metadata 
 isCollectionGoal=true
 isOrGateway=false
 shouldTest=true
 singleExercise=false
-## Description
+## Description 
 alle Arten von Abständen 

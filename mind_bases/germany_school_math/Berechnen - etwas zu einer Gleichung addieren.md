@@ -9,6 +9,7 @@
 #grundlagenTrigonometrie
 #abiturNullstellenBestimmen
 #quadratischeFunktionen
+#abiturAnalytischeGeometrie
 ##### Metadata 
 isCollectionGoal=false
 isOrGateway=false

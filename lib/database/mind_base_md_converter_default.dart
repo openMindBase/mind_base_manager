@@ -16,10 +16,14 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     bool singleExercise = false;
     String description = "";
     _readSection(mdLines, "##### Hard-Dependents", (s) {
-      dependents.add(_obsidianDependencyStringToString(s));
+      if (s.isNotEmpty) {
+        dependents.add(_obsidianDependencyStringToString(s));
+      }
     });
     _readSection(mdLines, "##### Tags", (s) {
-      tags.add(_tagStringToString(s));
+      if (s.isNotEmpty) {
+        tags.add(_tagStringToString(s));
+      }
     });
     _readSection(mdLines, "##### Metadata", (s) {
       if (s.contains("isCollectionGoal")) {

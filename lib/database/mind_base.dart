@@ -32,4 +32,11 @@ abstract class MindBase{
 
   Future<LearningGoalCollection> readAllLearningGoalsAsLearningGoalCollection({bool printStats=false});
 
+
+  Future<void> addTagToLearningGoal(String id,String tag);
+
+
+  /// Writes [learningGoal] to the database.
+  Future<void> writeLearningGoal(LearningGoal learningGoal);
+
 }

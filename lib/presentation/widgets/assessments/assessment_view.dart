@@ -51,14 +51,17 @@ class _AssessmentViewWidgetState extends State<AssessmentViewWidget> {
               onPressed: () {
                 widget.learningTree.resetControlLevelIf(
                     (learningGoal) => learningGoal.isControlled() == false);
-                LeanNavigator.pop(context);
-                LeanNavigator.pop(context);
+                if (Navigator.canPop(context)) {
+                  LeanNavigator.pop(context);
+                }
+                if (Navigator.canPop(context)) {
+                  LeanNavigator.pop(context);
+                }
                 LeanNavigator.push(
                     context,
                     Scaffold(
                       body: TestProcedurePage(
-                          learningTree:
-                          widget.learningTree,
+                          learningTree: widget.learningTree,
                           title: widget.learningTree.title,
                           onTestingComplete: (learningTree) {
                             // DatabaseAccess().addAssessmentToStudent(
@@ -145,7 +148,7 @@ class _AssessmentViewWidgetState extends State<AssessmentViewWidget> {
         Exercise e = v.randomExercise() as Exercise;
         output += e.question;
       } else {
-        output += v.description??"";
+        output += v.description ?? "";
       }
       output += "<br>";
       output += "<br>";

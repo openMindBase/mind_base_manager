@@ -15,7 +15,6 @@ import 'package:mind_base_manager/presentation/app_pages/test_procedure_page.dar
 
 Future<void> main() async {
   _init();
-
   runApp(const MindBaseApp());
 }
 

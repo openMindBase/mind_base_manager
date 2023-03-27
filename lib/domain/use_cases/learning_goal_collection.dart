@@ -33,6 +33,24 @@ class LearningGoalCollection {
     return LearningGoalCollection(output);
   }
 
+
+  bool contains(LearningGoal learningGoal) {
+    for(var v in learningGoalMap.values) {
+        if(learningGoal==v) {
+          return true;
+        }
+    }
+    return false;
+  }
+  bool containsTitle(String title) {
+    for(var v in learningGoalMap.values) {
+        if(title==v.title) {
+          return true;
+        }
+    }
+    return false;
+  }
+
   /// Reads all tags within the [learningGoalMap] and lists them in the output.
   Set<String> tags() {
     Set<String> output = {};

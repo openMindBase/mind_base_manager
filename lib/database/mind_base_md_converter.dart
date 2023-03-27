@@ -17,9 +17,10 @@ abstract class MindBaseMdConverter{
     return currentMindBaseMdConverter!;
   }
 
-
+  /// Converts a List with lines of a markdown String to a [LearningGoal].
   LearningGoal fromMd(List<String> mdLines,String id);
 
-
+  /// Converts a [LearningGoal] to a markdown string.
+  String learningGoalToMd(LearningGoal learningGoal);
 
 }

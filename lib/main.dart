@@ -8,6 +8,7 @@ import 'package:mind_base_manager/database/mind_base_md_converter.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter_default.dart';
 import 'package:mind_base_manager/domain/entities/persons/student_metadata.dart';
 import 'package:mind_base_manager/domain/use_cases/learning_goal_collection.dart';
+import 'package:mind_base_manager/domain/use_cases/mind_base_modifier/mind_base_tagger.dart';
 import 'package:mind_base_manager/presentation/app_pages/choose_mind_base_page.dart';
 import 'package:mind_base_manager/presentation/app_pages/loading_page.dart';
 import 'package:mind_base_manager/presentation/app_pages/tag_selection_page.dart';
@@ -15,7 +16,7 @@ import 'package:mind_base_manager/presentation/app_pages/test_procedure_page.dar
 
 Future<void> main() async {
   _init();
-
+  await MindBaseTagger(mindBasePath: "/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/germany_school_math").updateAllTags();
   runApp(const MindBaseApp());
 }
 

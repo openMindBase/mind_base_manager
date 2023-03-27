@@ -1,28 +1,30 @@
-##### Hard-Dependents
-##### Tags
+##### Hard-Dependents 
+
+##### Tags 
 #abiturAnalysis
-##### Metadata
+#abiturAbleitungen
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
-## Description
+## Description 
  
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Bestimme die Ableitung von der Funktion $f(x)=sin(x)\cdot3x^2$
-#### Answer
+#### Answer 
 $f'(x)=cos(x)\cdot3x^2+sin(x)\cdot6x$
-### 1
-#### Question
+### 1 
+#### Question 
 Bestimme die Ableitung von der Funktion $f(x)=sin(x)\cdot x^4$
-#### Answer
+#### Answer 
 $f'(x)=4x^3\cdot sin(x)+x^4\cdot cos(x)$
 $x^3(4\cdot sin(x)+x\cdot cos(x))$
-### 2
-#### Question
+### 2 
+#### Question 
 Bestimme die Ableitung von der Funktion $f(x)=sin(x)\cdot x^2+5$
-#### Answer
+#### Answer 
 $f'(x)=2x\cdot sin(x)+x^2\cdot cos(x)$
 $x(2\cdot sin(x)+x\cdot cos(x))$

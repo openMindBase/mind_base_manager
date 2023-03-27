@@ -1,17 +1,18 @@
-##### Hard-Dependents
+##### Hard-Dependents 
 [[Potenzgesetz 1]]
 [[Potenzgesetz 2]]
 [[Potenzgesetz 3]]
 [[Potenzgesetz 4]]
 [[Potenzgesetz 5]]
 [[Berechnen - Wurzel aus Bruch]]
-##### Tags
+##### Tags 
 #potenzUndWurzelgesetze
 #root
-##### Metadata
+#abiturAnalysis
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
-## Description
+## Description 
 du kannst Potenzen zusammenfassen und Wurzeln vereinfachen 

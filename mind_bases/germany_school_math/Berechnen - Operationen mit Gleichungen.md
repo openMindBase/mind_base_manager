@@ -1,17 +1,21 @@
-##### Hard-Dependents
+##### Hard-Dependents 
 [[Berechnen - etwas zu einer Gleichung addieren]]
 [[Berechnen - eine Gleichung durch etwas dividieren]]
 [[Berechnen - eine Gleichung mit etwas multiplizieren]]
 [[Berechnen - Gleichung Subtraktion]]
-##### Tags
+##### Tags 
 #abiturAnalysis
-#lineareGleichungen 
+#lineareGleichungen
 #analysisVollständigeKurvendiskussionPolynom
 #abiturFunktionsrekonstruktion
-##### Metadata
+#grundlagenTrigonometrie
+#grundlagenTrigonometrie
+#abiturNullstellenBestimmen
+#abiturAnalytischeGeometrie
+##### Metadata 
 isCollectionGoal=true
 isOrGateway=false
 shouldTest=false
 singleExercise=false
-## Description
+## Description 
 z.B. etwas zu einer Gleichung addieren, die Gleichung Multiplizieren, die Gleichung durch etwas teilen... 

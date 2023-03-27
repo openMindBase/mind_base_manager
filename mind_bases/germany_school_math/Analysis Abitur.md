@@ -4,6 +4,7 @@
 [[Abitur Integrale]]
 [[Abitur Nullstellen bestimmen]]
 [[Ableitungen Abitur]]
+[[Potenzgesetze und Wurzelgesetze]]
 ##### Tags
 #abiturAnalysis
 #root

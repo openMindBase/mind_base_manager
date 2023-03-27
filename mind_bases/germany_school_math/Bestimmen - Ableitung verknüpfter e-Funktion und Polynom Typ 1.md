@@ -1,17 +1,18 @@
-##### Hard-Dependents
+##### Hard-Dependents 
 [[Bestimmen - Ableitung E-Funktion über Produktregel]]
-##### Tags
+##### Tags 
 #abiturAnalysis
-##### Metadata
+#abiturAbleitungen
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
-## Description
+## Description 
  
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Bestimme die Ableitung der Funktion $f(x)=e^x\cdot 3x^2$
-#### Answer
+#### Answer 
 $f'(x)=e^x\cdot 3x^2+e^x\cdot6x=e^x\cdot (3x^2+6x)$

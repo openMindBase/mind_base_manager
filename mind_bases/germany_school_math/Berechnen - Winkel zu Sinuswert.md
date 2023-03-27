@@ -1,16 +1,18 @@
-##### Hard-Dependents
-##### Tags
+##### Hard-Dependents 
+
+##### Tags 
 #grundlagenTrigonometrie
-##### Metadata
+#abiturAnalytischeGeometrie
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
-## Description
+## Description 
  
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Berechne den Winkel zu dem Sinuswert $sin(\alpha)=0,913.$
-#### Answer
+#### Answer 
 $sin^{-1}(0,913)\approx 66\degree$

@@ -1,16 +1,18 @@
-##### Hard-Dependents
-##### Tags
+##### Hard-Dependents 
+
+##### Tags 
 #grundlagenTrigonometrie
-##### Metadata
+#abiturAnalytischeGeometrie
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=true
-## Description
+## Description 
  
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Nenne den Sinussatz.
-#### Answer
+#### Answer 
 $\frac{\alpha}{sin(\alpha)}=\frac{\beta}{sin(\beta)}= \frac{\gamma}{sin(\gamma)}$

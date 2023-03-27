@@ -1,19 +1,20 @@
-##### Hard-Dependents
+##### Hard-Dependents 
 [[Berechnen - Wurzel aus Quadratzahl]]
-##### Tags
+##### Tags 
 #potenzUndWurzelgesetze
-##### Metadata
+#abiturAnalysis
+##### Metadata 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
 singleExercise=false
-## Description
+## Description 
  
-## Exercises
-### 0
-#### Question
+## Exercises 
+### 0 
+#### Question 
 Berechne:
 
 $\sqrt{\frac{49}{4}}$
-#### Answer
+#### Answer 
 $\sqrt{\frac{49}{4}}=\frac{\sqrt{49}}{\sqrt{4}}=\frac{7}{2}$

@@ -44,7 +44,6 @@ class TransitivityCleaner<T> {
     try{
       generatePaths(directSuccessors,tuple.x2);
     } catch (e) {
-      print("cleans tuple: " + tuple.toString());
       _transitives.add(tuple);
       return true;
     }

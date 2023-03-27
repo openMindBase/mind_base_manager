@@ -22,7 +22,7 @@ class ChooseMindBasePage extends StatelessWidget {
 
 
   void _onClickSubmit(BuildContext context) {
-    onMindBasePathChoose(pathController.text);
+    onMindBasePathChoose(pathController.text.isEmpty?"/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/germany_school_math":pathController.text);
   }
 
 }

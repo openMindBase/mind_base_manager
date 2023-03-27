@@ -1,13 +1,14 @@
-##### Hard-Dependents
+##### Hard-Dependents 
 [[Nennen - Kosinussatz a]]
 [[Nennen - Kosinussatz b]]
 [[Nennen - Kosinussatz c]]
-##### Tags
+##### Tags 
 #grundlagenTrigonometrie
-##### Metadata
+#abiturAnalytischeGeometrie
+##### Metadata 
 isCollectionGoal=true
 isOrGateway=false
 shouldTest=false
 singleExercise=false
-## Description
+## Description 
  

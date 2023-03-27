@@ -7,6 +7,8 @@ import 'package:lean_ui_kit/other/lean_navigator.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_space.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_spaced_column.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_spaced_row.dart';
+import '../../../database/mind_base.dart';
+import '../../../domain/entities/learning_goals_and_structures/learning_goal.dart';
 import '../../../domain/entities/learning_goals_and_structures/learning_tree.dart';
 import '../../../domain/entities/persons/student_metadata.dart';
 import '../../../domain/use_cases/test_procedure_report/test_procedure_report_by_learning_tree_latex_v1.dart';
@@ -48,6 +50,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
       testingActive = false;
       widget.onTestingComplete(widget.testProcedure.learningTree);
       _createAnalysis();
+      _saveTestedTreeState();
       // DatabaseAccess().writeExerciseIndexList(studentId, exerciseIndexList)
     }
 
@@ -99,6 +102,29 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
     );
   }
 
+  void _saveTestedTreeState(){
+    LearningTree lt = widget.testProcedure.learningTree;
+    Set<LearningGoal> controlledLG={};
+    Set<LearningGoal> improvableLG={};
+    Set<LearningGoal> keyLG={};
+
+    //collecting all learning goal types
+    for (var v in lt.filter(
+            (learningGoal) => lt.isKeyLearningGoal(learningGoal))) {
+      keyLG.add(v);
+    }
+    for (var v in lt.filter(
+            (learningGoal) => learningGoal.isControlled())) {
+      controlledLG.add(v);
+    }
+    for (var v in lt.filter(
+            (learningGoal) => learningGoal.shouldBeImproved())) {
+      improvableLG.add(v);
+    }
+    MindBase.instance.writeTestedTree(
+        controlledLG,improvableLG,keyLG,widget.studentMetadata.name!);
+  }
+
   void _createAnalysis() {
     var t = TestProcedureReportByLearningTreeLatexV1(
         name: widget.studentMetadata.name ?? "",
@@ -106,7 +132,8 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
 
     Clipboard.setData(ClipboardData(
         text:
-        "${widget.testProcedure.learningTree.title.replaceAll(":", " ")}||||${widget.studentMetadata.name ?? "Max Muster"}||||${t.get()}"));
+        "${widget.testProcedure.learningTree.title.replaceAll(":", " ")}||||${widget.studentMetadata.name ?? "Max Muster"}||||${t.get()}")
+    );
   }
 
   Widget _buttonRow() {

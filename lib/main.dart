@@ -45,7 +45,7 @@ class MindBaseHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ChooseMindBasePage(
-        onMindBasePathChoose: (mindBasePath) async {
+        onMindBasePathChoose: (mindBasePath, testedName) async {
           MindBase.init(LocalMindBase(mindBasePath));
 
           LeanNavigator.push(
@@ -70,7 +70,8 @@ class MindBaseHomePage extends StatelessWidget {
                                 title: "#$tag",
                                 onTestingComplete: (learningTree) {},
                                 studentMetadata:
-                                    const StudentMetadata("Mira Bellenbaum")),
+                                    StudentMetadata(testedName)
+                            ),
                             includeScaffold: true);
                       },
                     );

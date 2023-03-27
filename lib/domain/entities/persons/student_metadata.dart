@@ -7,8 +7,6 @@ class StudentMetadata {
 
   static const StudentMetadata example = StudentMetadata("testStudent12345",name: "Mira Bellenbaum");
 
-
-
   static StudentMetadata fromJson(Map<String,dynamic> data) {
     return StudentMetadata(data["id"],name: data["name"],);
   }

@@ -9,13 +9,22 @@ import 'package:mind_base_manager/domain/use_cases/learning_goal_collection.dart
 import 'package:mind_base_manager/domain/use_cases/stats_printer.dart';
 
 class LocalMindBase extends MindBase {
-  LocalMindBase(this.localMindBasePath);
+  LocalMindBase(this.localMindBaseDatabasePath) {
+    String s = localMindBaseDatabasePath.replaceAll("/", "\\").split("\\").last;
+    s = localMindBaseDatabasePath.substring(
+            0, localMindBaseDatabasePath.length - (s.length)) +
+        testedDirectoryName;
+    print(s);
+    localMindBaseTestedTreesPath = s;
+  }
 
-  final String localMindBasePath;
+  static const String testedDirectoryName = "tested_tags";
+  final String localMindBaseDatabasePath;
+  late final String localMindBaseTestedTreesPath;
 
   @override
   Future<LearningGoal> readLearningGoal(String id) async {
-    File f = await openOrCreateFile("$localMindBasePath/$id.md");
+    File f = await openOrCreateFile("$localMindBaseDatabasePath/$id.md");
     return MindBaseMdConverter.instance.fromMd(
         f.readAsLinesSync(), _removeDotMdFromString(f.path.split("/").last));
   }
@@ -32,10 +41,10 @@ class LocalMindBase extends MindBase {
 
   Future<LearningGoal> _readLearningGoalFromPath(String path) async {
     File f = await openOrCreateFile(path);
-    String s = f.path.split(path.contains("/")?"/":"\\").last;
+    String s = f.path.replaceAll("/", "\\").split("\\").last;
     String id = _removeDotMdFromString(s);
     List<String> mdLines = f.readAsLinesSync();
-    if(mdLines.isEmpty) {
+    if (mdLines.isEmpty) {
       throw ArgumentError("$path does not exist");
     }
     return MindBaseMdConverter.instance.fromMd(mdLines,
@@ -53,11 +62,11 @@ class LocalMindBase extends MindBase {
     final List<LearningGoal> learningGoals = [];
     Stopwatch s = Stopwatch();
     s.start();
-    final dir = Directory(localMindBasePath);
+    final dir = Directory(localMindBaseDatabasePath);
     final List<FileSystemEntity> entities = await dir.list().toList();
     final Iterable<File> files = entities.whereType<File>();
     for (var v in files) {
-      if(v.path.contains("/.md")) {
+      if (v.path.contains("/.md")) {
         v.delete();
         continue;
       }
@@ -94,7 +103,7 @@ class LocalMindBase extends MindBase {
   }
 
   @override
-  Future<void> addTagToLearningGoal(String id,String tag) async {
+  Future<void> addTagToLearningGoal(String id, String tag) async {
     LearningGoal learningGoal = await readLearningGoal(id);
     learningGoal.tags.add(tag);
     await writeLearningGoal(learningGoal);
@@ -102,9 +111,18 @@ class LocalMindBase extends MindBase {
 
   @override
   Future<void> writeLearningGoal(LearningGoal learningGoal) async {
-    File f =
-        await openOrCreateFile("$localMindBasePath/${learningGoal.title}.md");
+    File f = await openOrCreateFile(
+        "$localMindBaseDatabasePath/${learningGoal.title}.md");
     f.writeAsString(
         MindBaseMdConverter.instance.learningGoalToMd(learningGoal));
+  }
+
+  @override
+  Future<void> writeTestedTree(Set<LearningGoal> controlledLG,
+      Set<LearningGoal> improvableLG, Set<LearningGoal> keyLG, String name) async {
+    File f = await openOrCreateFile(
+        "$localMindBaseTestedTreesPath/$name.md");
+    f.writeAsString(
+        MindBaseMdConverter.instance.testedTreeToMd(controlledLG,improvableLG,keyLG));
   }
 }

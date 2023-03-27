@@ -39,4 +39,6 @@ abstract class MindBase{
   /// Writes [learningGoal] to the database.
   Future<void> writeLearningGoal(LearningGoal learningGoal);
 
+  Future<void> writeTestedTree(Set<LearningGoal> controlledLG,
+      Set<LearningGoal> improvableLG, Set<LearningGoal> keyLG, String name);
 }

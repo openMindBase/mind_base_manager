@@ -23,4 +23,10 @@ abstract class MindBaseMdConverter{
   /// Converts a [LearningGoal] to a markdown string.
   String learningGoalToMd(LearningGoal learningGoal);
 
+  String testedTreeToMd(
+      Set<LearningGoal> controlledLG,
+      Set<LearningGoal> improvableLG,
+      Set<LearningGoal> keyLG
+      );
+
 }

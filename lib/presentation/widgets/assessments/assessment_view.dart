@@ -51,6 +51,7 @@ class _AssessmentViewWidgetState extends State<AssessmentViewWidget> {
               onPressed: () {
                 widget.learningTree.resetControlLevelIf(
                     (learningGoal) => learningGoal.isControlled() == false);
+                //TODO: not great continue button functionality
                 if (Navigator.canPop(context)) {
                   LeanNavigator.pop(context);
                 }
@@ -119,7 +120,7 @@ class _AssessmentViewWidgetState extends State<AssessmentViewWidget> {
             ],
           ),
           Text(
-            "Schlüssellernziele:(${learningTree.keyLearningGoals.length})",
+            "Schlüssellernziele: (${learningTree.keyLearningGoals.length})",
             style: Theme.of(context).textTheme.headlineLarge,
           ),
           Card(

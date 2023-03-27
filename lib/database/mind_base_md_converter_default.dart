@@ -161,6 +161,30 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     return output;
   }
 
+  //converts to md format, not controlled learning goals are the set difference
+  //this list and the specific mindbase database
+  @override
+  String testedTreeToMd(
+      Set<LearningGoal> controlledLG,
+      Set<LearningGoal> improvableLG,
+      Set<LearningGoal> keyLG) {
+    String newline = "\n";
+    String masteredSection = "##### Mastered Learning Goals$newline";
+    String improvableSection = "##### To be improved on Learning Goals$newline";
+    String keyLGSection = "##### Key Learning Goals$newline";
+
+    for (LearningGoal c in controlledLG) {
+      masteredSection + c.title + newline;
+    }
+    for (LearningGoal i in improvableLG) {
+      improvableSection + _stringToObsidianDependencyString(i.title) + newline;
+    }
+    for (LearningGoal k in keyLG) {
+      keyLGSection + _stringToObsidianDependencyString(k.title) + newline;
+    }
+    return keyLGSection + improvableSection + masteredSection;
+  }
+
   String _addSectionFromLearningGoal(
       String heading, String string, String Function(String s) stringComputer) {
     string += "$heading \n";
@@ -194,7 +218,13 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
   String _obsidianDependencyStringToString(String input) =>
       input.trim().replaceAll("[[", "").replaceAll("]]", "");
 
-  /// Converts " [[test]]" to "test".
+  /// Converts " test" to "[[test]]".
+  String _stringToObsidianDependencyString(String input) {
+    String s1 = "[[";
+    String s2 = "]]";
+    return s1 + input + s2;
+  }
+
   String _tagStringToString(String input) => input.trim().replaceAll("#", "");
 
   bool _metaDataStringToBool(String input) =>

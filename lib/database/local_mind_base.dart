@@ -32,7 +32,7 @@ class LocalMindBase extends MindBase {
 
   Future<LearningGoal> _readLearningGoalFromPath(String path) async {
     File f = await openOrCreateFile(path);
-    String s = f.path.split("/").last;
+    String s = f.path.split(path.contains("/")?"/":"\\").last;
     String id = _removeDotMdFromString(s);
     List<String> mdLines = f.readAsLinesSync();
     if(mdLines.isEmpty) {

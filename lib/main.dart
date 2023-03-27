@@ -16,7 +16,7 @@ import 'package:mind_base_manager/presentation/app_pages/test_procedure_page.dar
 
 Future<void> main() async {
   _init();
-  await MindBaseTagger(mindBasePath: "/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/germany_school_math").updateAllTags();
+  // await MindBaseTagger(mindBasePath: "/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/germany_school_math").updateAllTags();
   runApp(const MindBaseApp());
 }
 

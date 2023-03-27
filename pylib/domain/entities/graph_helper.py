@@ -1,19 +1,7 @@
 import networkx as nx
 from networkx import DiGraph
 
-
-# TODO make dict to no be in O(n^2)
-# checks for duplicate file names / node names
-def checkDuplicates(filesAsStrings: list[[str, str]]) -> None:
-    j = 0
-    for file in filesAsStrings:
-        fileName = file[0]
-        j += 1
-        for i in range(j, len(filesAsStrings)):
-            if fileName == filesAsStrings[i][0]:
-                raise Exception("duplicate file(=Node in Graph) detected => invalid Graph")
-    return
-
+# collection of conversions to and fro md files, validity checkers of formatting of files
 
 # converts whole file strings to DiGraph, leaves out orphan nodes (unconnected node)
 def convertFilesAsStringToConnectedDiGraph(filesAsStrings: list[[str, str]]) -> DiGraph:
@@ -45,7 +33,7 @@ def convertDiGraphToHardDependentsSectionStrings(Graph: DiGraph) -> dict[str:str
     return returnDict
 
 
-# in: file
+# in: file/node as string
 # out: files dependency names list
 def readDependencies(nodeAsString: str) -> list[str]:
     returnList = []
@@ -67,7 +55,7 @@ def readDependencies(nodeAsString: str) -> list[str]:
     return returnList
 
 
-# writes a dependency to a fileAsString
+# writes a dependency section to a list of strings representing the file
 def writeDependencies(dependenciesSection: str, nodeAsString: str) -> list[str]:
     tempL = nodeAsString.split("##### Tags")
     if tempL[0] != dependenciesSection:
@@ -80,7 +68,7 @@ def writeDependencies(dependenciesSection: str, nodeAsString: str) -> list[str]:
 
 
 # C:\Users\49176\PycharmProjects\mind_base_manager\mind_bases\germany_school_math\Potenzgesetz 5.md
-# -> Potenzgesetz 5
+# => Potenzgesetz 5
 def extractFilenameFromPath(path) -> str:
     name = path.split("\\")
     name = name[-1]
@@ -95,9 +83,21 @@ def convertAdjacencyListToEdgeList(adjacencyGraphList: [[str, [str]]]) -> [(str,
         edgeList.extend(convertAdjacencyNodeToEdgeList(node))
     return edgeList
 
-
+# iteration of above func
 def convertAdjacencyNodeToEdgeList(node: [str, [str]]) -> [(str, str)]:
     edgeList = []
     for successorNode in node[1]:
         edgeList.append((node[0], successorNode))
     return edgeList
+
+# TODO make dict to no be in O(n^2)
+# checks for duplicate file names / node names
+def checkDuplicates(filesAsStrings: list[[str, str]]) -> None:
+    j = 0
+    for file in filesAsStrings:
+        fileName = file[0]
+        j += 1
+        for i in range(j, len(filesAsStrings)):
+            if fileName == filesAsStrings[i][0]:
+                raise Exception("duplicate file(=Node in Graph) detected => invalid Graph")
+    return

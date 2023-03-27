@@ -22,8 +22,7 @@ def showExampleGraph():
 
 
 """
-in:
-path: path to folder of mds
+in: path: path to folder of mds
 writeDependentsContent: dict[str: str] contents is written to all relevant files 
 """
 
@@ -69,8 +68,7 @@ def fileMdWriteDependents(path: str, writeDependentsContent: dict[str:str]) -> N
 
 
 """
-in:
-path: path to folder of md
+in: path: path to folder of md
 out: files as String in format list[[str, str]] with header and whole content of file
 """
 

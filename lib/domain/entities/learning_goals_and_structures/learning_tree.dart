@@ -7,7 +7,7 @@ import 'learning_goal.dart';
 import 'learning_goal_structure.dart';
 import 'learning_tree_signature.dart';
 
-/// A [LearningTree] is a [LearningGoalStructure] with exactly has one [trunk].
+/// A [LearningTree] is a [LearningGoalStructure] with exactly one [trunk].
 class LearningTree extends LearningGoalStructure {
   /// This constructor validates the input with [_validateTrunkCount] and throws if input is not valid.
   LearningTree({required super.nodes, required super.edges, super.title,this.id="",LearningTreeSignature? learningTreeSignature}):_learningTreeSignature=learningTreeSignature {
@@ -150,7 +150,6 @@ class LearningTree extends LearningGoalStructure {
 
 
   int get totalGoalCount => learningGoals.length;
-
 
   /// Throws if there is more then one [trunk].
   void _validateTrunkCount() {

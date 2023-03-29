@@ -53,7 +53,7 @@ class MBAppCardMenuButton extends StatelessWidget {
     return Tooltip(
       message: tooltipMessage,
       waitDuration: const Duration(milliseconds: 300),
-      textStyle: const TextStyle(fontSize: 20,color: Colors.white),
+      textStyle: const TextStyle(fontSize: 20,color: Colors.black),
       child: button,
     );
   }

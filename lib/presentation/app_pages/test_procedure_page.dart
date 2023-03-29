@@ -32,10 +32,10 @@ class TestProcedurePage extends StatelessWidget {
       showBackButton: true,
       children: [
         TestProcedureWidgetV1(
-        testProcedure: TestProcedureV1(learningTree),
-    onTestingComplete: onTestingComplete,
-    studentMetadata: studentMetadata,
-    )
+          testProcedure: TestProcedureV1(learningTree),
+          onTestingComplete: onTestingComplete,
+          studentMetadata: studentMetadata,
+        )
       ],
     );
   }

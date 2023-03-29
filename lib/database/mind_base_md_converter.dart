@@ -1,6 +1,9 @@
 // @author Matthias Weigt 21.03.23
 
 import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/learning_goal.dart';
+import 'package:mind_base_manager/domain/entities/persons/student_metadata.dart';
+
+import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
 
 abstract class MindBaseMdConverter{
   static MindBaseMdConverter? currentMindBaseMdConverter;
@@ -18,9 +21,16 @@ abstract class MindBaseMdConverter{
   }
 
   /// Converts a List with lines of a markdown String to a [LearningGoal].
-  LearningGoal fromMd(List<String> mdLines,String id);
+  LearningGoal fromLearningGoalMd(List<String> mdLines,String id);
 
   /// Converts a [LearningGoal] to a markdown string.
   String learningGoalToMd(LearningGoal learningGoal);
+
+  String testedTreeToTreeCollectionMd(
+      LearningTree lt,
+      [String? mdFileAsString]
+      );
+
+  String mergeTestedCollections(String firstCollection, String secondCollection);
 
 }

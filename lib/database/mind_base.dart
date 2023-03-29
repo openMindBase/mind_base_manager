@@ -2,6 +2,8 @@
 
 
 import '../domain/entities/learning_goals_and_structures/learning_goal.dart';
+import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
+import '../domain/entities/persons/student_metadata.dart';
 import '../domain/use_cases/learning_goal_collection.dart';
 
 abstract class MindBase{
@@ -19,8 +21,6 @@ abstract class MindBase{
     return currentMindBase!;
   }
 
-
-
   /// Reads a single [LearningGoal] by the id of the goal.
   Future<LearningGoal> readLearningGoal(String id);
 
@@ -32,6 +32,7 @@ abstract class MindBase{
 
   Future<LearningGoalCollection> readAllLearningGoalsAsLearningGoalCollection({bool printStats=false});
 
+  Future<List<String>?> readAssessmentData(StudentMetadata metadata);
 
   Future<void> addTagToLearningGoal(String id,String tag);
 
@@ -39,4 +40,5 @@ abstract class MindBase{
   /// Writes [learningGoal] to the database.
   Future<void> writeLearningGoal(LearningGoal learningGoal);
 
+  Future<void> writeTestedTree(LearningTree lt, StudentMetadata metadata);
 }

@@ -7,9 +7,8 @@ It shows the graph we have mapped as of March 20th 2023. The topic is school mat
 You can play with this graph using obsidian by downloading the appropriate mind_base/ folder and opening it as a vault in the downloaded app on many devices of your choosing.
 
 ## You find what we do interesting?
--Leave a **star** on the repository or share it anywhere you want.
--Contribute to our project by writing with us on this software (the code is mainly written in dart in the flutter framework, but essential functions are also written in python, if this suits your preference or competiencies)
--Contribute to other or new topics with hard dependencies in obsidian, though do mind that every learning goal has to be written in the computable format that is accesible in the mindbases folder. This is of tremendous benefit to you in the short term if you need or want to learn this topic, as you can test yourself objectively on your current knowledge of this topic, additionally your work is simultaneously accesible to every other person with knowledge of this repository and it's functions, who wants to learn this topic as well. This is especially useful if you are taking modules or classes in university or school and have other fellow students, who are taking the same class and therefore the exact corpus of knowledge you have created.
+- Leave a **star** on the repository or share it anywhere you want.
+- Contribute to other or new topics with hard dependencies in obsidian, though do mind that every learning goal has to be written in the computable format that is accesible in the mindbases folder. This is of tremendous benefit to you in the short term if you need or want to learn this topic, as you can test yourself objectively on your current knowledge of this topic, additionally your work is simultaneously accesible to every other person with knowledge of this repository and it's functions, who wants to learn this topic as well. This is especially useful if you are taking modules or classes in university or school and have other fellow students, who are taking the same class and therefore the exact corpus of knowledge you have created.
 
 ## Try our old assessment software
 For better understanding of your individual competencies in math up until high school you can try out our old assessment-software at the following link.

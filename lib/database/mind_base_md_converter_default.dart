@@ -164,63 +164,81 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
   }
 
   @override
-  String mergeTestedCollections(String firstCollection, String secondCollection) {
-    String output="";
+  /// TODO: implement correctly with many trees being collected and merged
+  /// currently unused
+  String mergeTestedCollections(
+      String firstCollection, String secondCollection) {
+    String output = "";
     String newline = "\n";
     String keyLGSection = "##### Key Learning Goals$newline";
     String improvableSection = "##### To be improved on Learning Goals$newline";
     String masteredSection = "##### Mastered Learning Goals$newline";
-    List<String> l = [keyLGSection,improvableSection,masteredSection];
+    List<String> l = [keyLGSection, improvableSection, masteredSection];
 
-    List<String> allSectionsList=
-      _splitCollectionBySections(firstCollection,l)+
-          _splitCollectionBySections(secondCollection,l);
-    assert (allSectionsList.length == 6);
+    List<String> allSectionsList =
+        _splitCollectionBySections(firstCollection, l) +
+            _splitCollectionBySections(secondCollection, l);
+    assert(allSectionsList.length == 6);
 
-    List<List<String>> allSectionsListList=[];
-    int i=0;
-    for (String section in allSectionsList){
-      allSectionsListList[i]=section.split(newline);
-      for (String s1 in allSectionsListList[i]){
-        for (String s2 in allSectionsListList[i]){
-          if(s1==s2){
-            continue;
+    //check for duplicates and merge
+    for (int i = 0; i < allSectionsList.length / 2; i++) {
+      List<String> section = allSectionsList[i].split(newline) +
+          allSectionsList[i + 3].split(newline);
+      int j = 0;
+      List<String> removeList=[];
+      for (String line in section) {
+        for (int k = j + 1; k < section.length; k++) {
+          if (line == section[k]){
+            removeList.add(line);
           }
         }
+        j++;
       }
-      i++;
+      //remove duplicates in section
+      for (String toBeRemoved in removeList){
+        section.remove(toBeRemoved);
+      }
+      //merge section into output again
+      output += l[i];
+      //is empty
+      for (String s in section) {
+        if (s==""){
+          continue;
+        }
+        output += s + newline;
+      }
     }
+
     print(output);
 
     return output;
   }
 
   @override
-  String testedTreeToTreeCollectionMd(
-      LearningTree lt,
-      [String? mdFileAsString]
-      ) {
+  String testedTreeToTreeCollectionMd(LearningTree lt,
+      [String? mdFileAsString]) {
     String newline = "\n";
     String keyLGSection = "##### Key Learning Goals$newline";
     String improvableSection = "##### To be improved on Learning Goals$newline";
     String masteredSection = "##### Mastered Learning Goals$newline";
 
-    for (LearningGoal c in lt.filter(
-            (learningGoal) => learningGoal.isControlled())) {
+    for (LearningGoal c
+        in lt.filter((learningGoal) => learningGoal.isControlled())) {
       masteredSection += c.title + newline;
     }
-    for (LearningGoal i in lt.filter(
-            (learningGoal) => learningGoal.shouldBeImproved())) {
+    for (LearningGoal i
+        in lt.filter((learningGoal) => learningGoal.shouldBeImproved())) {
       improvableSection += _stringToObsidianDependencyString(i.title) + newline;
     }
-    for (LearningGoal k in lt.filter(
-            (learningGoal) => lt.isKeyLearningGoal(learningGoal))) {
+    for (LearningGoal k
+        in lt.filter((learningGoal) => lt.isKeyLearningGoal(learningGoal))) {
       keyLGSection += _stringToObsidianDependencyString(k.title) + newline;
     }
 
     String testedTree = keyLGSection + improvableSection + masteredSection;
-    if (mdFileAsString!=null){
-      return mergeTestedCollections(testedTree, mdFileAsString);
+    if (mdFileAsString != null) {
+      //TODO: implement merging instead of overwriteting
+      return testedTree;
     }
     return testedTree;
   }
@@ -262,8 +280,11 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
   }
 
   /// [listOfHeaders] is to be ordered by descending appearance in the collection
-  List<String> _splitCollectionBySections(String collection, List<String> listOfHeaders){
-    List<String> output=[];
+  /// a collection is formatted correctly if it has 3 categories
+  List<String> _splitCollectionBySections(
+      String collection, List<String> listOfHeaders) {
+    assert (listOfHeaders.length == 3);
+    List<String> output = [];
     output.add(collection.split(listOfHeaders[0]).last);
     output.addAll(output[0].split(listOfHeaders[1]));
     output.addAll(output[2].split(listOfHeaders[2]));
@@ -280,5 +301,4 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
   }
 
   String _tagStringToString(String input) => input.trim().replaceAll("#", "");
-
 }

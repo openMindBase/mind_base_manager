@@ -1,6 +1,6 @@
 # mind_base_manager
 ## We are mapping knowledge as a hard dependency graph.
-A map is only as good as the added value it provides. We develop a very specific kind of map. A map made of learning goals and hard dependencies. It provides a clear answer to the question: "What **needs** to be learned so that something else **can** be learned?" in the realm of fields in which every subtopic is foundationally built on other subtopics, such that one is always put in the so called zone of proximal developement (ZPD) in which learning is optimal and engaging as one is not overwhelmed nor underwhelmed by learning goals that are too advanced or trivial.
+A map is only as good as the added value it provides. We develop a very specific kind of map. A map made of learning goals and hard dependencies. It provides a clear answer to the question: "What **needs** to be learned so that something else **can** be learned?" in the realm of fields in which every subtopic is foundationally built on other subtopics. This formation of a topic is done such that one is always put in the so called zone of proximal developement (ZPD) in which learning is optimal and engaging as one is not overwhelmed nor underwhelmed by learning goals that are too advanced or trivial.
 To start, we have built this:
 ![](images/germany_math_graph.png)
 It shows the graph we have mapped as of March 20th 2023. The topic is school mathematics in Germany.

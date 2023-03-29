@@ -11,9 +11,8 @@ import 'app_page.dart';
 class ChooseMindBasePage extends StatelessWidget {
   ChooseMindBasePage({super.key, required this.onMindBasePathChoose});
   final TextEditingController pathController = TextEditingController();
-  final TextEditingController studentNameController = TextEditingController();
 
-  final void Function(String mindBasePath, String testedName) onMindBasePathChoose;
+  final void Function(String mindBasePath) onMindBasePathChoose;
   @override
   Widget build(BuildContext context) {
     return AppPage(
@@ -28,13 +27,6 @@ class ChooseMindBasePage extends StatelessWidget {
                 hintText: "path",
               ),
           ),
-          SizedBox(
-            width: 750,
-            child: LeanTextField(
-              controller: studentNameController,
-              hintText: "name of tested person",
-            ),
-          ),
           ElevatedButton(onPressed: () => _onClickSubmit(context), child: const Text("submit"))
         ]
     );
@@ -44,7 +36,6 @@ class ChooseMindBasePage extends StatelessWidget {
   void _onClickSubmit(BuildContext context) {
     onMindBasePathChoose(
         pathController.text.isEmpty?"mind_bases/germany_school_math/germany_school_math_database":pathController.text,
-        studentNameController.text.isEmpty?"genericTestedPerson":studentNameController.text
     );
   }
 }

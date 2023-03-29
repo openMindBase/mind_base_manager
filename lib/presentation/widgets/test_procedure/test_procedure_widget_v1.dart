@@ -103,26 +103,9 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
   }
 
   void _saveTestedTreeState(){
-    LearningTree lt = widget.testProcedure.learningTree;
-    Set<LearningGoal> controlledLG={};
-    Set<LearningGoal> improvableLG={};
-    Set<LearningGoal> keyLG={};
-
-    //collecting all learning goal types
-    for (var v in lt.filter(
-            (learningGoal) => lt.isKeyLearningGoal(learningGoal))) {
-      keyLG.add(v);
-    }
-    for (var v in lt.filter(
-            (learningGoal) => learningGoal.isControlled())) {
-      controlledLG.add(v);
-    }
-    for (var v in lt.filter(
-            (learningGoal) => learningGoal.shouldBeImproved())) {
-      improvableLG.add(v);
-    }
     MindBase.instance.writeTestedTree(
-        controlledLG,improvableLG,keyLG,widget.studentMetadata.name!);
+        widget.testProcedure.learningTree,widget.studentMetadata
+    );
   }
 
   void _createAnalysis() {

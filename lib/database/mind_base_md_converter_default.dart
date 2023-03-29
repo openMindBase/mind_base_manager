@@ -4,9 +4,11 @@ import 'package:mind_base_manager/database/mind_base_md_converter.dart';
 import 'package:mind_base_manager/domain/entities/exercise.dart';
 import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/learning_goal.dart';
 
+import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
+
 class MindBaseMdConverterDefault extends MindBaseMdConverter {
   @override
-  LearningGoal fromMd(List<String> mdLines, String id) {
+  LearningGoal fromLearningGoalMd(List<String> mdLines, String id) {
     List<String> dependents = [];
     List<String> tags = [];
     List<Exercise> exercises = [];
@@ -161,28 +163,66 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     return output;
   }
 
-  //converts to md format, not controlled learning goals are the set difference
-  //this list and the specific mindbase database
   @override
-  String testedTreeToMd(
-      Set<LearningGoal> controlledLG,
-      Set<LearningGoal> improvableLG,
-      Set<LearningGoal> keyLG) {
+  String mergeTestedCollections(String firstCollection, String secondCollection) {
+    String output="";
     String newline = "\n";
-    String masteredSection = "##### Mastered Learning Goals$newline";
-    String improvableSection = "##### To be improved on Learning Goals$newline";
     String keyLGSection = "##### Key Learning Goals$newline";
+    String improvableSection = "##### To be improved on Learning Goals$newline";
+    String masteredSection = "##### Mastered Learning Goals$newline";
+    List<String> l = [keyLGSection,improvableSection,masteredSection];
 
-    for (LearningGoal c in controlledLG) {
-      masteredSection + c.title + newline;
+    List<String> allSectionsList=
+      _splitCollectionBySections(firstCollection,l)+
+          _splitCollectionBySections(secondCollection,l);
+    assert (allSectionsList.length == 6);
+
+    List<List<String>> allSectionsListList=[];
+    int i=0;
+    for (String section in allSectionsList){
+      allSectionsListList[i]=section.split(newline);
+      for (String s1 in allSectionsListList[i]){
+        for (String s2 in allSectionsListList[i]){
+          if(s1==s2){
+            continue;
+          }
+        }
+      }
+      i++;
     }
-    for (LearningGoal i in improvableLG) {
-      improvableSection + _stringToObsidianDependencyString(i.title) + newline;
+    print(output);
+
+    return output;
+  }
+
+  @override
+  String testedTreeToTreeCollectionMd(
+      LearningTree lt,
+      [String? mdFileAsString]
+      ) {
+    String newline = "\n";
+    String keyLGSection = "##### Key Learning Goals$newline";
+    String improvableSection = "##### To be improved on Learning Goals$newline";
+    String masteredSection = "##### Mastered Learning Goals$newline";
+
+    for (LearningGoal c in lt.filter(
+            (learningGoal) => learningGoal.isControlled())) {
+      masteredSection += c.title + newline;
     }
-    for (LearningGoal k in keyLG) {
-      keyLGSection + _stringToObsidianDependencyString(k.title) + newline;
+    for (LearningGoal i in lt.filter(
+            (learningGoal) => learningGoal.shouldBeImproved())) {
+      improvableSection += _stringToObsidianDependencyString(i.title) + newline;
     }
-    return keyLGSection + improvableSection + masteredSection;
+    for (LearningGoal k in lt.filter(
+            (learningGoal) => lt.isKeyLearningGoal(learningGoal))) {
+      keyLGSection += _stringToObsidianDependencyString(k.title) + newline;
+    }
+
+    String testedTree = keyLGSection + improvableSection + masteredSection;
+    if (mdFileAsString!=null){
+      return mergeTestedCollections(testedTree, mdFileAsString);
+    }
+    return testedTree;
   }
 
   String _addSectionFromLearningGoal(
@@ -191,6 +231,21 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     string += stringComputer("");
     return string;
   }
+
+  void _checkForHeadingAndRemove(List<String> mdLines, String heading) {
+    if (!mdLines.first.contains(heading)) {
+      throw ArgumentError(
+          "md file seems to be formatted wrong. Expected $heading, found ${mdLines.first}");
+    }
+    mdLines.removeAt(0);
+  }
+
+  bool _metaDataStringToBool(String input) =>
+      input.split("=").last.trim() == "true" ? true : false;
+
+  /// Converts " [[test]]" to "test".
+  String _obsidianDependencyStringToString(String input) =>
+      input.trim().replaceAll("[[", "").replaceAll("]]", "");
 
   void _readSection(List<String> mdLines, String heading,
       void Function(String s) stringComputer,
@@ -206,17 +261,16 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     }
   }
 
-  void _checkForHeadingAndRemove(List<String> mdLines, String heading) {
-    if (!mdLines.first.contains(heading)) {
-      throw ArgumentError(
-          "md file seems to be formatted wrong. Expected $heading, found ${mdLines.first}");
-    }
-    mdLines.removeAt(0);
+  /// [listOfHeaders] is to be ordered by descending appearance in the collection
+  List<String> _splitCollectionBySections(String collection, List<String> listOfHeaders){
+    List<String> output=[];
+    output.add(collection.split(listOfHeaders[0]).last);
+    output.addAll(output[0].split(listOfHeaders[1]));
+    output.addAll(output[2].split(listOfHeaders[2]));
+    output.removeAt(0);
+    output.removeAt(1);
+    return output;
   }
-
-  /// Converts " [[test]]" to "test".
-  String _obsidianDependencyStringToString(String input) =>
-      input.trim().replaceAll("[[", "").replaceAll("]]", "");
 
   /// Converts " test" to "[[test]]".
   String _stringToObsidianDependencyString(String input) {
@@ -227,6 +281,4 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
 
   String _tagStringToString(String input) => input.trim().replaceAll("#", "");
 
-  bool _metaDataStringToBool(String input) =>
-      input.split("=").last.trim() == "true" ? true : false;
 }

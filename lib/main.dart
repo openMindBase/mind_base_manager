@@ -9,6 +9,7 @@ import 'package:mind_base_manager/database/mind_base_md_converter_default.dart';
 import 'package:mind_base_manager/domain/entities/persons/student_metadata.dart';
 import 'package:mind_base_manager/domain/use_cases/learning_goal_collection.dart';
 import 'package:mind_base_manager/presentation/app_pages/choose_mind_base_page.dart';
+import 'package:mind_base_manager/presentation/app_pages/input_student_metadata.dart';
 import 'package:mind_base_manager/presentation/app_pages/loading_page.dart';
 import 'package:mind_base_manager/presentation/app_pages/tag_selection_page.dart';
 import 'package:mind_base_manager/presentation/app_pages/test_procedure_page.dart';
@@ -18,7 +19,12 @@ Future<void> main() async {
   runApp(const MindBaseApp());
 }
 
-
+/// Some parts have to be initialized.
+/// In here its done.
+void _init() {
+  MindBaseMdConverter.init(MindBaseMdConverterDefault());
+  AppThemeAccess.init(theme: LeanAppTheme());
+}
 
 /// The primary class representing the [MindBaseApp].
 class MindBaseApp extends StatelessWidget {
@@ -44,48 +50,51 @@ class MindBaseHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ChooseMindBasePage(
-        onMindBasePathChoose: (mindBasePath, testedName) async {
-          MindBase.init(LocalMindBase(mindBasePath));
-
+      // describes sequence of pages being walked through
+      // when whole application functionality is used:
+      body:
+      InputStudentMetadataPage(
+        onSubmitMetadata: (metadata) async {
           LeanNavigator.push(
-              context,
-              FutureBuilder<LearningGoalCollection>(
-                  future: MindBase.instance
-                      .readAllLearningGoalsAsLearningGoalCollection(
-                          printStats: true),
-                  builder: (BuildContext context,
-                      AsyncSnapshot<LearningGoalCollection> snapshot) {
-                    if (!snapshot.hasData) {
-                      return const LoadingPage();
+            context,
+              ChooseMindBasePage(
+              onMindBasePathChoose: (mindBasePath) async {
+                MindBase.init(LocalMindBase(mindBasePath));
+
+                LeanNavigator.push(
+                context,
+                FutureBuilder<LearningGoalCollection>(
+                    future: MindBase.instance
+                        .readAllLearningGoalsAsLearningGoalCollection(
+                            printStats: true),
+                    builder: (BuildContext context,
+                        AsyncSnapshot<LearningGoalCollection> snapshot) {
+                      if (!snapshot.hasData) {
+                        return const LoadingPage();
+                      }
+                      var data = snapshot.data as LearningGoalCollection;
+                      return TagSelectionPage(
+                        learningGoalCollection: data,
+                        onTagPressed: (tag, collection) {
+                          LeanNavigator.push(
+                              context,
+                              TestProcedurePage(
+                                  learningTree: collection.getLearningTree(),
+                                  title: "#$tag",
+                                  onTestingComplete: (learningTree) {},
+                                  studentMetadata: metadata),
+                              includeScaffold: true);
+                        },
+                      );
                     }
-                    var data = snapshot.data as LearningGoalCollection;
-                    return TagSelectionPage(
-                      learningGoalCollection: data,
-                      onTagPressed: (tag, collection) {
-                        LeanNavigator.push(
-                            context,
-                            TestProcedurePage(
-                                learningTree: collection.getLearningTree(),
-                                title: "#$tag",
-                                onTestingComplete: (learningTree) {},
-                                studentMetadata:
-                                    StudentMetadata(testedName)
-                            ),
-                            includeScaffold: true);
-                      },
-                    );
-                  }),
-              includeScaffold: true);
+                    ),
+                includeScaffold: true
+            );
+          },
+          )
+          ,includeScaffold: true);
         },
       ),
     );
   }
-}
-
-/// Some parts have to be initialized.
-/// In here its done.
-void _init() {
-  MindBaseMdConverter.init(MindBaseMdConverterDefault());
-  AppThemeAccess.init(theme: LeanAppTheme());
 }

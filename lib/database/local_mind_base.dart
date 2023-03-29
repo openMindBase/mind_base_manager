@@ -5,27 +5,29 @@ import 'dart:io';
 import 'package:mind_base_manager/database/mind_base.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter.dart';
 import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/learning_goal.dart';
+import 'package:mind_base_manager/domain/entities/persons/student_metadata.dart';
 import 'package:mind_base_manager/domain/use_cases/learning_goal_collection.dart';
 import 'package:mind_base_manager/domain/use_cases/stats_printer.dart';
 
+import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
+
 class LocalMindBase extends MindBase {
   LocalMindBase(this.localMindBaseDatabasePath) {
+    //TODO: check if this conversion also holds on other os
     String s = localMindBaseDatabasePath.replaceAll("/", "\\").split("\\").last;
     s = localMindBaseDatabasePath.substring(
-            0, localMindBaseDatabasePath.length - (s.length)) +
-        testedDirectoryName;
-    print(s);
-    localMindBaseTestedTreesPath = s;
+            0, localMindBaseDatabasePath.length - (s.length)) + testedDirectoryName;
+    localMindBaseTestedStatePath = s;
   }
 
-  static const String testedDirectoryName = "tested_tags";
+  static const String testedDirectoryName = "assessment_data";
   final String localMindBaseDatabasePath;
-  late final String localMindBaseTestedTreesPath;
+  late final String localMindBaseTestedStatePath;
 
   @override
   Future<LearningGoal> readLearningGoal(String id) async {
     File f = await openOrCreateFile("$localMindBaseDatabasePath/$id.md");
-    return MindBaseMdConverter.instance.fromMd(
+    return MindBaseMdConverter.instance.fromLearningGoalMd(
         f.readAsLinesSync(), _removeDotMdFromString(f.path.split("/").last));
   }
 
@@ -39,6 +41,13 @@ class LocalMindBase extends MindBase {
     return f;
   }
 
+  Future<bool> _checkExistence(String path) async{
+    if (await File(path).exists()){
+      return true;
+    }
+    return false;
+  }
+
   Future<LearningGoal> _readLearningGoalFromPath(String path) async {
     File f = await openOrCreateFile(path);
     String s = f.path.replaceAll("/", "\\").split("\\").last;
@@ -47,7 +56,7 @@ class LocalMindBase extends MindBase {
     if (mdLines.isEmpty) {
       throw ArgumentError("$path does not exist");
     }
-    return MindBaseMdConverter.instance.fromMd(mdLines,
+    return MindBaseMdConverter.instance.fromLearningGoalMd(mdLines,
         id.replaceAll("ä", "ä").replaceAll("ö", "ö").replaceAll("ü", "ü"));
   }
 
@@ -118,11 +127,45 @@ class LocalMindBase extends MindBase {
   }
 
   @override
-  Future<void> writeTestedTree(Set<LearningGoal> controlledLG,
-      Set<LearningGoal> improvableLG, Set<LearningGoal> keyLG, String name) async {
-    File f = await openOrCreateFile(
-        "$localMindBaseTestedTreesPath/$name.md");
-    f.writeAsString(
-        MindBaseMdConverter.instance.testedTreeToMd(controlledLG,improvableLG,keyLG));
+  Future<void> writeTestedTree(
+      LearningTree lt,
+      StudentMetadata metadata) async {
+    File f;
+    List<String>? mdAsLines = await readAssessmentData(metadata);
+
+    if (mdAsLines==null){
+      // does not exist => create file
+      f = await openOrCreateFile(
+          "$localMindBaseTestedStatePath/${metadata.name}_${metadata.id}.md");
+      f.writeAsString(
+          MindBaseMdConverter.instance.testedTreeToTreeCollectionMd(lt)
+      );
+    } else {
+      String newline = "\n";
+      // exists => open file
+      f = await openOrCreateFile(
+          "$localMindBaseTestedStatePath/${metadata.name}_${metadata.id}.md");
+      String mdFile="";
+      for (String line in mdAsLines){
+        mdFile += line + newline;
+      }
+
+      f.writeAsString(
+          MindBaseMdConverter.instance.testedTreeToTreeCollectionMd(lt,mdFile)
+      );
+    }
+
   }
+
+  @override
+  Future<List<String>?> readAssessmentData(StudentMetadata metadata) async{
+    String path="$localMindBaseTestedStatePath/${metadata.name}_${metadata.id}.md";
+    if (!(await _checkExistence(path))){
+      return null;
+    }
+    // will definitely open something as we checked beforehand
+    File f= await openOrCreateFile(path);
+    return f.readAsLinesSync();
+  }
+
 }

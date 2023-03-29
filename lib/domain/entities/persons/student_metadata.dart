@@ -11,7 +11,6 @@ class StudentMetadata {
     return StudentMetadata(data["id"],name: data["name"],);
   }
 
-
   final String id;
   final String? name;
 

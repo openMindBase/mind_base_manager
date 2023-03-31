@@ -17,8 +17,8 @@ We are building a similar design in this repository for open use of the openMind
 www.le-an.org (in german)
 Info: NOT OPTIMIZED FOR MOBILE AND SAFARI ON IOS OR IPADOS
 
-## Techical information
-These mapped knowlegde structures are graphs called a directed, acyclic graphs (DAG) with other special properties based on graph theory, which is a branch of mathematics / computer science.
+## Technical information
+These mapped knowledge structures are graphs called a directed, acyclic graphs (DAG) with other special properties based on graph theory, which is a branch of mathematics / computer science.
 For further infos about the tech lookup "paper/WhitePaper.pdf".
 
 ## Project hypotheses

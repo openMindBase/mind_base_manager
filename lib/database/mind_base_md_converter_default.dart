@@ -2,6 +2,7 @@
 
 import 'package:mind_base_manager/database/mind_base_md_converter.dart';
 import 'package:mind_base_manager/domain/entities/exercise.dart';
+import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/knowledge_state.dart';
 import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/learning_goal.dart';
 
 import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
@@ -301,4 +302,10 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
   }
 
   String _tagStringToString(String input) => input.trim().replaceAll("#", "");
+
+  @override
+  String knowledgeStateToMd(KnowledgeState knowledgeState) {
+    // TODO: implement knowledgeStateToMd
+    throw UnimplementedError();
+  }
 }

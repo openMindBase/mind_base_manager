@@ -1,5 +1,4 @@
 ##### Hard-Dependents 
-
 ##### Tags 
 #potenzUndWurzelgesetze
 #abiturAnalysis

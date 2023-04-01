@@ -103,7 +103,7 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
   @override
   String learningGoalToMd(LearningGoal learningGoal) {
     String output = "";
-    output = _addSectionFromLearningGoal("##### Hard-Dependents", output, (s) {
+    output = _addMarkdownSection("##### Hard-Dependents", output, (s) {
       for (int i = 0; i < learningGoal.dependents.length; i++) {
         if (i != 0) {
           s += "\n";
@@ -113,7 +113,7 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
       s += "\n";
       return s;
     });
-    output = _addSectionFromLearningGoal("##### Tags", output, (s) {
+    output = _addMarkdownSection("##### Tags", output, (s) {
       for (int i = 0; i < learningGoal.tags.length; i++) {
         if (i != 0) {
           s += "\n";
@@ -124,7 +124,7 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
       return s;
     });
 
-    output = _addSectionFromLearningGoal("##### Metadata", output, (s) {
+    output = _addMarkdownSection("##### Metadata", output, (s) {
       s += "isCollectionGoal=${learningGoal.isCollectionGoal.toString()}";
       s += "\n";
       s += "isOrGateway=${learningGoal.isOrGateway.toString()}";
@@ -135,7 +135,7 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
       s += "\n";
       return s;
     });
-    output = _addSectionFromLearningGoal("## Description", output, (s) {
+    output = _addMarkdownSection("## Description", output, (s) {
       s += learningGoal.description ?? "";
       s += "\n";
       return s;
@@ -143,15 +143,15 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     if (learningGoal.exercises.isEmpty) {
       return output;
     }
-    output = _addSectionFromLearningGoal("## Exercises", output, (s) {
+    output = _addMarkdownSection("## Exercises", output, (s) {
       for (int i = 0; i < learningGoal.exercises.length; i++) {
-        s = _addSectionFromLearningGoal("### ${i.toString()}", s, (s2) {
-          s2 = _addSectionFromLearningGoal("#### Question", s2, (s3) {
+        s = _addMarkdownSection("### ${i.toString()}", s, (s2) {
+          s2 = _addMarkdownSection("#### Question", s2, (s3) {
             s3 += learningGoal.exercises[i].question;
             s3 += "\n";
             return s3;
           });
-          s2 = _addSectionFromLearningGoal("#### Answer", s2, (s3) {
+          s2 = _addMarkdownSection("#### Answer", s2, (s3) {
             s3 += learningGoal.exercises[i].answer;
             s3 += "\n";
             return s3;
@@ -244,7 +244,7 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     return testedTree;
   }
 
-  String _addSectionFromLearningGoal(
+  String _addMarkdownSection(
       String heading, String string, String Function(String s) stringComputer) {
     string += "$heading \n";
     string += stringComputer("");
@@ -305,7 +305,45 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
 
   @override
   String knowledgeStateToMd(KnowledgeState knowledgeState) {
-    // TODO: implement knowledgeStateToMd
-    throw UnimplementedError();
+    String output = "#totalKnowledgeState \n";
+    output = _addMarkdownSection("# total knowledge State", output, (s) {
+      s = _addMarkdownSection("## KeyLearningGoals", s, (s2) {
+        for (LearningGoal lg in knowledgeState.keyLearningGoals) {
+          s2 += _stringToObsidianDependencyString(lg.title);
+          s2 += "\n";
+        }
+        return s2;
+      });
+      s = _addMarkdownSection("## improvement goals", s, (s2) {
+        for (LearningGoal lg in knowledgeState.improvementGoals) {
+          s2 += _stringToObsidianDependencyString(lg.title);
+          s2 += "\n";
+        }
+        return s2;
+      });
+      s = _addMarkdownSection("## controlled learning goals", s, (s2) {
+        for (LearningGoal lg in knowledgeState.controlledGoals) {
+          s2 += learningGoalKnowledgeStateOfControlledToMd(lg);
+        }
+        return s2;
+      });
+
+      return s;
+    });
+    return output;
+  }
+
+  @override
+  String learningGoalKnowledgeStateOfControlledToMd(LearningGoal learningGoal) {
+    String output = "";
+    output = _addMarkdownSection("### ${learningGoal.title}", output, (s) {
+      s += "lastCorrectlyTested=${learningGoal.lastCorrectlyTested}\n";
+      s +=
+          "timesTestedCorrectlyStreak=${learningGoal.timesTestedCorrectlyStreak}\n";
+      s +=
+          "dependency=${_stringToObsidianDependencyString(learningGoal.title)}\n";
+      return s;
+    });
+    return output;
   }
 }

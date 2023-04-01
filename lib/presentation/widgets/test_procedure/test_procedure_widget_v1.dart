@@ -7,8 +7,8 @@ import 'package:lean_ui_kit/other/lean_navigator.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_space.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_spaced_column.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_spaced_row.dart';
+
 import '../../../database/mind_base.dart';
-import '../../../domain/entities/learning_goals_and_structures/learning_goal.dart';
 import '../../../domain/entities/learning_goals_and_structures/learning_tree.dart';
 import '../../../domain/entities/persons/student_metadata.dart';
 import '../../../domain/use_cases/test_procedure_report/test_procedure_report_by_learning_tree_latex_v1.dart';
@@ -103,9 +103,9 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
   }
 
   void _saveTestedTreeState(){
-    MindBase.instance.writeTestedTree(
-        widget.testProcedure.learningTree,widget.studentMetadata
-    );
+    MindBase.instance.writeTotalKnowledgeState(
+        knowledgeState: widget.testProcedure.learningTree.toKnowledgeState(),
+        studentMetadata: widget.studentMetadata);
   }
 
   void _createAnalysis() {

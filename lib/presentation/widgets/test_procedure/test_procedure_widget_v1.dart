@@ -103,7 +103,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
   }
 
   void _saveTestedTreeState(){
-    MindBase.instance.writeTotalKnowledgeState(
+    MindBase.instance.addKnowledgeStateToTotalKnowledgeState(
         knowledgeState: widget.testProcedure.learningTree.toKnowledgeState(),
         studentMetadata: widget.studentMetadata);
   }

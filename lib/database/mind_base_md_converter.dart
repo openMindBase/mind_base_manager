@@ -4,8 +4,6 @@ import 'package:mind_base_manager/database/mind_base_md_converter_default.dart';
 import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/knowledge_state.dart';
 import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/learning_goal.dart';
 
-import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
-
 abstract class MindBaseMdConverter{
   static MindBaseMdConverter? currentMindBaseMdConverter;
 
@@ -29,12 +27,13 @@ abstract class MindBaseMdConverter{
   /// The metadata includes the id, the last time the learningGoal was tested and the number of times the learningGoal was controlled.
   String learningGoalKnowledgeStateOfControlledToMd(LearningGoal learningGoal);
 
-  String testedTreeToTreeCollectionMd(LearningTree lt,
-      [String? mdFileAsString]);
+  /// Converts a markdown string, that represents the metadata of the knowledge state of a controlled learningGoal, to a [LearningGoal].
+  LearningGoal learningGoalKnowledgeStateOfControlledFromMd(
+      List<String> mdFileAsList);
 
   /// Converts a [KnowledgeState] to a String representing a md file.
   String knowledgeStateToMd(KnowledgeState knowledgeState);
 
-  String mergeTestedCollections(String firstCollection, String secondCollection);
-
+  /// Converts a String representing a md file to a [KnowledgeState].
+  KnowledgeState knowledgeStateFromMd(String mdFileAsString);
 }

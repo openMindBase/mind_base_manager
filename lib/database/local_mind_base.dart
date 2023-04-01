@@ -136,6 +136,7 @@ class LocalMindBase extends MindBase {
   }
 
   @override
+  @Deprecated("not in use")
   Future<void> writeTestedTree(
       LearningTree lt,
       StudentMetadata metadata) async {
@@ -166,6 +167,7 @@ class LocalMindBase extends MindBase {
     throw UnimplementedError();
   }
 
+  @Deprecated("not in use")
   @override
   Future<List<String>?> readAssessmentData(StudentMetadata metadata) async {
     throw UnimplementedError();
@@ -187,6 +189,33 @@ class LocalMindBase extends MindBase {
     File f = await openOrCreateFile(filePath);
     f.writeAsString(
         MindBaseMdConverter.instance.knowledgeStateToMd(knowledgeState));
+  }
+
+  @override
+  Future<KnowledgeState?> readTotalKnowledgeState(
+      {required StudentMetadata studentMetadata}) async {
+    if (!await _checkExistence(
+        "$pathAssessment/${studentMetadata.name}_${studentMetadata.id}.md")) {
+      return null;
+    }
+    final String filePath =
+        "$pathAssessment/${studentMetadata.name}_${studentMetadata.id}.md";
+    File f = await openOrCreateFile(filePath);
+    return MindBaseMdConverter.instance
+        .knowledgeStateFromMd(f.readAsStringSync());
+  }
+
+  @override
+  Future<void> addKnowledgeStateToTotalKnowledgeState(
+      {required KnowledgeState knowledgeState,
+      required StudentMetadata studentMetadata}) async {
+    KnowledgeState? oldKnowledgeState =
+        await readTotalKnowledgeState(studentMetadata: studentMetadata);
+    KnowledgeState newKnowledgeState = oldKnowledgeState == null
+        ? knowledgeState
+        : oldKnowledgeState + knowledgeState;
+    writeTotalKnowledgeState(
+        knowledgeState: newKnowledgeState, studentMetadata: studentMetadata);
   }
 }
 

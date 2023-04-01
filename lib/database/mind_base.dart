@@ -44,6 +44,15 @@ abstract class MindBase{
       {required KnowledgeState knowledgeState,
       required StudentMetadata studentMetadata});
 
+  /// Reads the total [KnowledgeState] of the student.
+  Future<KnowledgeState?> readTotalKnowledgeState(
+      {required StudentMetadata studentMetadata});
+
+  /// Reads the total [KnowledgeState] of the student and adds [knowledgeState] to it.
+  Future<void> addKnowledgeStateToTotalKnowledgeState(
+      {required KnowledgeState knowledgeState,
+      required StudentMetadata studentMetadata});
+
   /// Writes [learningGoal] to the database.
   Future<void> writeLearningGoal(LearningGoal learningGoal);
 

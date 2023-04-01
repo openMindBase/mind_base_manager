@@ -10,7 +10,7 @@ import 'package:mind_base_manager/domain/entities/persons/student_metadata.dart'
 /// Tests for LocalMindBase.
 
 void main() {
-  test("Write totalKnowledgeState", () {
+  test("Write totalKnowledgeState", () async {
     MindBase m = LocalMindBase(
         pathRoot:
             "/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/germany_school_math");

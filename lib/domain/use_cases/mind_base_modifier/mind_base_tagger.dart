@@ -12,16 +12,17 @@ import '../learning_goal_collection.dart';
 /// The [MindBaseTagger] adds tags to dependent [LearningGoal]s of other tags.
 class MindBaseTagger{
 
-  MindBaseTagger({required this.mindBasePath});
+  MindBaseTagger({required this.pathMindBaseRoot});
 
-  final String mindBasePath;
+  final String pathMindBaseRoot;
   bool shouldReloadLearningGoals = true;
   Future<LearningGoalCollection>? learningGoalCollection;
 
   Future<void> updateAllTags() async {
-    LearningGoalCollection learningGoalCollection = await openLearningGoalCollection();
-    for(var tag in learningGoalCollection.tags()) {
-        await tagSpecificTag(tag);
+    LearningGoalCollection learningGoalCollection =
+        await openLearningGoalCollection();
+    for (var tag in learningGoalCollection.tags()) {
+      await tagSpecificTag(tag);
     }
   }
 
@@ -50,10 +51,11 @@ class MindBaseTagger{
 
 
   Future<LearningGoalCollection> openLearningGoalCollection() {
-    MindBase.init(LocalMindBase(mindBasePath));
-    if(shouldReloadLearningGoals || learningGoalCollection==null) {
-      shouldReloadLearningGoals=false;
-      learningGoalCollection = MindBase.instance.readAllLearningGoalsAsLearningGoalCollection();
+    MindBase.init(LocalMindBase(pathRoot: pathMindBaseRoot));
+    if (shouldReloadLearningGoals || learningGoalCollection == null) {
+      shouldReloadLearningGoals = false;
+      learningGoalCollection =
+          MindBase.instance.readAllLearningGoalsAsLearningGoalCollection();
     }
     return learningGoalCollection!;
   }

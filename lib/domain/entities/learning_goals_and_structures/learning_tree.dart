@@ -1,6 +1,7 @@
 // @author Matthias Weigt 27.07.2022
 // All rights reserved ©2022
 
+import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/knowledge_state.dart';
 
 import '../graphs/transitivity_cleaner.dart';
 import 'learning_goal.dart';
@@ -10,7 +11,13 @@ import 'learning_tree_signature.dart';
 /// A [LearningTree] is a [LearningGoalStructure] with exactly one [trunk].
 class LearningTree extends LearningGoalStructure {
   /// This constructor validates the input with [_validateTrunkCount] and throws if input is not valid.
-  LearningTree({required super.nodes, required super.edges, super.title,this.id="",LearningTreeSignature? learningTreeSignature}):_learningTreeSignature=learningTreeSignature {
+  LearningTree(
+      {required super.nodes,
+      required super.edges,
+      super.title,
+      this.id = "",
+      LearningTreeSignature? learningTreeSignature})
+      : _learningTreeSignature = learningTreeSignature {
     _validateTrunkCount();
     trunk = trunks.first;
   }
@@ -139,15 +146,29 @@ class LearningTree extends LearningGoalStructure {
     return filter((learningGoal) => learningGoal.isControlled()).length/totalGoalCount;
   }
   double computePercentageShouldBeImproved() {
-    return filter((learningGoal) => learningGoal.shouldBeImproved()).length/totalGoalCount;
-  }
-  double computePercentageKeyLearningGoal() {
-    return filter((learningGoal) => isKeyLearningGoal(learningGoal)).length/totalGoalCount;
-  }
-  double computePercentageUncontrolled() {
-    return 1-computePercentageControlled()-computePercentageKeyLearningGoal()-computePercentageShouldBeImproved();
+    return filter((learningGoal) => learningGoal.shouldBeImproved()).length /
+        totalGoalCount;
   }
 
+  double computePercentageKeyLearningGoal() {
+    return filter((learningGoal) => isKeyLearningGoal(learningGoal)).length /
+        totalGoalCount;
+  }
+
+  double computePercentageUncontrolled() {
+    return 1 -
+        computePercentageControlled() -
+        computePercentageKeyLearningGoal() -
+        computePercentageShouldBeImproved();
+  }
+
+  /// Converts this [LearningTree] to an [KnowledgeState].
+  KnowledgeState toKnowledgeState() {
+    return KnowledgeState(
+        controlledGoals: controlledGoals,
+        improvementGoals: shouldBeImprovedGoal,
+        keyLearningGoals: keyLearningGoals);
+  }
 
   int get totalGoalCount => learningGoals.length;
 

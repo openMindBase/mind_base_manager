@@ -8,6 +8,8 @@ import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/
 import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
 
 class MindBaseMdConverterDefault extends MindBaseMdConverter {
+  static const totalKnowledgeStateHeading = "# total knowledge State";
+
   @override
   LearningGoal fromLearningGoalMd(List<String> mdLines, String id) {
     List<String> dependents = [];
@@ -103,7 +105,7 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
   @override
   String learningGoalToMd(LearningGoal learningGoal) {
     String output = "";
-    output = _addSectionFromLearningGoal("##### Hard-Dependents", output, (s) {
+    output = _addMarkdownSection("##### Hard-Dependents", output, (s) {
       for (int i = 0; i < learningGoal.dependents.length; i++) {
         if (i != 0) {
           s += "\n";
@@ -113,7 +115,7 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
       s += "\n";
       return s;
     });
-    output = _addSectionFromLearningGoal("##### Tags", output, (s) {
+    output = _addMarkdownSection("##### Tags", output, (s) {
       for (int i = 0; i < learningGoal.tags.length; i++) {
         if (i != 0) {
           s += "\n";
@@ -124,7 +126,7 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
       return s;
     });
 
-    output = _addSectionFromLearningGoal("##### Metadata", output, (s) {
+    output = _addMarkdownSection("##### Metadata", output, (s) {
       s += "isCollectionGoal=${learningGoal.isCollectionGoal.toString()}";
       s += "\n";
       s += "isOrGateway=${learningGoal.isOrGateway.toString()}";
@@ -135,7 +137,7 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
       s += "\n";
       return s;
     });
-    output = _addSectionFromLearningGoal("## Description", output, (s) {
+    output = _addMarkdownSection("## Description", output, (s) {
       s += learningGoal.description ?? "";
       s += "\n";
       return s;
@@ -143,15 +145,15 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     if (learningGoal.exercises.isEmpty) {
       return output;
     }
-    output = _addSectionFromLearningGoal("## Exercises", output, (s) {
+    output = _addMarkdownSection("## Exercises", output, (s) {
       for (int i = 0; i < learningGoal.exercises.length; i++) {
-        s = _addSectionFromLearningGoal("### ${i.toString()}", s, (s2) {
-          s2 = _addSectionFromLearningGoal("#### Question", s2, (s3) {
+        s = _addMarkdownSection("### ${i.toString()}", s, (s2) {
+          s2 = _addMarkdownSection("#### Question", s2, (s3) {
             s3 += learningGoal.exercises[i].question;
             s3 += "\n";
             return s3;
           });
-          s2 = _addSectionFromLearningGoal("#### Answer", s2, (s3) {
+          s2 = _addMarkdownSection("#### Answer", s2, (s3) {
             s3 += learningGoal.exercises[i].answer;
             s3 += "\n";
             return s3;
@@ -164,56 +166,6 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     return output;
   }
 
-  @override
-  /// TODO: implement correctly with many trees being collected and merged
-  /// currently unused
-  String mergeTestedCollections(
-      String firstCollection, String secondCollection) {
-    String output = "";
-    String newline = "\n";
-    String keyLGSection = "##### Key Learning Goals$newline";
-    String improvableSection = "##### To be improved on Learning Goals$newline";
-    String masteredSection = "##### Mastered Learning Goals$newline";
-    List<String> l = [keyLGSection, improvableSection, masteredSection];
-
-    List<String> allSectionsList =
-        _splitCollectionBySections(firstCollection, l) +
-            _splitCollectionBySections(secondCollection, l);
-    assert(allSectionsList.length == 6);
-
-    //check for duplicates and merge
-    for (int i = 0; i < allSectionsList.length / 2; i++) {
-      List<String> section = allSectionsList[i].split(newline) +
-          allSectionsList[i + 3].split(newline);
-      int j = 0;
-      List<String> removeList=[];
-      for (String line in section) {
-        for (int k = j + 1; k < section.length; k++) {
-          if (line == section[k]){
-            removeList.add(line);
-          }
-        }
-        j++;
-      }
-      //remove duplicates in section
-      for (String toBeRemoved in removeList){
-        section.remove(toBeRemoved);
-      }
-      //merge section into output again
-      output += l[i];
-      //is empty
-      for (String s in section) {
-        if (s==""){
-          continue;
-        }
-        output += s + newline;
-      }
-    }
-
-    print(output);
-
-    return output;
-  }
 
   @override
   String testedTreeToTreeCollectionMd(LearningTree lt,
@@ -224,15 +176,15 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     String masteredSection = "##### Mastered Learning Goals$newline";
 
     for (LearningGoal c
-        in lt.filter((learningGoal) => learningGoal.isControlled())) {
+    in lt.filter((learningGoal) => learningGoal.isControlled())) {
       masteredSection += c.title + newline;
     }
     for (LearningGoal i
-        in lt.filter((learningGoal) => learningGoal.shouldBeImproved())) {
+    in lt.filter((learningGoal) => learningGoal.shouldBeImproved())) {
       improvableSection += _stringToObsidianDependencyString(i.title) + newline;
     }
     for (LearningGoal k
-        in lt.filter((learningGoal) => lt.isKeyLearningGoal(learningGoal))) {
+    in lt.filter((learningGoal) => lt.isKeyLearningGoal(learningGoal))) {
       keyLGSection += _stringToObsidianDependencyString(k.title) + newline;
     }
 
@@ -244,8 +196,7 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     return testedTree;
   }
 
-  String _addSectionFromLearningGoal(
-      String heading, String string, String Function(String s) stringComputer) {
+  String _addMarkdownSection(String heading, String string, String Function(String s) stringComputer) {
     string += "$heading \n";
     string += stringComputer("");
     return string;
@@ -282,9 +233,9 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
 
   /// [listOfHeaders] is to be ordered by descending appearance in the collection
   /// a collection is formatted correctly if it has 3 categories
-  List<String> _splitCollectionBySections(
-      String collection, List<String> listOfHeaders) {
-    assert (listOfHeaders.length == 3);
+  @Deprecated("not in use?")
+  List<String> _splitCollectionBySections(String collection, List<String> listOfHeaders) {
+    assert(listOfHeaders.length == 3);
     List<String> output = [];
     output.add(collection.split(listOfHeaders[0]).last);
     output.addAll(output[0].split(listOfHeaders[1]));
@@ -305,7 +256,92 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
 
   @override
   String knowledgeStateToMd(KnowledgeState knowledgeState) {
-    // TODO: implement knowledgeStateToMd
-    throw UnimplementedError();
+    String output = "#totalKnowledgeState \n";
+    output = _addMarkdownSection(totalKnowledgeStateHeading, output, (s) {
+      s = _addMarkdownSection("## KeyLearningGoals", s, (s2) {
+        for (LearningGoal lg in knowledgeState.keyLearningGoals) {
+          s2 += _stringToObsidianDependencyString(lg.title);
+          s2 += "\n";
+        }
+        return s2;
+      });
+      s = _addMarkdownSection("## improvement goals", s, (s2) {
+        for (LearningGoal lg in knowledgeState.improvementGoals) {
+          s2 += _stringToObsidianDependencyString(lg.title);
+          s2 += "\n";
+        }
+        return s2;
+      });
+      s = _addMarkdownSection("## controlled learning goals", s, (s2) {
+        for (LearningGoal lg in knowledgeState.controlledGoals) {
+          s2 += learningGoalKnowledgeStateOfControlledToMd(lg);
+        }
+        return s2;
+      });
+
+      return s;
+    });
+    return output;
+  }
+
+  @override
+  String learningGoalKnowledgeStateOfControlledToMd(LearningGoal learningGoal) {
+    String output = "";
+    output = _addMarkdownSection("### ${learningGoal.title}", output, (s) {
+      s += "lastCorrectlyTested=${learningGoal.lastCorrectlyTested}\n";
+      s +=
+          "timesTestedCorrectlyStreak=${learningGoal.timesTestedCorrectlyStreak}\n";
+      s +=
+          "dependency=${_stringToObsidianDependencyString(learningGoal.title)}\n";
+      return s;
+    });
+    return output;
+  }
+
+  @override
+  LearningGoal learningGoalKnowledgeStateOfControlledFromMd(
+      List<String> mdFileAsList) {
+    mdFileAsList.removeAt(0);
+    String s = mdFileAsList.removeAt(0).split("=").last.trim();
+    DateTime? lastCorrectlyTested = s == "null" ? null : DateTime.parse(s);
+    int timesTestedCorrectlyStreak =
+        int.parse(mdFileAsList.removeAt(0).split("=").last.trim());
+    String dependency = _obsidianDependencyStringToString(
+        mdFileAsList.removeAt(0).split("=").last.trim());
+
+    LearningGoal lg = LearningGoal(
+        id: dependency,
+        lastCorrectlyTested: lastCorrectlyTested,
+        timesTestedCorrectlyStreak: timesTestedCorrectlyStreak);
+    return lg;
+  }
+
+  @override
+  KnowledgeState knowledgeStateFromMd(String mdFileAsString) {
+    List<String> mdLines = mdFileAsString.split("\n");
+    mdLines.removeAt(0);
+    _checkForHeadingAndRemove(mdLines, totalKnowledgeStateHeading);
+    KnowledgeState ks = KnowledgeState(
+        controlledGoals: {}, improvementGoals: {}, keyLearningGoals: {});
+    _readSection(mdLines, "## KeyLearningGoals", (s) {
+      ks.keyLearningGoals
+          .add(LearningGoal(id: _obsidianDependencyStringToString(s)));
+    });
+    _readSection(mdLines, "## improvement goals", (s) {
+      ks.improvementGoals
+          .add(LearningGoal(id: _obsidianDependencyStringToString(s)));
+    });
+
+    _readSection(mdLines, "## controlled learning goals", abortString: "####",
+        (s) {
+      while (mdLines.length >= 4) {
+        ks.controlledGoals.add(learningGoalKnowledgeStateOfControlledFromMd(
+            mdLines.sublist(0, 4)));
+        for (int i = 0; i < 4; i++) {
+          mdLines.removeAt(0);
+        }
+      }
+    });
+    return ks;
   }
 }

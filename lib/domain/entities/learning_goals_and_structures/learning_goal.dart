@@ -12,6 +12,8 @@ class LearningGoal extends Node{
 
   LearningGoal(
       {required super.id,
+      this.lastCorrectlyTested,
+      this.timesTestedCorrectlyStreak = 0,
       String? title,
       this.description,
       this.isCollectionGoal = _isCollectionGoalDefault,
@@ -20,7 +22,7 @@ class LearningGoal extends Node{
       this.singleExercise = _singleExerciseDefault,
       double? controlLevel,
       List<Exercise>? exercises,
-        List<String>? dependents,
+      List<String>? dependents,
       List<String>? tags})
       : title = title ?? id,
         _controlLevel = controlLevel ?? _defaultControlLevel,
@@ -60,11 +62,16 @@ class LearningGoal extends Node{
   /// The learning dependents of this [LearningGoal].
   final List<String> dependents;
 
+  /// The date of the last test.
+  final DateTime? lastCorrectlyTested;
+
+  /// The number of times this [LearningGoal] has been tested and controlled in a streak.
+  final int timesTestedCorrectlyStreak;
+
   /// -1 = [LearningGoal] has not been tested.
   /// 0 = [LearningGoal] has been tested but is not controlled.
   /// 1 = [LearningGoal] has been tested and is controlled.
   double _controlLevel;
-
 
   /// Use this methode to check if [LearningGoal] has been tested.
   bool isAlreadyTested() => controlLevel != _defaultControlLevel;

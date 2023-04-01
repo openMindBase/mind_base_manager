@@ -1,6 +1,7 @@
 // @author Matthias Weigt 21.03.23
 
 
+import '../domain/entities/learning_goals_and_structures/knowledge_state.dart';
 import '../domain/entities/learning_goals_and_structures/learning_goal.dart';
 import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
 import '../domain/entities/persons/student_metadata.dart';
@@ -28,14 +29,29 @@ abstract class MindBase{
   Future<List<LearningGoal>> readAllLearningGoals({bool printStats=false});
 
   /// Reads all [LearningGoal]s.
-  Future<Map<String,LearningGoal>> readAllLearningGoalsAsMap({bool printStats=false});
+  Future<Map<String, LearningGoal>> readAllLearningGoalsAsMap(
+      {bool printStats = false});
 
-  Future<LearningGoalCollection> readAllLearningGoalsAsLearningGoalCollection({bool printStats=false});
+  Future<LearningGoalCollection> readAllLearningGoalsAsLearningGoalCollection(
+      {bool printStats = false});
 
   Future<List<String>?> readAssessmentData(StudentMetadata metadata);
 
-  Future<void> addTagToLearningGoal(String id,String tag);
+  Future<void> addTagToLearningGoal(String id, String tag);
 
+  /// Saves the total [KnowledgeState] of the student.
+  Future<void> writeTotalKnowledgeState(
+      {required KnowledgeState knowledgeState,
+      required StudentMetadata studentMetadata});
+
+  /// Reads the total [KnowledgeState] of the student.
+  Future<KnowledgeState?> readTotalKnowledgeState(
+      {required StudentMetadata studentMetadata});
+
+  /// Reads the total [KnowledgeState] of the student and adds [knowledgeState] to it.
+  Future<void> addKnowledgeStateToTotalKnowledgeState(
+      {required KnowledgeState knowledgeState,
+      required StudentMetadata studentMetadata});
 
   /// Writes [learningGoal] to the database.
   Future<void> writeLearningGoal(LearningGoal learningGoal);

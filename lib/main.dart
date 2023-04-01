@@ -6,7 +6,6 @@ import 'package:mind_base_manager/database/local_mind_base.dart';
 import 'package:mind_base_manager/database/mind_base.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter_default.dart';
-import 'package:mind_base_manager/domain/entities/persons/student_metadata.dart';
 import 'package:mind_base_manager/domain/use_cases/learning_goal_collection.dart';
 import 'package:mind_base_manager/presentation/app_pages/choose_mind_base_page.dart';
 import 'package:mind_base_manager/presentation/app_pages/input_student_metadata.dart';
@@ -59,18 +58,18 @@ class MindBaseHomePage extends StatelessWidget {
             context,
               ChooseMindBasePage(
               onMindBasePathChoose: (mindBasePath) async {
-                MindBase.init(LocalMindBase(mindBasePath));
+                MindBase.init(LocalMindBase(pathRoot: mindBasePath));
 
-                LeanNavigator.push(
-                context,
-                FutureBuilder<LearningGoalCollection>(
-                    future: MindBase.instance
-                        .readAllLearningGoalsAsLearningGoalCollection(
-                            printStats: true),
-                    builder: (BuildContext context,
-                        AsyncSnapshot<LearningGoalCollection> snapshot) {
-                      if (!snapshot.hasData) {
-                        return const LoadingPage();
+              LeanNavigator.push(
+                  context,
+                  FutureBuilder<LearningGoalCollection>(
+                      future: MindBase.instance
+                          .readAllLearningGoalsAsLearningGoalCollection(
+                              printStats: true),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<LearningGoalCollection> snapshot) {
+                        if (!snapshot.hasData) {
+                          return const LoadingPage();
                       }
                       var data = snapshot.data as LearningGoalCollection;
                       return TagSelectionPage(

@@ -18,8 +18,7 @@ class ChooseMindBasePage extends StatelessWidget {
     return AppPage(
         title: "Choose the folder path of your mindbase", children: [
           const Text(
-            "submitting with an empty path will lead to mind_bases/germany_school_math/germany_school_math_database"
-          ),
+            "submitting with an empty path will lead to mind_bases/germany_school_math"),
           SizedBox(
               width: 750,
               child: LeanTextField(
@@ -35,7 +34,9 @@ class ChooseMindBasePage extends StatelessWidget {
 
   void _onClickSubmit(BuildContext context) {
     onMindBasePathChoose(
-        pathController.text.isEmpty?"mind_bases/germany_school_math/germany_school_math_database":pathController.text,
+      pathController.text.isEmpty
+          ? "mind_bases/germany_school_math"
+          : pathController.text,
     );
   }
 }

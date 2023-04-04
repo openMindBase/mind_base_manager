@@ -3,7 +3,6 @@
 
 import '../domain/entities/learning_goals_and_structures/knowledge_state.dart';
 import '../domain/entities/learning_goals_and_structures/learning_goal.dart';
-import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
 import '../domain/entities/persons/student_metadata.dart';
 import '../domain/use_cases/learning_goal_collection.dart';
 
@@ -26,7 +25,7 @@ abstract class MindBase{
   Future<LearningGoal> readLearningGoal(String id);
 
   /// Reads all [LearningGoal]s.
-  Future<List<LearningGoal>> readAllLearningGoals({bool printStats=false});
+  Future<List<LearningGoal>> readAllLearningGoals({bool printStats = false});
 
   /// Reads all [LearningGoal]s.
   Future<Map<String, LearningGoal>> readAllLearningGoalsAsMap(
@@ -35,8 +34,23 @@ abstract class MindBase{
   Future<LearningGoalCollection> readAllLearningGoalsAsLearningGoalCollection(
       {bool printStats = false});
 
-  Future<List<String>?> readAssessmentData(StudentMetadata metadata);
+  /// Reads all [LearningGoal]s and adds the [KnowledgeState] of the student to it.
+  /// If the [KnowledgeState] is available, the [LearningGoalCollection] is updated with it.
+  Future<LearningGoalCollection>
+      readAllLearningGoalsAsLearningGoalCollectionWithKnowledgeState(
+          {required StudentMetadata metadata, bool printStats = false}) async {
+    LearningGoalCollection learningGoalCollection =
+        await readAllLearningGoalsAsLearningGoalCollection(
+            printStats: printStats);
+    KnowledgeState? totalKnowledgeState =
+        await readTotalKnowledgeState(studentMetadata: metadata);
+    if (totalKnowledgeState != null) {
+      learningGoalCollection.updateWithKnowledgeState(totalKnowledgeState);
+    }
+    return learningGoalCollection;
+  }
 
+  /// Adds the [tag] to every [LearningGoal] depending on the [LearningGoal] represented by [id].
   Future<void> addTagToLearningGoal(String id, String tag);
 
   /// Saves the total [KnowledgeState] of the student.
@@ -56,5 +70,4 @@ abstract class MindBase{
   /// Writes [learningGoal] to the database.
   Future<void> writeLearningGoal(LearningGoal learningGoal);
 
-  Future<void> writeTestedTree(LearningTree lt, StudentMetadata metadata);
 }

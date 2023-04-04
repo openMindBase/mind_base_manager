@@ -117,8 +117,13 @@ class LearningGoalStructure extends Graph<LearningGoal> {
 
   /// Assigns a control [level] to every [LearningGoal] in [LearningGoalStructure].
   void assignControlLevel({required double level}) {
-    onEveryLearningGoal(
-        (learningGoal) => learningGoal.assignControlLevel(controlLevel: level));
+    onEveryLearningGoal((learningGoal) {
+      if (level == 1) {
+        learningGoal.setAsControlled();
+      } else {
+        learningGoal.assignControlLevel(controlLevel: level);
+      }
+    });
   }
 
   /// A valid [LearningTree] has exactly one trunk.

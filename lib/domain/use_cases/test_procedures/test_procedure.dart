@@ -27,6 +27,9 @@ abstract class TestProcedure {
 
   /// Sets the [LearningGoal.controlLevel] of the current [LearningGoal] to [controlLevel], if current [LearningGoal] has not been tested.
   void assignCurrentControlLevel(double controlLevel) {
+    if (controlLevel == 1) {
+      currentLearningGoal.setAsControlled();
+    }
     currentLearningGoal.assignControlLevel(controlLevel: controlLevel);
   }
 

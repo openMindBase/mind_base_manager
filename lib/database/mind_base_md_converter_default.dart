@@ -5,8 +5,6 @@ import 'package:mind_base_manager/domain/entities/exercise.dart';
 import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/knowledge_state.dart';
 import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/learning_goal.dart';
 
-import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
-
 class MindBaseMdConverterDefault extends MindBaseMdConverter {
   static const totalKnowledgeStateHeading = "# total knowledge State";
 
@@ -167,35 +165,6 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
   }
 
 
-  @override
-  String testedTreeToTreeCollectionMd(LearningTree lt,
-      [String? mdFileAsString]) {
-    String newline = "\n";
-    String keyLGSection = "##### Key Learning Goals$newline";
-    String improvableSection = "##### To be improved on Learning Goals$newline";
-    String masteredSection = "##### Mastered Learning Goals$newline";
-
-    for (LearningGoal c
-    in lt.filter((learningGoal) => learningGoal.isControlled())) {
-      masteredSection += c.title + newline;
-    }
-    for (LearningGoal i
-    in lt.filter((learningGoal) => learningGoal.shouldBeImproved())) {
-      improvableSection += _stringToObsidianDependencyString(i.title) + newline;
-    }
-    for (LearningGoal k
-    in lt.filter((learningGoal) => lt.isKeyLearningGoal(learningGoal))) {
-      keyLGSection += _stringToObsidianDependencyString(k.title) + newline;
-    }
-
-    String testedTree = keyLGSection + improvableSection + masteredSection;
-    if (mdFileAsString != null) {
-      //TODO: implement merging instead of overwriteting
-      return testedTree;
-    }
-    return testedTree;
-  }
-
   String _addMarkdownSection(String heading, String string, String Function(String s) stringComputer) {
     string += "$heading \n";
     string += stringComputer("");
@@ -231,19 +200,6 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     }
   }
 
-  /// [listOfHeaders] is to be ordered by descending appearance in the collection
-  /// a collection is formatted correctly if it has 3 categories
-  @Deprecated("not in use?")
-  List<String> _splitCollectionBySections(String collection, List<String> listOfHeaders) {
-    assert(listOfHeaders.length == 3);
-    List<String> output = [];
-    output.add(collection.split(listOfHeaders[0]).last);
-    output.addAll(output[0].split(listOfHeaders[1]));
-    output.addAll(output[2].split(listOfHeaders[2]));
-    output.removeAt(0);
-    output.removeAt(1);
-    return output;
-  }
 
   /// Converts " test" to "[[test]]".
   String _stringToObsidianDependencyString(String input) {
@@ -322,7 +278,10 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     mdLines.removeAt(0);
     _checkForHeadingAndRemove(mdLines, totalKnowledgeStateHeading);
     KnowledgeState ks = KnowledgeState(
-        controlledGoals: {}, improvementGoals: {}, keyLearningGoals: {});
+        controlledGoals: {},
+        improvementGoals: {},
+        keyLearningGoals: {},
+        tooHardGoals: {});
     _readSection(mdLines, "## KeyLearningGoals", (s) {
       ks.keyLearningGoals
           .add(LearningGoal(id: _obsidianDependencyStringToString(s)));

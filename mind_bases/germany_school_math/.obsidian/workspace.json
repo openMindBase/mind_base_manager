@@ -1,0 +1,175 @@
+{
+  "main": {
+    "id": "9b7ce9332d70ff7c",
+    "type": "split",
+    "children": [
+      {
+        "id": "044b26924491a52f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "779aa7ebafc4f122",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4632f2cb3a79b3e9",
+    "type": "split",
+    "children": [
+      {
+        "id": "b1fe81dd29aa4dea",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8733ab0cfcda9349",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3de787665e5a7a3b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "808084f8a21a49c1",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3bf79586a85c376b",
+    "type": "split",
+    "children": [
+      {
+        "id": "824f401e28c68b84",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "93bf14fbc09445b4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5470ecec13ce17d5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0c40c8a8741783b1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "bad3c892c7c2edd2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "779aa7ebafc4f122",
+  "lastOpenFiles": [
+    "t.md",
+    "assessment_data/stephan_0wia2Hv7g4MiD22OCMlY.md",
+    "md_database/templates/template.md",
+    "f.md",
+    "assessment_data/templates",
+    "md_database/templates/learningGoal - template.md",
+    "ökologie.md",
+    "Beschreiben - Mechanismen Temperaturregulation bei Tieren.md",
+    "md_database/Nennen - pq-Formel.md",
+    "assessment_data/test_Y5tA3lUMNhoNmwlDL0gU.md",
+    "md_database/Berechnen - Betrag von Vektor.md",
+    "assessment_data/kil_rS0ns378yWPvjfpHzMio.md",
+    "assessment_data/mark_CueA7d6M1z8Gx3rTO6uh.md",
+    "assessment_data/test_Zge3msnNPYGgUmxepLYr.md",
+    "assessment_data/mats_fpwEtgQ7Mts7PqUZRGAA.md",
+    "md_database/Potenzgesetz 3.md",
+    "assessment_data/yuri_7PH4YueAoaUmSas8CuAo.md",
+    "assessment_data/tesasd_iVJ7hGEWuS60J5vqBAbs.md",
+    "assessment_data/te_dxIWjSxU0KgrXW6O43Ot.md",
+    "assessment_data/te_a2EMtiCdLs1pHpZRguwW.md",
+    "assessment_data/t_WFTyN4m0CAdBnzYdVgFH.md",
+    "assessment_data/matthias_7yPOsFjt1KTtVMa6GOc8.md",
+    "assessment_data/mark_RMzJoWxjLVoqTUhoUa17.md",
+    "md_database/chemie gleichung b.md",
+    "chemie gleichung a.md",
+    "assessment_data/matthias_vlrtcQTsB3At8clatYcN.md",
+    "assessment_data/luise_S48XpI8qL562fnPNXpbf.md",
+    "md_database/templates",
+    "md_database",
+    "germany_school_math_database/templates",
+    "germany_school_math_database"
+  ]
+}

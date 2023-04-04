@@ -11,8 +11,6 @@ import 'package:mind_base_manager/domain/entities/persons/student_metadata.dart'
 import 'package:mind_base_manager/domain/use_cases/learning_goal_collection.dart';
 import 'package:mind_base_manager/domain/use_cases/stats_printer.dart';
 
-import '../domain/entities/learning_goals_and_structures/learning_tree.dart';
-
 class LocalMindBase extends MindBase {
   LocalMindBase({required String pathRoot})
       : pathRoot = _convertPath(pathRoot),
@@ -39,40 +37,6 @@ class LocalMindBase extends MindBase {
     File f = await openOrCreateFile("$pathMdFiles/$id.md");
     return MindBaseMdConverter.instance.fromLearningGoalMd(
         f.readAsLinesSync(), _removeDotMdFromString(f.path.split("/").last));
-  }
-
-  Future<File> openOrCreateFile(String path) async {
-    File? f;
-    if (await File(path).exists()) {
-      f = File(path);
-    } else {
-      f = await File(path).create(recursive: true);
-    }
-    return f;
-  }
-
-  Future<bool> _checkExistence(String path) async{
-    if (await File(path).exists()){
-      return true;
-    }
-    return false;
-  }
-
-  Future<LearningGoal> _readLearningGoalFromPath(String path) async {
-    File f = await openOrCreateFile(path);
-    String s = f.path.replaceAll("/", "\\").split("\\").last;
-    String id = _removeDotMdFromString(s);
-    List<String> mdLines = f.readAsLinesSync();
-    if (mdLines.isEmpty) {
-      throw ArgumentError("$path does not exist");
-    }
-    return MindBaseMdConverter.instance.fromLearningGoalMd(mdLines,
-        id.replaceAll("ä", "ä").replaceAll("ö", "ö").replaceAll("ü", "ü"));
-  }
-
-  String _removeDotMdFromString(String string) {
-    if (string.contains(".md")) ;
-    return string.substring(0, string.length - 3);
   }
 
   @override
@@ -136,51 +100,6 @@ class LocalMindBase extends MindBase {
   }
 
   @override
-  @Deprecated("not in use")
-  Future<void> writeTestedTree(
-      LearningTree lt,
-      StudentMetadata metadata) async {
-    // File f;
-    // List<String>? mdAsLines = await readAssessmentData(metadata);
-    //
-    // if (mdAsLines==null){
-    //   // does not exist => create file
-    //   f = await openOrCreateFile(
-    //       "$localMindBaseTestedStatePath/${metadata.name}_${metadata.id}.md");
-    //   f.writeAsString(
-    //       MindBaseMdConverter.instance.testedTreeToTreeCollectionMd(lt)
-    //   );
-    // } else {
-    //   String newline = "\n";
-    //   // exists => open file
-    //   f = await openOrCreateFile(
-    //       "$localMindBaseTestedStatePath/${metadata.name}_${metadata.id}.md");
-    //   String mdFile="";
-    //   for (String line in mdAsLines){
-    //     mdFile += line + newline;
-    //   }
-    //
-    //   f.writeAsString(
-    //       MindBaseMdConverter.instance.testedTreeToTreeCollectionMd(lt,mdFile)
-    //   );
-    // }
-    throw UnimplementedError();
-  }
-
-  @Deprecated("not in use")
-  @override
-  Future<List<String>?> readAssessmentData(StudentMetadata metadata) async {
-    throw UnimplementedError();
-    // String path="$localMindBaseTestedStatePath/${metadata.name}_${metadata.id}.md";
-    // if (!(await _checkExistence(path))){
-    //   return null;
-    // }
-    // // will definitely open something as we checked beforehand
-    // File f= await openOrCreateFile(path);
-    // return f.readAsLinesSync();
-  }
-
-  @override
   Future<void> writeTotalKnowledgeState(
       {required KnowledgeState knowledgeState,
       required StudentMetadata studentMetadata}) async {
@@ -216,6 +135,44 @@ class LocalMindBase extends MindBase {
         : oldKnowledgeState.update(knowledgeState);
     writeTotalKnowledgeState(
         knowledgeState: newKnowledgeState, studentMetadata: studentMetadata);
+  }
+
+  /// Checks the file at [path] for existence. If it does not exist, it will be created.
+  Future<File> openOrCreateFile(String path) async {
+    File? f;
+    if (await File(path).exists()) {
+      f = File(path);
+    } else {
+      f = await File(path).create(recursive: true);
+    }
+    return f;
+  }
+
+  /// Checks if the file at [path] exists.
+  Future<bool> _checkExistence(String path) async {
+    if (await File(path).exists()) {
+      return true;
+    }
+    return false;
+  }
+
+  /// Reads the [LearningGoal] from the file at [path].
+  Future<LearningGoal> _readLearningGoalFromPath(String path) async {
+    File f = await openOrCreateFile(path);
+    String s = f.path.replaceAll("/", "\\").split("\\").last;
+    String id = _removeDotMdFromString(s);
+    List<String> mdLines = f.readAsLinesSync();
+    if (mdLines.isEmpty) {
+      throw ArgumentError("$path does not exist");
+    }
+    return MindBaseMdConverter.instance.fromLearningGoalMd(mdLines,
+        id.replaceAll("ä", "ä").replaceAll("ö", "ö").replaceAll("ü", "ü"));
+  }
+
+  /// Removes the ".md" from the end of [string].
+  String _removeDotMdFromString(String string) {
+    if (string.contains(".md")) ;
+    return string.substring(0, string.length - 3);
   }
 }
 

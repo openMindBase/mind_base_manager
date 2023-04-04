@@ -231,19 +231,6 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     }
   }
 
-  /// [listOfHeaders] is to be ordered by descending appearance in the collection
-  /// a collection is formatted correctly if it has 3 categories
-  @Deprecated("not in use?")
-  List<String> _splitCollectionBySections(String collection, List<String> listOfHeaders) {
-    assert(listOfHeaders.length == 3);
-    List<String> output = [];
-    output.add(collection.split(listOfHeaders[0]).last);
-    output.addAll(output[0].split(listOfHeaders[1]));
-    output.addAll(output[2].split(listOfHeaders[2]));
-    output.removeAt(0);
-    output.removeAt(1);
-    return output;
-  }
 
   /// Converts " test" to "[[test]]".
   String _stringToObsidianDependencyString(String input) {
@@ -322,7 +309,10 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
     mdLines.removeAt(0);
     _checkForHeadingAndRemove(mdLines, totalKnowledgeStateHeading);
     KnowledgeState ks = KnowledgeState(
-        controlledGoals: {}, improvementGoals: {}, keyLearningGoals: {});
+        controlledGoals: {},
+        improvementGoals: {},
+        keyLearningGoals: {},
+        tooHardGoals: {});
     _readSection(mdLines, "## KeyLearningGoals", (s) {
       ks.keyLearningGoals
           .add(LearningGoal(id: _obsidianDependencyStringToString(s)));

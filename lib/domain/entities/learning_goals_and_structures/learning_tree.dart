@@ -22,7 +22,7 @@ class LearningTree extends LearningGoalStructure {
     trunk = trunks.first;
   }
 
-  LearningTree.byGoal({required LearningGoal learningGoal,this.id=""})
+  LearningTree.byGoal({required LearningGoal learningGoal, this.id = ""})
       : super(nodes: {learningGoal}, edges: {}, title: learningGoal.title) {
     trunk = learningGoal.id;
   }
@@ -31,7 +31,6 @@ class LearningTree extends LearningGoalStructure {
   /// Trunk definition: [LearningGoalStructure].
   late String trunk;
   final String id;
-
 
   LearningTreeSignature? _learningTreeSignature;
 
@@ -52,7 +51,11 @@ class LearningTree extends LearningGoalStructure {
   }
 
   LearningTree cleanTransitivity() {
-    return LearningTree(nodes: nodes, edges: TransitivityCleaner(edges).get(),id: id,title: title);
+    return LearningTree(
+        nodes: nodes,
+        edges: TransitivityCleaner(edges).get(),
+        id: id,
+        title: title);
   }
 
   /// A key [LearningGoal] is a controlled [LearningGoal] that has direct successors which are not controlled.
@@ -126,11 +129,13 @@ class LearningTree extends LearningGoalStructure {
     }
   }
 
-  LearningTreeSignature signature({bool forceGenerateNew=false,double maxTries=1000}) {
-    if(_learningTreeSignature != null && !forceGenerateNew) {
+  LearningTreeSignature signature(
+      {bool forceGenerateNew = false, double maxTries = 1000}) {
+    if (_learningTreeSignature != null && !forceGenerateNew) {
       return _learningTreeSignature as LearningTreeSignature;
     }
-    _learningTreeSignature = LearningTreeSignature.byTree(this).sort(maxTries: maxTries);
+    _learningTreeSignature =
+        LearningTreeSignature.byTree(this).sort(maxTries: maxTries);
     return signature();
   }
 
@@ -143,8 +148,10 @@ class LearningTree extends LearningGoalStructure {
   }
 
   double computePercentageControlled() {
-    return filter((learningGoal) => learningGoal.isControlled()).length/totalGoalCount;
+    return filter((learningGoal) => learningGoal.isControlled()).length /
+        totalGoalCount;
   }
+
   double computePercentageShouldBeImproved() {
     return filter((learningGoal) => learningGoal.shouldBeImproved()).length /
         totalGoalCount;
@@ -167,7 +174,14 @@ class LearningTree extends LearningGoalStructure {
     return KnowledgeState(
         controlledGoals: controlledGoals,
         improvementGoals: shouldBeImprovedGoal,
-        keyLearningGoals: keyLearningGoals);
+        keyLearningGoals: keyLearningGoals,
+        tooHardGoals: tooHardGoals);
+  }
+
+  /// Computes all [LearningGoal]s that are not controlled and not key [LearningGoal]s.
+  Set<LearningGoal> get tooHardGoals {
+    return filter((learningGoal) =>
+        !learningGoal.isControlled() && !isKeyLearningGoal(learningGoal));
   }
 
   int get totalGoalCount => learningGoals.length;
@@ -180,6 +194,5 @@ class LearningTree extends LearningGoalStructure {
     }
   }
 }
-
 
 typedef LearningGoalBoolCallback = bool Function(LearningGoal learningGoal);

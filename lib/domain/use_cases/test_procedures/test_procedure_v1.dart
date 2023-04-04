@@ -5,7 +5,6 @@
 
 import 'package:mind_base_manager/domain/use_cases/test_procedures/test_procedure.dart';
 
-
 import '../../entities/learning_goals_and_structures/learning_goal.dart';
 import '../../entities/learning_goals_and_structures/learning_tree.dart';
 
@@ -73,7 +72,7 @@ class TestProcedureV1 extends TestProcedure {
         if (learningTree.untestedLearningGoals.length > 1) {
           continue;
         }
-        learningGoal.assignControlLevel(controlLevel: 1);
+        learningGoal.setAsControlled();
         return null;
       }
 

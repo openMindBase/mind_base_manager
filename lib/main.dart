@@ -64,29 +64,28 @@ class MindBaseHomePage extends StatelessWidget {
                   context,
                   FutureBuilder<LearningGoalCollection>(
                       future: MindBase.instance
-                          .readAllLearningGoalsAsLearningGoalCollection(
-                              printStats: true),
+                          .readAllLearningGoalsAsLearningGoalCollectionWithKnowledgeState(
+                              printStats: true, metadata: metadata),
                       builder: (BuildContext context,
                           AsyncSnapshot<LearningGoalCollection> snapshot) {
                         if (!snapshot.hasData) {
                           return const LoadingPage();
-                      }
-                      var data = snapshot.data as LearningGoalCollection;
-                      return TagSelectionPage(
-                        learningGoalCollection: data,
-                        onTagPressed: (tag, collection) {
-                          LeanNavigator.push(
-                              context,
-                              TestProcedurePage(
-                                  learningTree: collection.getLearningTree(),
-                                  title: "#$tag",
-                                  onTestingComplete: (learningTree) {},
-                                  studentMetadata: metadata),
-                              includeScaffold: true);
-                        },
-                      );
-                    }
-                    ),
+                        }
+                        var data = snapshot.data as LearningGoalCollection;
+                        return TagSelectionPage(
+                          learningGoalCollection: data,
+                          onTagPressed: (tag, collection) {
+                            LeanNavigator.push(
+                                context,
+                                TestProcedurePage(
+                                    learningTree: collection.getLearningTree(),
+                                    title: "#$tag",
+                                    onTestingComplete: (learningTree) {},
+                                    studentMetadata: metadata),
+                                includeScaffold: true);
+                          },
+                        );
+                      }),
                 includeScaffold: true
             );
           },

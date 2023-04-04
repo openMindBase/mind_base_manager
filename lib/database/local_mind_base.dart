@@ -213,7 +213,7 @@ class LocalMindBase extends MindBase {
         await readTotalKnowledgeState(studentMetadata: studentMetadata);
     KnowledgeState newKnowledgeState = oldKnowledgeState == null
         ? knowledgeState
-        : oldKnowledgeState + knowledgeState;
+        : oldKnowledgeState.update(knowledgeState);
     writeTotalKnowledgeState(
         knowledgeState: newKnowledgeState, studentMetadata: studentMetadata);
   }

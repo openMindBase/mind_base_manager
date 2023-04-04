@@ -26,7 +26,7 @@ abstract class MindBase{
   Future<LearningGoal> readLearningGoal(String id);
 
   /// Reads all [LearningGoal]s.
-  Future<List<LearningGoal>> readAllLearningGoals({bool printStats=false});
+  Future<List<LearningGoal>> readAllLearningGoals({bool printStats = false});
 
   /// Reads all [LearningGoal]s.
   Future<Map<String, LearningGoal>> readAllLearningGoalsAsMap(
@@ -34,6 +34,22 @@ abstract class MindBase{
 
   Future<LearningGoalCollection> readAllLearningGoalsAsLearningGoalCollection(
       {bool printStats = false});
+
+  /// Reads all [LearningGoal]s and adds the [KnowledgeState] of the student to it.
+  /// If the [KnowledgeState] is available, the [LearningGoalCollection] is updated with it.
+  Future<LearningGoalCollection>
+      readAllLearningGoalsAsLearningGoalCollectionWithKnowledgeState(
+          {required StudentMetadata metadata, bool printStats = false}) async {
+    LearningGoalCollection learningGoalCollection =
+        await readAllLearningGoalsAsLearningGoalCollection(
+            printStats: printStats);
+    KnowledgeState? totalKnowledgeState =
+        await readTotalKnowledgeState(studentMetadata: metadata);
+    if (totalKnowledgeState != null) {
+      learningGoalCollection.updateWithKnowledgeState(totalKnowledgeState);
+    }
+    return learningGoalCollection;
+  }
 
   Future<List<String>?> readAssessmentData(StudentMetadata metadata);
 

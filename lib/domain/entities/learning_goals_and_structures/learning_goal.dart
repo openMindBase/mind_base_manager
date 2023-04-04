@@ -62,11 +62,13 @@ class LearningGoal extends Node{
   /// The learning dependents of this [LearningGoal].
   final List<String> dependents;
 
+  bool _flagCanIncrementTimesTestedCorrectlyStreak = true;
+
   /// The date of the last test.
-  final DateTime? lastCorrectlyTested;
+  DateTime? lastCorrectlyTested;
 
   /// The number of times this [LearningGoal] has been tested and controlled in a streak.
-  final int timesTestedCorrectlyStreak;
+  int timesTestedCorrectlyStreak;
 
   /// -1 = [LearningGoal] has not been tested.
   /// 0 = [LearningGoal] has been tested but is not controlled.
@@ -84,6 +86,19 @@ class LearningGoal extends Node{
   /// [shouldBeImproved] tells if this [LearningGoal] is one of them.
   bool shouldBeImproved() => controlLevel == 0.5;
 
+  /// Sets [_controlLevel] for [LearningGoal] to: "has been tested and is controlled".
+  void setAsControlled({bool incrementTimesTestedCorrectly = true}) {
+    assignControlLevel(controlLevel: 1);
+    _incrementCounter();
+  }
+
+  void _incrementCounter() {
+    if (_flagCanIncrementTimesTestedCorrectlyStreak) {
+      timesTestedCorrectlyStreak++;
+      lastCorrectlyTested = DateTime.now();
+      _flagCanIncrementTimesTestedCorrectlyStreak = false;
+    }
+  }
 
   /// Sets [_controlLevel] for [LearningGoal].
   /// If the [LearningGoal] is tested already, [level] won't be set.

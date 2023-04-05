@@ -1,29 +1,11 @@
 // @author Matthias Weigt 22.03.23
 
 import 'package:flutter/material.dart';
-import 'package:lean_ui_kit/other/lean_navigator.dart';
-import 'package:mind_base_manager/domain/entities/persons/student_metadata.dart';
 import 'package:mind_base_manager/domain/use_cases/learning_goal_collection.dart';
 import 'package:mind_base_manager/presentation/app_pages/app_page.dart';
-import 'package:mind_base_manager/presentation/app_pages/test_procedure_page.dart';
 import 'package:mind_base_manager/presentation/widgets/buttons/tag_selection_button.dart';
 
 class TagSelectionPage extends StatefulWidget {
-  static OnTagSelect openTestProcedurePage(
-      {required BuildContext context,
-      required StudentMetadata studentMetadata}) {
-    return (tag, collection) {
-      LeanNavigator.push(
-          context,
-          TestProcedurePage(
-              learningTree: collection.getLearningTree(),
-              title: "#$tag",
-              onTestingComplete: (learningTree) {},
-              studentMetadata: studentMetadata),
-          includeScaffold: true);
-    };
-  }
-
   const TagSelectionPage(
       {super.key,
       required this.learningGoalCollection,
@@ -34,7 +16,8 @@ class TagSelectionPage extends StatefulWidget {
 
   /// Executed, when clicked on a tag.
   /// [collection] is the already by [tag] filtered [LearningGoalCollection].
-  final OnTagSelect onTagPressed;
+  final void Function(String tag, LearningGoalCollection collection)
+      onTagPressed;
 
   @override
   State<TagSelectionPage> createState() => _TagSelectionPageState();
@@ -68,6 +51,3 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
     ]);
   }
 }
-
-typedef OnTagSelect = void Function(
-    String tag, LearningGoalCollection collection);

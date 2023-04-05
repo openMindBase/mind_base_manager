@@ -2,37 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_text_field.dart';
-import 'package:mind_base_manager/presentation/app_pages/tag_selection_page.dart';
-import 'package:mind_base_manager/presentation/other/future_page_navigator.dart';
 
-import '../../database/local_mind_base.dart';
-import '../../database/mind_base.dart';
-import '../../domain/entities/persons/student_metadata.dart';
-import '../../domain/use_cases/learning_goal_collection.dart';
 import 'app_page.dart';
 
 class ChooseMindBasePage extends StatelessWidget {
-  static OnMindBasePathSelect openTagSelectionPage(
-      {required BuildContext context,
-      required StudentMetadata metadata,
-      required OnTagSelect onTagSelect}) {
-    return (mindBasePath) {
-      MindBase.init(LocalMindBase(pathRoot: mindBasePath));
-
-      FuturePageNavigator<LearningGoalCollection>().push(
-        future: MindBase.instance
-            .readAllLearningGoalsAsLearningGoalCollectionWithKnowledgeState(
-                printStats: true, metadata: metadata),
-        context: context,
-        builder: (context, data) {
-          return TagSelectionPage(
-            learningGoalCollection: data,
-            onTagPressed: onTagSelect,
-          );
-        },
-      );
-    };
-  }
 
   ChooseMindBasePage({super.key, required this.onMindBasePathChoose});
 
@@ -66,4 +39,3 @@ class ChooseMindBasePage extends StatelessWidget {
   }
 }
 
-typedef OnMindBasePathSelect = void Function(String mindBasePath);

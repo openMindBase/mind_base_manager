@@ -7,6 +7,12 @@ import 'package:mind_base_manager/database/mind_base_md_converter_default.dart';
 import 'package:mind_base_manager/presentation/app_pages/choose_mind_base_page.dart';
 import 'package:mind_base_manager/presentation/app_pages/input_student_metadata.dart';
 import 'package:mind_base_manager/presentation/app_pages/tag_selection_page.dart';
+import 'package:mind_base_manager/presentation/app_pages/test_procedure_page.dart';
+import 'package:mind_base_manager/presentation/other/future_page_navigator.dart';
+
+import 'database/local_mind_base.dart';
+import 'database/mind_base.dart';
+import 'domain/use_cases/learning_goal_collection.dart';
 
 Future<void> main() async {
   _init();
@@ -44,22 +50,36 @@ class MindBaseHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // describes sequence of pages being walked through
-      // when whole application functionality is used:
-      body: InputStudentMetadataPage(
-        onSubmitMetadata: (metadata) async {
-          LeanNavigator.push(
-              context,
-              ChooseMindBasePage(
-                onMindBasePathChoose: ChooseMindBasePage.openTagSelectionPage(
-                    context: context,
-                    metadata: metadata,
-                    onTagSelect: TagSelectionPage.openTestProcedurePage(
-                        context: context, studentMetadata: metadata)),
-              ),
-              includeScaffold: true);
-        },
-      ),
-    );
+        // describes sequence of pages being walked through
+        // when whole application functionality is used:
+        body: InputStudentMetadataPage(
+      onSubmitMetadata: (metadata) async {
+        LeanNavigator.pushPage(context,
+            ChooseMindBasePage(onMindBasePathChoose: (mindBasePath) {
+          MindBase.init(LocalMindBase(pathRoot: mindBasePath));
+
+          FuturePageNavigator<LearningGoalCollection>().push(
+            future: MindBase.instance
+                .readAllLearningGoalsAsLearningGoalCollectionWithKnowledgeState(
+                    printStats: true, metadata: metadata),
+            context: context,
+            builder: (context, data) {
+              return TagSelectionPage(
+                learningGoalCollection: data,
+                onTagPressed: (tag, collection) {
+                  LeanNavigator.pushPage(
+                      context,
+                      TestProcedurePage(
+                          learningTree: collection.getLearningTree(),
+                          title: "#$tag",
+                          onTestingComplete: (learningTree) {},
+                          studentMetadata: metadata));
+                },
+              );
+            },
+          );
+        }));
+      },
+    ));
   }
 }

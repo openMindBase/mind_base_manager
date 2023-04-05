@@ -15,14 +15,13 @@ class FuturePageNavigator<T> {
       {required Future<T> future,
       required BuildContext context,
       required Widget Function(BuildContext context, T data) builder}) {
-    LeanNavigator.push(
+    LeanNavigator.pushPage(
         context,
         FuturePage<T>(
           future: future,
           builder: (context, data) {
             return builder(context, data);
           },
-        ),
-        includeScaffold: true);
+        ));
   }
 }

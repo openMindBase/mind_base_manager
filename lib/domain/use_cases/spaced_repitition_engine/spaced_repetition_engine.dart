@@ -18,6 +18,13 @@ class _SpacedRepetitionEngineDefault extends SpacedRepetitionEngine {
   bool shouldTestAgain(
       {required DateTime? lastCorrectlyTested,
       required int timesTestedCorrectlyStreak}) {
+    if (lastCorrectlyTested == null) return true;
+
+    final int daysPassed =
+        DateTime.now().difference(lastCorrectlyTested).inDays;
+
+    if (daysPassed >= timesTestedCorrectlyStreak) return true;
+
     return false;
   }
 }

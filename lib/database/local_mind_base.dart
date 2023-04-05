@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:ini/ini.dart';
 import 'package:mind_base_manager/database/mind_base.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter.dart';
 import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/knowledge_state.dart';
@@ -174,7 +175,42 @@ class LocalMindBase extends MindBase {
     if (string.contains(".md")) ;
     return string.substring(0, string.length - 3);
   }
+
+  @override
+  Future<StudentMetadata?> readCurrentStudentMetadata() async {
+    File f = await openOrCreateFile("userdata/config.ini");
+    return f
+        .readAsLines()
+        .then((lines) => Config.fromStrings(lines))
+        .then((Config config) {
+      if (!config.hasSection("config")) {
+        config.addSection("config");
+      }
+      String? s = config.get("config", "id");
+      if (s == null) {
+        return null;
+      }
+      return StudentMetadata(s, name: config.get("config", "name"));
+    });
+  }
+
+  @override
+  Future<void> writeCurrentStudentMetadata(
+      StudentMetadata studentMetadata) async {
+    (await openOrCreateFile("userdata/config.ini"))
+        .readAsLines()
+        .then((lines) => Config.fromStrings(lines))
+        .then((Config config) {
+      if (!config.hasSection("config")) {
+        config.addSection("config");
+      }
+      config.set("config", "name", studentMetadata.name ?? "");
+      config.set("config", "id", studentMetadata.id);
+      File("userdata/config.ini").writeAsString(config.toString());
+    });
+  }
 }
 
 /// Converts the folder path to a path working on all platforms.
 String _convertPath(String path) => path.replaceAll("/", "\\");
+

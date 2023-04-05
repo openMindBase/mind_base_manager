@@ -44,7 +44,7 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
         },
       ));
     }
-    return AppPage(title: "tag - selection", children: [
+    return AppPage(showBackButton: true, title: "tag - selection", children: [
       Wrap(
         children: children,
       )

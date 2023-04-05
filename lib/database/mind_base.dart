@@ -70,4 +70,9 @@ abstract class MindBase{
   /// Writes [learningGoal] to the database.
   Future<void> writeLearningGoal(LearningGoal learningGoal);
 
+  /// Reads the [StudentMetadata] of the current student.
+  Future<StudentMetadata?> readCurrentStudentMetadata();
+
+  /// Writes the [StudentMetadata] of the current student.
+  Future<void> writeCurrentStudentMetadata(StudentMetadata studentMetadata);
 }

@@ -11,7 +11,7 @@
             "id": "779aa7ebafc4f122",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {}
             }
           }
@@ -65,7 +65,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "3bf79586a85c376b",
@@ -140,6 +141,10 @@
   },
   "active": "779aa7ebafc4f122",
   "lastOpenFiles": [
+    "assessment_data/matthias_t4a2HAzPKF6xeUd52RMz.md",
+    "assessment_data/test_YYzwFtFnNPF1WDPZ5ROH.md",
+    "assessment_data/hallo_tSjt2xwlM1NDArKAh7Xs.md",
+    "md_database/Berechnen - Brüche quadrieren.md",
     "t.md",
     "assessment_data/stephan_0wia2Hv7g4MiD22OCMlY.md",
     "md_database/templates/template.md",
@@ -163,10 +168,6 @@
     "assessment_data/t_WFTyN4m0CAdBnzYdVgFH.md",
     "assessment_data/matthias_7yPOsFjt1KTtVMa6GOc8.md",
     "assessment_data/mark_RMzJoWxjLVoqTUhoUa17.md",
-    "md_database/chemie gleichung b.md",
-    "chemie gleichung a.md",
-    "assessment_data/matthias_vlrtcQTsB3At8clatYcN.md",
-    "assessment_data/luise_S48XpI8qL562fnPNXpbf.md",
     "md_database/templates",
     "md_database",
     "germany_school_math_database/templates",

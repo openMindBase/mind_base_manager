@@ -18,6 +18,6 @@ class _SpacedRepetitionEngineDefault extends SpacedRepetitionEngine {
   bool shouldTestAgain(
       {required DateTime? lastCorrectlyTested,
       required int timesTestedCorrectlyStreak}) {
-    return true;
+    return false;
   }
 }

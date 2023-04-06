@@ -11,13 +11,13 @@
       "query": "tag:#totalKnowledgeState",
       "color": {
         "a": 1,
-        "rgb": 14701138
+        "rgb": 14766557
       }
     }
   ],
-  "collapse-display": true,
-  "showArrow": false,
-  "textFadeMultiplier": 0,
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": -0.9,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
   "collapse-forces": false,
@@ -25,6 +25,6 @@
   "repelStrength": 10.39794921875,
   "linkStrength": 1,
   "linkDistance": 292,
-  "scale": 0.5600853205026217,
+  "scale": 0.18717776132591657,
   "close": true
 }

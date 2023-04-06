@@ -1,0 +1,1 @@
+Eine [[Knowledge Base]] ist eine Wissensdatenbank.

@@ -1,9 +1,16 @@
 # mind_base_manager
-## We are mapping knowledge as a hard dependency graph.
-A map is only as good as the added value it provides. We develop a very specific kind of map. A map made of learning goals and hard dependencies. It provides a clear answer to the question: "What **needs** to be learned so that something else **can** be learned?" in the realm of fields in which every subtopic is foundationally built on other subtopics, such that one is always put in the so called zone of proximal developement (ZPD) in which learning is optimal and engaging as one is not overwhelmed nor underwhelmed by local learning goals that are too advanced or trivial.
-To start, we have built this:
+## We are mapping knowledge as a hard dependency graph for learning - mindbases.
+
+- The graph is acyclical, intransitive and directed
+- The knowledge is contained in the form of relatively unambiguous defined learning goals (nodes). 
+- The hard dependency is the relation between two learning goals, providing a clear answer to the question: "What **needs** to be learned **in order to** make something else learnable?" .
+
+We've developed operatable "mindbases" and assessment software to assist teachers and students with finding the zone of proximal developement (ZPD), respectively, learning goals that are not over- nor underwhelming whilst in the process of learning.
+
+Starting to study the benefits of use-cases, we've come up with this: 
 ![](images/germany_math_graph.png)
-It shows the graph we have mapped as of March 20th 2023. The topic is school mathematics in Germany.
+
+This is the mindbase we have mapped as of March 20th 2023. The topic is school mathematics in Germany.
 You can play with this graph using obsidian by downloading the appropriate mind_base/ folder and opening it as a vault in the downloaded app on many devices of your choosing.
 
 ## You find what we do interesting?

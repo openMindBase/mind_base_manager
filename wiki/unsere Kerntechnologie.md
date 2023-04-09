@@ -1,5 +1,4 @@
-Kern unseres Projekts ist das Kartografieren von Themenbereiche über [[Graph]]en, sowie das Entwickeln von Operationen
-auf diesen.
+Kern unseres Projekts ist das Kartografieren von Themenbereiche über [[Graph]]en, sowie das Entwickeln von Operationen auf diesen.
 
 Unsere [[Graph]]en, wir nennen sie [[Lernziel-Depenenz-Struktur]]en, sind gerichtet, azyklisch und nicht transitiv.
 Ein [[Knoten]] repräsentiert ein [[Lernziel]], eine [[Kante]] die [[harte Dependenz]] zu anderen [[Lernziel]]en.

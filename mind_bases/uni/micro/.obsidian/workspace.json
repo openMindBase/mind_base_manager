@@ -1,22 +1,18 @@
 {
   "main": {
-    "id": "028ddf64edb5372a",
+    "id": "3e8718710d0cfc38",
     "type": "split",
     "children": [
       {
-        "id": "6ef4d938d3a2938b",
+        "id": "4b73c680edf95ad8",
         "type": "tabs",
         "children": [
           {
-            "id": "93ed54ddd4948d4d",
+            "id": "b1cf686bcd5fa026",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "unsere Kerntechnologie.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -25,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "951fad54dac92706",
+    "id": "0554beba7553356a",
     "type": "split",
     "children": [
       {
-        "id": "9d25454b66050b4c",
+        "id": "a325f8fe72862c81",
         "type": "tabs",
         "children": [
           {
-            "id": "722d5d87a7f95818",
+            "id": "5c119ee142966247",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +39,7 @@
             }
           },
           {
-            "id": "e6d7b63fd467fd52",
+            "id": "7a21b0eb54d8600d",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +54,7 @@
             }
           },
           {
-            "id": "d78be85af992fd28",
+            "id": "c00c8c693905aa90",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -72,20 +68,19 @@
     "width": 300
   },
   "right": {
-    "id": "503cf94e90d53e27",
+    "id": "4a2aab9532de7e65",
     "type": "split",
     "children": [
       {
-        "id": "c22ab1262cd9e5f0",
+        "id": "1a287dca01e0a63d",
         "type": "tabs",
         "children": [
           {
-            "id": "54de59dd9ae2eeae",
+            "id": "35f105a22d0ac49c",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "unsere Kerntechnologie.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +92,18 @@
             }
           },
           {
-            "id": "52625aba5acc5d9f",
+            "id": "c220bfadd5ab6337",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "unsere Kerntechnologie.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "6a898454e702c273",
+            "id": "9bc6c0be9d3e0bcc",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,13 +114,11 @@
             }
           },
           {
-            "id": "c7bb9710a8d617fe",
+            "id": "10df6df41ed3b24d",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "unsere Kerntechnologie.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,21 +138,8 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "93ed54ddd4948d4d",
+  "active": "b1cf686bcd5fa026",
   "lastOpenFiles": [
-    "Lernziel-Depenenz-Struktur.md",
-    "OpenMindBase.md",
-    "OpenMindBase Wiki.md",
-    "Keylink Software Engineering UG.md",
-    "Lernzweige.md",
-    "Aktueller Technischer Stand.md",
-    "Matthias.md",
-    "Mark.md",
-    "Yuri.md",
-    "Paul.md",
-    "Pasted image 20230406000603.jpg",
-    "Collin.md",
-    "Entstehungsgeschichte OpenMindBase.md",
-    "Knowledge Base.md"
+    "assessment_data/matthias_t4a2HAzPKF6xeUd52RMz.md"
   ]
 }

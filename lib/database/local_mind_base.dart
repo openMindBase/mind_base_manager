@@ -166,6 +166,7 @@ class LocalMindBase extends MindBase {
     if (mdLines.isEmpty) {
       throw ArgumentError("$path does not exist");
     }
+
     return MindBaseMdConverter.instance.fromLearningGoalMd(mdLines,
         id.replaceAll("ä", "ä").replaceAll("ö", "ö").replaceAll("ü", "ü"));
   }

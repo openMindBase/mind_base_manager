@@ -183,8 +183,13 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
       input.split("=").last.trim() == "true" ? true : false;
 
   /// Converts " [[test]]" to "test".
-  String _obsidianDependencyStringToString(String input) =>
-      input.trim().replaceAll("[[", "").replaceAll("]]", "");
+  String _obsidianDependencyStringToString(String input) => input
+      .trim()
+      .replaceAll("[[", "")
+      .replaceAll("]]", "")
+      .replaceAll("ä", "ä")
+      .replaceAll("ö", "ö")
+      .replaceAll("ü", "ü");
 
   void _readSection(List<String> mdLines, String heading,
       void Function(String s) stringComputer,

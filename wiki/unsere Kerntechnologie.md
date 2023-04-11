@@ -5,7 +5,7 @@ Ein [[Knoten]] repräsentiert ein [[Lernziel]], eine [[Kante]] die [[harte Depen
 
 Vereinfacht liefert eine [[Lernziel-Depenenz-Struktur]] die Antwort auf die Frage:
 
-> Was **muss** gelernt werden, damit etwas andere gelernt werden **kann**.
+> Was **muss** gelernt werden, damit etwas anderes gelernt werden **kann**.
 
 ### Schlüsselbegriffe
 

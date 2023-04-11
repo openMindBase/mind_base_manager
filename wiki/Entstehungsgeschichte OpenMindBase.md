@@ -29,26 +29,26 @@ Das Paper liegt auch in dem Repository unter **/paper/WhitePaper.pdf **
 
 Wir bauen eine erste Website, die abstrakt sagt was wir vorhaben. Wir schicken diverse Nachrichten in viele Uni-WhatsApp-Gruppen und suchen nach Feedback.
 Es meldet sich so gut wie niemand. ;p
-Wie entwickeln noch etwas an der Technologie weiter und versuchen erste Themen zu mappen.
+Wir entwickeln die Technologie weiter und versuchen erste Themen zu mappen.
 
 ### Berlin Startup-Kontakt Treffen
 
-Anfang April
+16. April 2022
 Wir haben unser Projekt auf einer Startup-Netzwerk-Seite vorgestellt und wurden von einem Interessierten angeschrieben.
 Daraufhin haben [[Mark]] und ich uns mit ihm in Berlin getroffen und zusammen Donuts gegessen. Zahlen im fünfstelligen Bereich flogen durch den Raum, trotz keiner konkreten Vorstellung, wie das Projekt seine Anwendung finden soll.
 
+
+![[20220416_082213.jpg]]
+
 Er wüsste nicht ganz wie man mit unserem Modell "gut Geld machen" könne...
 Wir haben uns auf Grund mangelnder Ziele und verschiedener Interessen vorübergehend gegen eine Zusammenarbeit entschieden.
-
-16.4.22
-
-![[Pasted image 20230405233112.jpg]]
 
 ## Gründungsphase
 
 Wir lernen Flutter, um eine bessere Website und eine Front-End Anwendung für unsere Technologie zu bauen.
 
-Einige Zeit später steht eine hübsche Seite in Flutter. Wir "kapern" einige Dutzend Uni-WhatsApp Gruppen und schreiben etwa 200 Leute direkt an, um Feedback zu bekommen.
+Einige Zeit später steht eine hübsche Seite in Flutter. 
+Wir "kapern" einige Dutzend Uni-WhatsApp Gruppen und schreiben etwa 200 Leute direkt an, um Feedback zu bekommen.
 Wir bekommen von einigen durchaus konstruktives Feedback zur Seite, weniger allerdings zur Idee.
 
 ### Projekt Lernzweige
@@ -62,16 +62,22 @@ Erste Markttest mit [[Lernzweige]] haben gezeigt, das die [[Lernziel-Depenenz-St
 
 ### 1. Externalisierungsversuch
 
-Wir haben Freiberufliche Nachhilfelehrer dazu geholt, die mit unserer Software Nachhilfe geben sollten. Da Software noch nicht nutzerfreundlich genug war, 
-Wir haben die nächste größere Produktiteration begonnen.
+<!-- TODO: Nachhilfe-Konzeptidee -->
+Wir haben Freiberufliche Nachhilfelehrer dazu geholt, die mit unserer Software Nachhilfe geben sollten. Da die Software noch nicht nutzerfreundlich genug war, konnte einer der Lehrer keinen guten Unterricht bieten. 
+Wir haben die nächste große Produktiteration begonnen.
 
 ### BBA
 
-Gegen Ende August/September haben wir viel Zeit und Energie für eine Bewerbung aufgewandt bei einem Business AngelNetzwerk in Schleswig-Holstein, den Baltic Business Angles.
+<!-- TODO: Womit haben wir uns beworben. Wie war das Feedback?-->
+Gegen Ende August/September haben wir zu viel Zeit und Energie für eine Bewerbung aufgewandt, die bei einem Business-Angel Netzwerk in Schleswig-Holstein eingehen sollte.
+Das Bestimmen eines Businessplanes im Kontext einer so universell anwendbaren Ressource ist im Team sehr schwierig gewesen...
+In die Glaskugel guckt man lieber alleine.
+
 Bewerbung abgeschickt: Abgelehnt.
 
 ## Post Gründung
 
+<!-- TODO: Nicht wichtig, nichts aussagend... Was waren die Gedanken damals?  -->
 Mit der Absage von BBA war die Stimmung etwas geknickt.
 Wir sind zusammen mit Oskar (hat ein Praktikum gemacht) in Hamburg zusammen essen gegangen und haben über die weitere
 Strategie geredet.
@@ -81,12 +87,12 @@ Strategie geredet.
 ### Graduelle Weiterentwicklung
 
 In den darauf folgenden Wochen kommt für einige Wochen Maja mit zum Team.
-Wir arbeiten zusammen etwas an der Anwenung und an [[Lernzweige]].
+Wir arbeiten zusammen etwas an der Anwendung und an [[Lernzweige]].
 
 ### Netzwerk Phase
 
-Wir schreiben diverse Leute an, auf der Suche nach potentiellen Partnern. Ich treffe mich und rede mit Leuten quer in
-Deutschland.
+<!-- TODO: Was war unsere Intention? -->
+Wir schreiben diverse Leute an, auf der Suche nach potentiellen Partnern. Ich treffe mich und rede mit Leuten quer in Deutschland.
 Einige Kontakte erweisen sich als vielversprechend.
 [[Paul]] und [[Yuri]] stoßen zum Team dazu.
 
@@ -108,16 +114,12 @@ Leider hat sich am Ende herausgestellt, dass meine und seine Vorstellungen sich 
 
 Wir hatten die Option einen 100.000€ Kredit für das Unternehmen zu bekommen. Aus persönlichen Gründen wollte ich diesen
 jedoch nicht annehmen.
-Meine privaten Mittel mit denen ich [[Kanten & Knoten UG]] finanzierte, die ich aus meinem früheren
-Unternehmen [[Keylink Software Engineering UG]] erwirtschaftet hatte neigten sich ebenfalls dem Ende zu.
+Meine privaten Mittel mit denen ich [[Kanten & Knoten UG]] finanzierte, die ich aus meinem früheren Unternehmen [[Keylink Software Engineering UG]] erwirtschaftet hatte neigten sich dem Ende zu.
 Deshalb entschied ich mich dazu das Projekt auf die alte Art und Weise nicht mehr fortzuführen.
 
 # Ein Neubeginn: OpenMindBase
 
 Mein Gefühl hat mir gesagt, dass ich den Kern meiner Idee ([[unsere Kerntechnologie]]) nicht kommerzialisieren möchte.
-Meine Intuition war, dass es den Gesamtnutzen für die Welt maximiert, wenn ich alles frei zur Verfügung stelle und Open
-source [[unsere Kerntechnologie]] und die [[Lernziel-Depenenz-Struktur]]en weiterentwickle.
-Ich habe unsere alte Datenbank, auf der wir bis dahin große Teile der Schul-Mathematik gemappt haben auf GitHub migriert
-und alles veröffentlicht.
+Meine Intuition war, dass es den Gesamtnutzen für die Welt maximiert, wenn ich alles frei zur Verfügung stelle und [[unsere Kerntechnologie]] und die [[Lernziel-Depenenz-Struktur]]en Open-Source weiterentwickle.
+Ich habe unsere alte Datenbank, auf der wir bis dahin große Teile der Schul-Mathematik gemappt haben auf GitHub migriert und alles veröffentlicht.
 Und so wurde [[OpenMindBase]] geboren.
-Und wenn sie nicht gestorben ist, so lebt sie noch heute. 

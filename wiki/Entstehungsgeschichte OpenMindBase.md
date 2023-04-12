@@ -38,8 +38,6 @@ Wir haben unser Projekt auf einer Startup-Netzwerk-Seite vorgestellt und wurden 
 Daraufhin haben [[Mark]] und ich uns mit ihm in Berlin getroffen und zusammen Donuts gegessen. Zahlen im fünfstelligen Bereich flogen durch den Raum, trotz keiner konkreten Vorstellung, wie das Projekt seine Anwendung finden soll.
 
 
-![[20220416_082213.jpg]]
-
 Er wüsste nicht ganz wie man mit unserem Modell "gut Geld machen" könne...
 Wir haben uns auf Grund mangelnder Ziele und verschiedener Interessen vorübergehend gegen eine Zusammenarbeit entschieden.
 

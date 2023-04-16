@@ -1,6 +1,3 @@
-import os, glob
-import networkx as nx
-from matplotlib import pyplot as plt
 from networkx import find_cycle, NetworkXNoCycle, DiGraph
 
 """

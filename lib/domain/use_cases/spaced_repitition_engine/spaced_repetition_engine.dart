@@ -1,5 +1,7 @@
 // @author Matthias Weigt 04.04.23
 
+import 'dart:math';
+
 import 'package:mind_base_manager/domain/entities/learning_goals_and_structures/learning_goal.dart';
 
 abstract class SpacedRepetitionEngine {
@@ -22,9 +24,7 @@ class _SpacedRepetitionEngineDefault extends SpacedRepetitionEngine {
 
     final int daysPassed =
         DateTime.now().difference(lastCorrectlyTested).inDays;
-
-    int daysTilTestAgain = (2 ^ timesTestedCorrectlyStreak) ~/ 2;
-
+    int daysTilTestAgain = pow(2, timesTestedCorrectlyStreak) as int;
     if (daysPassed >= daysTilTestAgain) return true;
 
     return false;

@@ -1,12 +1,13 @@
 // @author Matthias Weigt 21.03.23
 
+import 'package:flutter/material.dart';
 
 import '../domain/entities/learning_goals_and_structures/knowledge_state.dart';
 import '../domain/entities/learning_goals_and_structures/learning_goal.dart';
 import '../domain/entities/persons/student_metadata.dart';
 import '../domain/use_cases/learning_goal_collection.dart';
 
-abstract class MindBase{
+abstract class MindBase {
   static MindBase? currentMindBase;
 
   /// Initializes the [MindBase]database in use.
@@ -33,6 +34,8 @@ abstract class MindBase{
 
   Future<LearningGoalCollection> readAllLearningGoalsAsLearningGoalCollection(
       {bool printStats = false});
+
+  Image image(String id);
 
   /// Reads all [LearningGoal]s and adds the [KnowledgeState] of the student to it.
   /// If the [KnowledgeState] is available, the [LearningGoalCollection] is updated with it.

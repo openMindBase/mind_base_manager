@@ -2,7 +2,7 @@
 // All rights reserved ©2022
 
 import 'package:flutter/material.dart';
-import 'package:knowledge_dependency_graph_manager/presentation/widgets/pages/rendered_tex.dart';
+import 'package:mind_base_manager/presentation/old_widgets/rendered_tex.dart';
 
 /// This class converts markdown text into a [Widget].
 /// + It renders formula.
@@ -15,7 +15,6 @@ class Markdown extends StatefulWidget {
   final int height;
   final bool left;
   final Color? color;
-
   @override
   State<Markdown> createState() => _MarkdownState();
 }
@@ -26,7 +25,7 @@ class _MarkdownState extends State<Markdown> {
 
   @override
   Widget build(BuildContext context) {
-
+    // print("123");
     return RenderedTex(
         text: widget.texData
             .replaceAll("\\(", "\$")

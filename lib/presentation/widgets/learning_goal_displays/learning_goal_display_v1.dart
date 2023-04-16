@@ -44,7 +44,7 @@ class _LearningGoalDisplayV1State extends State<LearningGoalDisplayV1> {
     Widget child = Container(
       padding: const EdgeInsets.all(20),
       width: widget.width,
-      height: widget.height,
+      // height: widget.height,
       child: LeanSpacedColumn(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

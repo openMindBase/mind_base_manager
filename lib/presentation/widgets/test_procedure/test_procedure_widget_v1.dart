@@ -66,16 +66,16 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
     return LayoutBuilder(builder: (context, constraints) {
       return LeanSpacedColumn(
         children: [
-          _learningTreeVisualWidget(constraints.maxWidth * 0.9,
-              MediaQuery.of(context).size.height * 0.6),
           Text(
             widget.testProcedure.currentLearningGoal.title,
             style: Theme.of(context).textTheme.headlineMedium,
           ),
+          _buttonRow(),
           _learningGoalDisplay(constraints.maxWidth * 0.9,
               MediaQuery.of(context).size.height * 0.4),
-          _buttonRow(),
-          const LeanDY(y: 50)
+          const LeanDY(y: 50),
+          _learningTreeVisualWidget(constraints.maxWidth * 0.9,
+              MediaQuery.of(context).size.height * 0.6),
         ],
       );
     });

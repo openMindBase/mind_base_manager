@@ -95,7 +95,7 @@ packages:
     source: hosted
     version: "2.0.1"
   flutter_math_fork:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_math_fork
       sha256: fa511bdcb91fc35eac155ec5790883886dd9de6572fea549f1ad4660ef6804e9
@@ -147,15 +147,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.5"
-  knowledge_dependency_graph_manager:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "104aa9d78747615dc0bdeb59d690de424a1d1be9"
-      url: "https://github.com/winfryed/knowledge_dependency_graph_manager.git"
-    source: git
-    version: "0.0.1"
   lean_ui_kit:
     dependency: "direct main"
     description:

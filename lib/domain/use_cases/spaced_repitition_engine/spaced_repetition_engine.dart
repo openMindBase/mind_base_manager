@@ -23,7 +23,9 @@ class _SpacedRepetitionEngineDefault extends SpacedRepetitionEngine {
     final int daysPassed =
         DateTime.now().difference(lastCorrectlyTested).inDays;
 
-    if (daysPassed >= timesTestedCorrectlyStreak) return true;
+    int daysTilTestAgain = (2 ^ timesTestedCorrectlyStreak) ~/ 2;
+
+    if (daysPassed >= daysTilTestAgain) return true;
 
     return false;
   }

@@ -1,12 +1,17 @@
-from networkx import transitive_reduction, DiGraph
-import matplotlib.pyplot as plt
-from pylib.domain.entities import cyclicality_checker, graph_helper, transitivity_cleaner
 import codecs
-import os, glob
+import glob
+import os
+
+import matplotlib.pyplot as plt
 import networkx as nx
+from networkx import transitive_reduction, DiGraph
+
+from pylib.domain.entities import cyclicality_checker, transitivity_cleaner
 from pylib.domain.entities.graph_helper import convertFilesAsStringToConnectedDiGraph, \
     convertDiGraphToHardDependentsSectionStrings, checkDuplicates, extractFilenameFromPath, writeDependencies
-from stopwatch import Stopwatch
+
+
+# from stopwatch import Stopwatch
 
 
 # example graph for showcase of functionality of networkx lib
@@ -92,8 +97,8 @@ if __name__ == '__main__':
     # "germany_school_math"
     folder = "germany_school_math"
 
-    stopwatch = Stopwatch(2)  # Start a stopwatch
-    stopwatch.start()  # Start it again
+    # stopwatch = Stopwatch(2)  # Start a stopwatch
+    # stopwatch.start()  # Start it again
     # extract path
     workingDirectoryName = os.getcwd()
     head, tail = workingDirectoryName.split("pylib")
@@ -118,5 +123,5 @@ if __name__ == '__main__':
     dependencySectionsStrings: dict[str:str] = convertDiGraphToHardDependentsSectionStrings(cleanedG)
     if graphChanged: fileMdWriteDependents(folderPath, dependencySectionsStrings)
 
-    stopwatch.stop()  # Stop stopwatch, time freezes
-    print("time elapsed: " + str(stopwatch))
+    # stopwatch.stop()  # Stop stopwatch, time freezes
+    # print("time elapsed: " + str(stopwatch))

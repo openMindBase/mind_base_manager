@@ -25,7 +25,6 @@ class ChooseMindBasePage extends StatelessWidget {
         folderNames.add(s);
       }
     }
-    print(folderNames);
 
     List<Widget> buttons = [];
     for (var v in folderNames) {

@@ -124,6 +124,16 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
       TestProcedureControllerButton(
         onPressed: () {
           showFront = true;
+          widget.testProcedure.submitCurrentLearningGoal(1, increment: 1000);
+          setState(() {});
+        },
+        iconData: Icons.not_interested,
+        title: 'never test',
+        iconColor: Colors.green,
+      ),
+      TestProcedureControllerButton(
+        onPressed: () {
+          showFront = true;
           widget.testProcedure.submitCurrentLearningGoal(1, increment: 3);
           setState(() {});
         },

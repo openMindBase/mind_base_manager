@@ -54,10 +54,9 @@ def convert_pdf_to_multiple_pngs(pdf_path, img_prefix):
 
 
 def main():
+    multi_page_pdf_path = input("Enter path to multipage PDF: ")
     img_prefix = input("Enter image prefix: ")
 
-    multi_page_pdf_path = "/Users/matthiasweigt/IdeaProjects/mind_base_manager/pylib/multipage_pdf_transformer" \
-                          "/StatMeth_Kap1.pdf"
     # multi_page_pdf_path = input("Enter path to multipage PDF: ")
 
     convert_pdf_to_multiple_pngs(multi_page_pdf_path, img_prefix)

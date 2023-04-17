@@ -5,7 +5,6 @@ import 'package:lean_ui_kit/theming/app_theme_access.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter_default.dart';
 import 'package:mind_base_manager/domain/entities/persons/student_metadata.dart';
-import 'package:mind_base_manager/domain/use_cases/mind_base_modifier/mind_base_tagger.dart';
 import 'package:mind_base_manager/presentation/app_pages/choose_mind_base_page.dart';
 import 'package:mind_base_manager/presentation/app_pages/input_student_metadata.dart';
 import 'package:mind_base_manager/presentation/app_pages/tag_selection_page.dart';
@@ -27,10 +26,10 @@ Future<void> _init() async {
   MindBaseMdConverter.init(MindBaseMdConverterDefault());
   AppThemeAccess.init(theme: LeanAppTheme());
   MindBase.init(LocalMindBase(pathRoot: "a"));
-  MindBaseTagger(
-          pathMindBaseRoot:
-              "/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/uni/computational intelligence")
-      .updateAllTags();
+  // MindBaseTagger(
+  //         pathMindBaseRoot:
+  //             "/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/uni/computational intelligence")
+  //     .updateAllTags();
   MindBaseApp.studentMetadata =
       await MindBase.instance.readCurrentStudentMetadata();
 }

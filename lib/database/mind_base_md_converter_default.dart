@@ -172,6 +172,13 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
   }
 
   void _checkForHeadingAndRemove(List<String> mdLines, String heading) {
+    // for(int i = 0;i<mdLines.length;i++) {
+    //   if(mdLines.first=="") {
+    //     mdLines.removeAt(0);
+    //   } else {
+    //     break;
+    //   }
+    // }
     if (!mdLines.first.contains(heading)) {
       throw ArgumentError(
           "md file seems to be formatted wrong. Expected $heading, found ${mdLines.first}");
@@ -201,7 +208,9 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
         break;
       }
       stringComputer(mdLines.first);
-      mdLines.removeAt(0);
+      if (mdLines.isNotEmpty) {
+        mdLines.removeAt(0);
+      }
     }
   }
 
@@ -279,7 +288,14 @@ class MindBaseMdConverterDefault extends MindBaseMdConverter {
 
   @override
   KnowledgeState knowledgeStateFromMd(String mdFileAsString) {
-    List<String> mdLines = mdFileAsString.split("\n");
+    List<String> mdLinesRaw = mdFileAsString.split("\n");
+
+    List<String> mdLines = [];
+    for (var v in mdLinesRaw) {
+      if (v != "") {
+        mdLines.add(v);
+      }
+    }
     mdLines.removeAt(0);
     _checkForHeadingAndRemove(mdLines, totalKnowledgeStateHeading);
     KnowledgeState ks = KnowledgeState(

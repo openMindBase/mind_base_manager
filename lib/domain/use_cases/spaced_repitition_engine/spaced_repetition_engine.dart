@@ -22,6 +22,10 @@ class _SpacedRepetitionEngineDefault extends SpacedRepetitionEngine {
       required int timesTestedCorrectlyStreak}) {
     if (lastCorrectlyTested == null) return true;
 
+    if (timesTestedCorrectlyStreak > 100) {
+      return false;
+    }
+
     final int daysPassed =
         DateTime.now().difference(lastCorrectlyTested).inDays;
     int daysTilTestAgain = pow(2, timesTestedCorrectlyStreak) as int;

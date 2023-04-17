@@ -17,7 +17,6 @@ class ChooseMindBasePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<FileSystemEntity> files = Directory("mind_bases/uni").listSync();
-    // files.forEach(print);
     List<String> folderNames = [];
     for (var v in files) {
       String s = v.path.split("uni").last;

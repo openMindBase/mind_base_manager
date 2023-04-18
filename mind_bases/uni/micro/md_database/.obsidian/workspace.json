@@ -11,9 +11,17 @@
             "id": "e909e55ff5f4471f",
             "type": "leaf",
             "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "44f96c7e4fb78f0f",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "Verstehen - Begriff Vorliebe aus dem Bereich Konsumentenpräferenzen.md",
+                "file": "Verstehen - Mischung von zwei Warenkörben.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +93,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Verstehen - Begriff Vorliebe aus dem Bereich Konsumentenpräferenzen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +109,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Verstehen - Begriff Vorliebe aus dem Bereich Konsumentenpräferenzen.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +130,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Verstehen - Begriff Vorliebe aus dem Bereich Konsumentenpräferenzen.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -148,12 +152,24 @@
   },
   "active": "e909e55ff5f4471f",
   "lastOpenFiles": [
-    "Verstehen - Begriff Warenkorb aus dem Bereich Konsumentenpräferenzen.md",
+    "Verstehen - Ordnung von Warenkörben.md",
+    "Verstehen - Indifferenz von Warenkörben.md",
+    "Verstehen - Indifferenzkurve von Warenkörben.md",
+    "Verstehen - Begriff Warenkorb.md",
+    "Verstehen - Mischung von zwei Warenkörben.md",
+    "Verstehen - Begriff Vorliebe.md",
     "Verstehen - Bedeutung aller Begriffe aus dem Bereich Konsumentenpräferenzen.md",
+    "templates/template.md",
+    "Verstehen - Vollständigkeit von Präferenzordnung.md",
+    "Verstehen - Transitivität von Präferenzordnung.md",
+    "Verstehen - Strenge Monotonie von Präferenzordnung.md",
+    "Verstehen - Präferenzordnung.md",
+    "Verstehen - Konvexität von Präferenzordnung.md",
+    "Untitled.canvas",
     "Konsumentenpräferenzen.md",
     "Das Verbraucherverhalten.md",
     "Verstehen - Formale Definition Begriff Warenkorb aus dem Bereich Konsumentenpräferenzen.md",
     "Verstehen - Formale Definition aller Begriffe aus dem Bereich Konsumentenpräferenzen.md",
-    "Verstehen - Begriff Vorliebe aus dem Bereich Konsumentenpräferenzen.md"
+    "Verstehen - Was ist eine Präferenzordnung.md"
   ]
 }

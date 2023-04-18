@@ -1,11 +1,10 @@
 ##### Hard-Dependents
-
-[[Verstehen - Begriff Warenkorb aus dem Bereich Konsumentenpräferenzen]]
-[[Verstehen - Begriff Vorliebe aus dem Bereich Konsumentenpräferenzen]]
-
+[[Verstehen - Präferenzordnung]]
+[[Verstehen - Indifferenz von Warenkörben]]
+[[Verstehen - Indifferenzkurve von Warenkörben]]
 ##### Tags
 
-#dasVerbraucherveralten
+#dasVerbraucherverhalten
 
 ##### Metadata
 

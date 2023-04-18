@@ -1,11 +1,10 @@
 ##### Hard-Dependents
 
 [[Verstehen - Bedeutung aller Begriffe aus dem Bereich Konsumentenpräferenzen]]
-[[Verstehen - Formale Definition aller Begriffe aus dem Bereich Konsumentenpräferenzen]]
 
 ##### Tags
 
-#dasVerbraucherveralten
+#dasVerbraucherverhalten
 
 ##### Metadata
 

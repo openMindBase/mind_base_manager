@@ -1,13 +1,14 @@
 ##### Hard-Dependents
 
 ##### Tags
+#dasVerbraucherverhalten
 
 ##### Metadata
 
 isCollectionGoal=false
 isOrGateway=false
 shouldTest=true
-singleExercise=false
+singleExercise=true
 
 ## Description
 

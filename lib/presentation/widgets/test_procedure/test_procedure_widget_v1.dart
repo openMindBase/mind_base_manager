@@ -49,7 +49,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
     if (!widget.testProcedure.testingActive && testingActive) {
       testingActive = false;
       widget.onTestingComplete(widget.testProcedure.learningTree);
-      _createAnalysis();
+      // _createAnalysis();
       _saveTestedTreeState();
       // DatabaseAccess().writeExerciseIndexList(studentId, exerciseIndexList)
     }
@@ -70,15 +70,49 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
             widget.testProcedure.currentLearningGoal.title,
             style: Theme.of(context).textTheme.headlineMedium,
           ),
+          _testProcedureMetadataWidget(),
           _buttonRow(),
           _learningGoalDisplay(constraints.maxWidth * 0.9,
               MediaQuery.of(context).size.height * 0.4),
           const LeanDY(y: 50),
           _learningTreeVisualWidget(constraints.maxWidth * 0.9,
               MediaQuery.of(context).size.height * 0.6),
+          _endTesting()
         ],
       );
     });
+  }
+
+  Widget _testProcedureMetadataWidget() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+            "Streak of current: ${widget.testProcedure.currentLearningGoal.timesTestedCorrectlyStreak.toString()}"),
+        const SizedBox(
+          width: 10,
+        ),
+        Text(
+            "Progress: ${(100 - widget.testProcedure.learningTree.untestedLearningGoals.length / widget.testProcedure.learningTree.length * 100).round().toString()}%"),
+        const SizedBox(
+          width: 10,
+        ),
+        Text(
+            "left: ${widget.testProcedure.learningTree.untestedLearningGoals.length}")
+      ],
+    );
+  }
+
+  Widget _endTesting() {
+    return ElevatedButton(
+        onPressed: () {
+          testingActive = false;
+          widget.onTestingComplete(widget.testProcedure.learningTree);
+          // _createAnalysis();
+          _saveTestedTreeState();
+          LeanNavigator.pop(context);
+        },
+        child: const Text("end and save"));
   }
 
   Widget _learningTreeVisualWidget(double width, double height) {
@@ -102,7 +136,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
     );
   }
 
-  void _saveTestedTreeState(){
+  void _saveTestedTreeState() {
     MindBase.instance.addKnowledgeStateToTotalKnowledgeState(
         knowledgeState: widget.testProcedure.learningTree.toKnowledgeState(),
         studentMetadata: widget.studentMetadata);
@@ -115,8 +149,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
 
     Clipboard.setData(ClipboardData(
         text:
-        "${widget.testProcedure.learningTree.title.replaceAll(":", " ")}||||${widget.studentMetadata.name ?? "Max Muster"}||||${t.get()}")
-    );
+            "${widget.testProcedure.learningTree.title.replaceAll(":", " ")}||||${widget.studentMetadata.name ?? "Max Muster"}||||${t.get()}"));
   }
 
   Widget _buttonRow() {
@@ -189,7 +222,6 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
     ]);
   }
 
-
   void _onNotRelevant(BuildContext context) {
     setState(() {
       LeanNavigator.pop(context);
@@ -198,7 +230,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
           Scaffold(
             body: TestProcedurePage(
               studentMetadata: widget.studentMetadata,
-              learningTree:_removeCurrentLearningGoal(),
+              learningTree: _removeCurrentLearningGoal(),
               title: widget.testProcedure.learningTree.title,
               onTestingComplete: (learningTree) {
                 // DatabaseAccess().addAssessmentToStudent(
@@ -211,7 +243,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
 
   LearningTree _removeCurrentLearningGoal() {
     TreeBuilder treeBuilder =
-    TreeBuilder.byTree(learningTree: widget.testProcedure.learningTree);
+        TreeBuilder.byTree(learningTree: widget.testProcedure.learningTree);
     treeBuilder.removeGoal(
         learningGoal: widget.testProcedure.currentLearningGoal);
     treeBuilder.sort(10000);

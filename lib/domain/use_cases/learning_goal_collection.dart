@@ -74,7 +74,8 @@ class LearningGoalCollection {
             lastCorrectlyTested: learningGoal.lastCorrectlyTested,
             timesTestedCorrectlyStreak:
                 learningGoal.timesTestedCorrectlyStreak)) {
-          learningGoal.setAsControlled(incrementTimesTestedCorrectly: false);
+          learningGoal.setAsControlled(
+              incrementTimesTestedCorrectly: false, increment: 0);
         }
       }
     }

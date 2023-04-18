@@ -7,13 +7,16 @@
 
 We've developed operable "mindbases" and assessment software to assist teachers and students with finding the zone of proximal developement (ZPD), respectively, learning goals that are not over- nor underwhelming whilst in the  process of learning.
 
-For further infos about the tech lookup "paper/WhitePaper.pdf" (Note: The WhitePaper wasn't meant to live up to scientific standards - it's amateurish).
+For further infos about the tech lookup "paper/WhitePaper.pdf" (Note: The WhitePaper wasn't meant to live up to
+scientific standards - it's amateurish).
 
-Starting to study the benefits of use-cases, this is what we've come up with: 
+Starting to study the benefits of use-cases, this is what we've come up with:
 ![](images/germany_math_graph.png)
-
 This is the mindbase we have mapped as of March 20th 2023. The topic is school mathematics in Germany.
-You can play with this graph using obsidian by downloading the appropriate mind_base/ folder and opening it as a vault in the app on most devices.
+You can play with this graph using obsidian by downloading the appropriate mind_base/ folder and opening it as a vault
+in the app on most devices.
+![](images/uni.png)
+I mapped this on my local device for the university.
 <!-- TODO: ## What do we envision with this project? -Lektion aus der gesamten Unternehmung -->
 ## You find this interesting?
 - Leave a **star** on the repository or share it anywhere you want.

@@ -14,6 +14,7 @@ import 'package:mind_base_manager/presentation/other/future_page_navigator.dart'
 import 'database/local_mind_base.dart';
 import 'database/mind_base.dart';
 import 'domain/use_cases/learning_goal_collection.dart';
+import 'domain/use_cases/mind_base_modifier/mind_base_tagger.dart';
 
 Future<void> main() async {
   await _init();
@@ -26,10 +27,10 @@ Future<void> _init() async {
   MindBaseMdConverter.init(MindBaseMdConverterDefault());
   AppThemeAccess.init(theme: LeanAppTheme());
   MindBase.init(LocalMindBase(pathRoot: "a"));
-  // MindBaseTagger(
-  //         pathMindBaseRoot:
-  //             "/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/uni/computational intelligence")
-  //     .updateAllTags();
+  MindBaseTagger(
+          pathMindBaseRoot:
+              "/Users/matthiasweigt/IdeaProjects/mind_base_manager/mind_bases/uni/spieltheorie")
+      .updateAllTags();
   MindBaseApp.studentMetadata =
       await MindBase.instance.readCurrentStudentMetadata();
 }

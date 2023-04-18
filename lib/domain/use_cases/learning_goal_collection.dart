@@ -61,11 +61,13 @@ class LearningGoalCollection {
   int get countControlled =>
       filterToLength((learningGoal) => learningGoal.isControlled());
 
-  int get countNeverControlled =>
-      filterToLength((learningGoal) => learningGoal.isControlled());
+  int get countNeverControlled => filterToLength((learningGoal) =>
+      !learningGoal.isControlled() &&
+      learningGoal.timesTestedCorrectlyStreak == 0);
 
-  int get countMaybeNotControlled =>
-      filterToLength((learningGoal) => learningGoal.isControlled());
+  int get countMaybeNotControlled => filterToLength((learningGoal) =>
+      !learningGoal.isControlled() &&
+      learningGoal.timesTestedCorrectlyStreak > 0);
 
   int get countTotal => learningGoalMap.values.length;
 

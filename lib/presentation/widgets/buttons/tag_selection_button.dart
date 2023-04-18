@@ -27,26 +27,31 @@ class TagSelectionButton extends StatelessWidget {
           child: Column(
             children: [
               Text("#$tag"),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Row(
-                children: [
-                  _Bar(
-                      percent: learningGoalCollection.percentControlled,
-                      color: Colors.green,
-                      text: learningGoalCollection.countControlled.toString()),
-                  _Bar(
-                      percent: learningGoalCollection.percentMaybeNotControlled,
-                      color: Colors.limeAccent,
-                      text: learningGoalCollection.countMaybeNotControlled
-                          .toString()),
-                  _Bar(
-                      percent: learningGoalCollection.percentNeverControlled,
-                      color: Colors.red,
-                      text: learningGoalCollection.countNeverControlled
-                          .toString()),
-                ],
+              SizedBox(
+                width: _Bar.widthBar,
+                child: Row(
+                  children: [
+                    _Bar(
+                        percent: learningGoalCollection.percentControlled,
+                        color: Colors.green,
+                        text:
+                            learningGoalCollection.countControlled.toString()),
+                    _Bar(
+                        percent:
+                            learningGoalCollection.percentMaybeNotControlled,
+                        color: Colors.limeAccent,
+                        text: learningGoalCollection.countMaybeNotControlled
+                            .toString()),
+                    _Bar(
+                        percent: learningGoalCollection.percentNeverControlled,
+                        color: Colors.red,
+                        text: learningGoalCollection.countNeverControlled
+                            .toString()),
+                  ],
+                ),
               )
             ],
           ),
@@ -71,7 +76,7 @@ class _Bar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tooltip(
       message: text,
-      child: Container(width: percent * widthBar, height: 5, color: color),
+      child: Container(width: percent * widthBar, height: 7.5, color: color),
     );
   }
 }

@@ -29,6 +29,7 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
   @override
   void initState() {
     tags.addAll(widget.learningGoalCollection.tags());
+    tags.removeWhere((element) => element.contains("root"));
     super.initState();
   }
 

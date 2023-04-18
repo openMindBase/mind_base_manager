@@ -58,6 +58,38 @@ class LearningGoalCollection {
     return false;
   }
 
+  int get countControlled =>
+      filterToLength((learningGoal) => learningGoal.isControlled());
+
+  int get countNeverControlled =>
+      filterToLength((learningGoal) => learningGoal.isControlled());
+
+  int get countMaybeNotControlled =>
+      filterToLength((learningGoal) => learningGoal.isControlled());
+
+  int get countTotal => learningGoalMap.values.length;
+
+  double get percentControlled => _percent(countControlled);
+
+  double get percentNeverControlled => _percent(countNeverControlled);
+
+  double get percentMaybeNotControlled => _percent(countMaybeNotControlled);
+
+  double _percent(int value) => value / learningGoalMap.values.length;
+
+  int filterToLength(bool Function(LearningGoal learningGoal) where) =>
+      filter(where).length;
+
+  Set<LearningGoal> filter(bool Function(LearningGoal learningGoal) where) {
+    Set<LearningGoal> output = {};
+    for (var v in learningGoalMap.values) {
+      if (where(v)) {
+        output.add(v);
+      }
+    }
+    return output;
+  }
+
   /// Updates the [LearningGoal]s in the [LearningGoalCollection] with the [KnowledgeState]s in [knowledgeState].
   /// For example, if a [LearningGoal] is marked as "controlled" in [knowledgeState],
   /// the [LearningGoal] in the [LearningGoalCollection] will be marked as "controlled" as well.

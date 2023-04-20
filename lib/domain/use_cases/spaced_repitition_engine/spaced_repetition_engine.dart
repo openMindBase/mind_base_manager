@@ -8,6 +8,8 @@ abstract class SpacedRepetitionEngine {
   static SpacedRepetitionEngine get instance =>
       _SpacedRepetitionEngineDefault();
 
+  int daysTillTestAgain(int streak);
+
   /// Tells if the [LearningGoal] should be tested again.
   bool shouldTestAgain(
       {required DateTime? lastCorrectlyTested,
@@ -28,9 +30,14 @@ class _SpacedRepetitionEngineDefault extends SpacedRepetitionEngine {
 
     final int daysPassed =
         DateTime.now().difference(lastCorrectlyTested).inDays;
-    int daysTilTestAgain = pow(2, timesTestedCorrectlyStreak) as int;
+    int daysTilTestAgain = daysTillTestAgain(timesTestedCorrectlyStreak);
     if (daysPassed >= daysTilTestAgain) return true;
 
     return false;
+  }
+
+  @override
+  int daysTillTestAgain(int streak) {
+    return pow(2, streak) as int;
   }
 }

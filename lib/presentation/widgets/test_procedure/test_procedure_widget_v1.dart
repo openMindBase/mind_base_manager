@@ -7,6 +7,7 @@ import 'package:lean_ui_kit/other/lean_navigator.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_space.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_spaced_column.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_spaced_row.dart';
+import 'package:mind_base_manager/domain/use_cases/spaced_repitition_engine/spaced_repetition_engine.dart';
 
 import '../../../database/mind_base.dart';
 import '../../../domain/entities/learning_goals_and_structures/learning_tree.dart';
@@ -171,7 +172,8 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
           setState(() {});
         },
         iconData: Icons.check,
-        title: 'perfekt gekonnt + 3',
+        title:
+            'perfekt gekonnt + 3 (+${SpacedRepetitionEngine.instance.daysTillTestAgain(widget.testProcedure.currentLearningGoal.timesTestedCorrectlyStreak + 3)}d)',
         iconColor: Colors.green,
       ),
       TestProcedureControllerButton(
@@ -181,7 +183,8 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
           setState(() {});
         },
         iconData: Icons.check,
-        title: 'sehr gut gekonnt + 2',
+        title:
+            'sehr gut gekonnt + 2 (+${SpacedRepetitionEngine.instance.daysTillTestAgain(widget.testProcedure.currentLearningGoal.timesTestedCorrectlyStreak + 2)}d)',
         iconColor: Colors.green,
       ),
       TestProcedureControllerButton(
@@ -191,7 +194,8 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
           setState(() {});
         },
         iconData: Icons.check,
-        title: 'gekonnt',
+        title:
+            'gekonnt (+${SpacedRepetitionEngine.instance.daysTillTestAgain(widget.testProcedure.currentLearningGoal.timesTestedCorrectlyStreak + 1)}d)',
         iconColor: Colors.green,
       ),
       TestProcedureControllerButton(

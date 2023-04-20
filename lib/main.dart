@@ -62,10 +62,12 @@ class MindBaseHomePage extends StatelessWidget {
             ? InputStudentMetadataPage(
                 onSubmitMetadata: (metadata) async {
                   LeanNavigator.pushPage(
-                      context, _mainRoute(metadata, context));
+                      context, _mainRoute(metadata, context)
+                  );
                 },
               )
-            : _mainRoute(MindBaseApp.studentMetadata!, context));
+            : _mainRoute(MindBaseApp.studentMetadata!, context)
+    );
   }
 
   Widget _mainRoute(StudentMetadata studentMetadata, BuildContext context) {
@@ -87,7 +89,9 @@ class MindBaseHomePage extends StatelessWidget {
                       learningTree: collection.getLearningTree(),
                       title: "#$tag",
                       onTestingComplete: (learningTree) {},
-                      studentMetadata: studentMetadata));
+                      studentMetadata: studentMetadata
+                  )
+              );
             },
           );
         },

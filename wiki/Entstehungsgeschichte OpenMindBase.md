@@ -28,19 +28,16 @@ Das paper liegt auch in dem repository unter **/paper/WhitePaper.pdf **
 
 ### Erster Webauftritt und Feedback
 
-Wir bauen eine erste Website, die abstrakt sagt was wir vorhaben. Wir schicken diverse Nachrichten in viele
-Uni-WhatsApp-Gruppen und suchen nach Feedback.
+Wir bauen eine erste Website, die abstrakt sagt was wir vorhaben. Wir schicken diverse Nachrichten in viele Uni-WhatsApp-Gruppen und suchen nach Feedback.
 Es meldet sich so gut wie niemand. ;p
 Wie entwickeln noch etwas an der Technologie weiter und versuchen erste Themen zu Mappen.
 
 ### Berlin Startup-Kontakt Treffen
 
 Anfang April
-Wir haben unser Projekt auf einer Startup-Netzwerk-Seite vorgestellt und wurden von einem potenziellen "Investor"
-angeschrieben.
+Wir haben unser Projekt auf einer Startup-Netzwerk-Seite vorgestellt und wurden von einem potenziellen "Investor" angeschrieben.
 Daraufhin haben [[Mark]] und ich uns mit ihm in Berlin getroffen und zusammen Donuts gegessen.
-Er meinte er wäre prinzipiell bereit 50.000€ zu investieren, wüsste aber noch nicht ganz wie man mit unserem Modell "gut
-Geld machen" könne.
+Er meinte er wäre prinzipiell bereit 50.000€ zu investieren, wüsste aber noch nicht ganz wie man mit unserem Modell "gut Geld machen" könne.
 Wir haben uns, weil wir bei ihm beide kein gutes Gefühl hatten gegen eine weitere Zusammenarbeit entschieden.
 16.4.22
 
@@ -50,21 +47,17 @@ Wir haben uns, weil wir bei ihm beide kein gutes Gefühl hatten gegen eine weite
 
 Wir lernen Flutter um eine bessere Website und eine Frontend Anwendung für unsere Technologie zu bauen.
 
-Einige Zeit später steht eine hübsche Seite in Flutter. Wir "kapern" einige Dutzend Uni-WhatsApp Gruppen und schreiben
-etwa 200 Leute direkt an, um Feedback zu bekommen.
+Einige Zeit später steht eine hübsche Seite in Flutter. Wir "kapern" einige Dutzend Uni-WhatsApp Gruppen und schreiben etwa 200 Leute direkt an, um Feedback zu bekommen.
 Wir bekommen von einigen durchaus konstruktives Feedback zur Seite, weniger allerdings zur Idee.
 
 ### Projekt Lernzweige
 
-Wir stehen kurz vor den Sommerferien 2022 und planen, die Sommerferien zu nutzen, um eine erste Anwendung auf MVP Niveau
-zu bringen.
-Mit [[Collin]] zusammen gründen wir ([[Mark]] & [[Matthias]] im August das Unternehmen [[Kanten & Knoten UG]].
+Wir stehen kurz vor den Sommerferien 2022 und planen, die Sommerferien zu nutzen, um eine erste Anwendung auf MVP Niveau zu bringen.
+Mit [[Collin]] zusammen gründen wir ([[Mark]] & [[Matthias]]) im August das Unternehmen [[Kanten & Knoten UG]].
 
-Nach den Sommerferien bieten wir in unser kleinen Nachhilfeschule [[Lernzweige]] zum ersten Mal Software-gestützte
-Nachhilfe an.
+Nach den Sommerferien bieten wir in unser kleinen Nachhilfeschule [[Lernzweige]] zum ersten Mal Software-gestützte Nachhilfe an.
 
-Erste Marktttest mit [[Lernzweige]] haben gezeigt, das die [[Lernziel-Depenenz-Struktur]]en bei Schüler:innen und Eltern
-positive Resonanz erzeugen.
+Erste Marktttest mit [[Lernzweige]] haben gezeigt, das die [[Lernziel-Depenenz-Struktur]]en bei Schüler:innen und Eltern positive Resonanz erzeugen.
 
 ### 1. Externalisierungsversuch
 
@@ -74,16 +67,14 @@ Wir haben die nächste größere Produktiteration begonnen.
 
 ### BBA
 
-Gegen Ende August/September haben wir viel Zeit und Energie dafür aufgewandt für eine Bewerbung bei einem Business Angel
-Netzwerk in Schleswig-Holstein, den Baltic Business Angles.
+Gegen Ende August/September haben wir viel Zeit und Energie dafür aufgewandt für eine Bewerbung bei einem Business Angel Netzwerk in Schleswig-Holstein, den Baltic Business Angles.
 Bewerbung abgeschickt:
 Abgelehnt.
 
 ## Post Gründung
 
 Mit der Absage von BBA war die Stimmung etwas geknickt.
-Wir sind zusammen mit Oskar (hat ein Praktikum gemacht) in Hamburg zusammen essen gegangen und haben über die weitere
-Strategie geredet.
+Wir sind zusammen mit Oskar (hat ein Praktikum gemacht) in Hamburg zusammen essen gegangen und haben über die weitere Strategie geredet.
 
 ![[Pasted image 20230406000603.jpg]]
 
@@ -102,22 +93,18 @@ Einige Kontakte erweisen sich als vielversprechend.
 ### Hype Week
 
 Eine Woche um den 8. Dezember herum ist so viel passiert wie noch im keiner Woche zuvor.
-Ich habe mich in Berlin und Zürich mit potentiellen Investoren und Partnern getroffen und ein Unternehmen aus dem EdTech
-Bereich hat Interesse an unserer Technologie geäußert. Alle Gespräche liefen richtig gut.
+Ich habe mich in Berlin und Zürich mit potentiellen Investoren und Partnern getroffen und ein Unternehmen aus dem EdTech Bereich hat Interesse an unserer Technologie geäußert. Alle Gespräche liefen richtig gut.
 Ich erinnere mich, dass das eine sehr aufregende Woche war.
 
 ## Felix Phase
 
-Ich habe Felix kennengelernt, der viele Jahre Erfahrung im BWL Bereich hat sowie schon mehrere Projekte geleitet hat und
-Interesse geäußert hat, in einer führenden Position mitzuarbeiten.
+Ich habe Felix kennengelernt, der viele Jahre Erfahrung im BWL Bereich hat sowie schon mehrere Projekte geleitet hat und Interesse geäußert hat, in einer führenden Position mitzuarbeiten.
 Felix wurde Teil des Teams und wir haben etwa zwei Monate zusammen an einer Präsentation für Investoren gearbeitet.
-Leider hat sich am Ende herausgestellt, dass meine und seine Vorstellungen sich doch zu stark unterschieden und wir habe
-die Zusammenarbeit wieder eingestellt.
+Leider hat sich am Ende herausgestellt, dass meine und seine Vorstellungen sich doch zu stark unterschieden und wir haben die Zusammenarbeit wieder eingestellt.
 
 ## Team Breakup
 
-Wir hatten die Option einen 100.000€ Kredit für das Unternehmen zu bekommen. Aus persönlichen Gründen wollte ich diesen
-jedoch nicht annehmen.
+Wir hatten die Option einen 100.000€ Kredit für das Unternehmen zu bekommen. Aus persönlichen Gründen wollte ich diesen jedoch nicht annehmen.
 Meine privaten Mittel mit denen ich [[Kanten & Knoten UG]] finanzierte, die ich aus meinem früheren
 Unternehmen [[Keylink Software Engineering UG]] erwirtschaftet hatte neigten sich ebenfalls dem Ende zu.
 Deshalb entschied ich mich dazu das Projekt auf die alte Art und Weise nicht mehr fortzuführen.
@@ -125,9 +112,7 @@ Deshalb entschied ich mich dazu das Projekt auf die alte Art und Weise nicht meh
 # Ein Neubeginn: OpenMindBase
 
 Mein Gefühl hat mir gesagt, dass ich den Kern meiner Idee ([[unsere Kerntechnologie]]) nicht kommerzialisieren möchte.
-Meine Intuition war, dass es den Gesamtnutzen für die Welt maximiert, wenn ich alles frei zur Verfügung stelle und Open
-source [[unsere Kerntechnologie]] und die [[Lernziel-Depenenz-Struktur]]en weiterentwickle.
-Ich habe unsere alte Datenbank, auf der wir bis dahin große Teile der Schul-Mathematik gemappt haben auf GitHub migriert
-und alles veröffentlicht.
+Meine Intuition war, dass es den Gesamtnutzen für die Welt maximiert, wenn ich alles frei zur Verfügung stelle und Open Source [[unsere Kerntechnologie]] und die [[Lernziel-Depenenz-Struktur]]en weiterentwickle.
+Ich habe unsere alte Datenbank, auf der wir bis dahin große Teile der Schul-Mathematik gemappt haben auf GitHub migriert und alles veröffentlicht.
 Und so wurde [[OpenMindBase]] geboren.
 Und wenn sie nicht gestorben ist, so lebt sie noch heute. 

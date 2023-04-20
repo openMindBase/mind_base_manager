@@ -29,6 +29,7 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
   @override
   void initState() {
     tags.addAll(widget.learningGoalCollection.tags());
+    tags.removeWhere((element) => element.contains("root"));
     super.initState();
   }
 
@@ -36,11 +37,14 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
   Widget build(BuildContext context) {
     List<Widget> children = [];
     for (var tag in tags) {
+      LearningGoalCollection collection =
+          widget.learningGoalCollection.filterByTag(tag);
+
       children.add(TagSelectionButton(
+        learningGoalCollection: collection,
         tag: tag,
         onPressed: (tag) {
-          widget.onTagPressed(
-              tag, widget.learningGoalCollection.filterByTag(tag));
+          widget.onTagPressed(tag, collection);
         },
       ));
     }

@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "2eb6fc615e3530eb",
+    "id": "028ddf64edb5372a",
     "type": "split",
     "children": [
       {
-        "id": "38c07d63bd216a72",
+        "id": "6ef4d938d3a2938b",
         "type": "tabs",
         "children": [
           {
-            "id": "9574b2270bdbcbd6",
+            "id": "93ed54ddd4948d4d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -25,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "5a11e9f4583b83c3",
+    "id": "951fad54dac92706",
     "type": "split",
     "children": [
       {
-        "id": "525db02684c23ed1",
+        "id": "9d25454b66050b4c",
         "type": "tabs",
         "children": [
           {
-            "id": "b94f3242f34fcc79",
+            "id": "722d5d87a7f95818",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +43,7 @@
             }
           },
           {
-            "id": "614310bb6abe8f61",
+            "id": "e6d7b63fd467fd52",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +58,7 @@
             }
           },
           {
-            "id": "a9617fa3c5743058",
+            "id": "d78be85af992fd28",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -72,15 +72,15 @@
     "width": 300
   },
   "right": {
-    "id": "6c085a380f8f3cce",
+    "id": "503cf94e90d53e27",
     "type": "split",
     "children": [
       {
-        "id": "25a4c9ff18fa5bd9",
+        "id": "c22ab1262cd9e5f0",
         "type": "tabs",
         "children": [
           {
-            "id": "94e9c14ca02aef3e",
+            "id": "54de59dd9ae2eeae",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -97,7 +97,7 @@
             }
           },
           {
-            "id": "8eece351e061cab0",
+            "id": "52625aba5acc5d9f",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -109,7 +109,7 @@
             }
           },
           {
-            "id": "f420dfb5052aeda6",
+            "id": "6a898454e702c273",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,7 +120,7 @@
             }
           },
           {
-            "id": "1404295a9555159f",
+            "id": "c7bb9710a8d617fe",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -146,34 +146,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9574b2270bdbcbd6",
+  "active": "93ed54ddd4948d4d",
   "lastOpenFiles": [
     "Lernziel-Depenenz-Struktur.md",
-    "unsere Kerntechnologie.md",
-    "Kante.md",
-    "Knoten.md",
-    "Graph.md",
-    "Dependenz Koeffizient.md",
-    "Pasted image 20230408185657.png",
-    "Lernbaum.md",
-    "Schlüssellernziel.md",
-    "Paul.md",
-    "Yuri.md",
+    "OpenMindBase.md",
+    "OpenMindBase Wiki.md",
     "Keylink Software Engineering UG.md",
     "Lernzweige.md",
-    "Mark.md",
-    "Lernziel.md",
-    "Knowledge Base.md",
-    "Kanten & Knoten UG.md",
-    "harte Dependenz.md",
     "Aktueller Technischer Stand.md",
+    "Matthias.md",
+    "Mark.md",
+    "Yuri.md",
+    "Paul.md",
+    "Pasted image 20230406000603.jpg",
     "Collin.md",
     "Entstehungsgeschichte OpenMindBase.md",
-    "Matthias.md",
-    "OpenMindBase Wiki.md",
-    "OpenMindBase.md",
-    "Pasted image 20230406000603.jpg",
-    "Pasted image 20230405233112.jpg",
-    "Pasted image 20230405231343.jpg"
+    "Knowledge Base.md"
   ]
 }

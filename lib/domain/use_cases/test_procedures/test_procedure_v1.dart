@@ -25,9 +25,9 @@ class TestProcedureV1 extends TestProcedure {
   /// Returns [true] if there is another [LearningGoal] in [TestProcedure.learningTree] to test.
   /// Returns [false] at the end of the [TestProcedureV1].
   @override
-  bool submitCurrentLearningGoal(double controlLevel) {
+  bool submitCurrentLearningGoal(double controlLevel, {int increment = 1}) {
     _testsCount++;
-    assignCurrentControlLevel(controlLevel);
+    assignCurrentControlLevel(controlLevel, increment: increment);
     _updatePercentage(currentLearningGoal.isControlled());
     if (!currentLearningGoal.shouldBeImproved()) {
       markSubStructureControlLevel(

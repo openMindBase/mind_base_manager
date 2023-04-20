@@ -7,6 +7,7 @@ import 'package:lean_ui_kit/other/lean_navigator.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_space.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_spaced_column.dart';
 import 'package:lean_ui_kit/presentation/widgets/lean_spaced_row.dart';
+import 'package:mind_base_manager/domain/use_cases/spaced_repitition_engine/spaced_repetition_engine.dart';
 
 import '../../../database/mind_base.dart';
 import '../../../domain/entities/learning_goals_and_structures/learning_tree.dart';
@@ -49,7 +50,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
     if (!widget.testProcedure.testingActive && testingActive) {
       testingActive = false;
       widget.onTestingComplete(widget.testProcedure.learningTree);
-      _createAnalysis();
+      // _createAnalysis();
       _saveTestedTreeState();
       // DatabaseAccess().writeExerciseIndexList(studentId, exerciseIndexList)
     }
@@ -66,19 +67,53 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
     return LayoutBuilder(builder: (context, constraints) {
       return LeanSpacedColumn(
         children: [
-          _learningTreeVisualWidget(constraints.maxWidth * 0.9,
-              MediaQuery.of(context).size.height * 0.6),
           Text(
             widget.testProcedure.currentLearningGoal.title,
             style: Theme.of(context).textTheme.headlineMedium,
           ),
+          _testProcedureMetadataWidget(),
+          _buttonRow(),
           _learningGoalDisplay(constraints.maxWidth * 0.9,
               MediaQuery.of(context).size.height * 0.4),
-          _buttonRow(),
-          const LeanDY(y: 50)
+          const LeanDY(y: 50),
+          _learningTreeVisualWidget(constraints.maxWidth * 0.9,
+              MediaQuery.of(context).size.height * 0.6),
+          _endTesting()
         ],
       );
     });
+  }
+
+  Widget _testProcedureMetadataWidget() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+            "Streak of current: ${widget.testProcedure.currentLearningGoal.timesTestedCorrectlyStreak.toString()}"),
+        const SizedBox(
+          width: 10,
+        ),
+        Text(
+            "Progress: ${(100 - widget.testProcedure.learningTree.untestedLearningGoals.length / widget.testProcedure.learningTree.length * 100).round().toString()}%"),
+        const SizedBox(
+          width: 10,
+        ),
+        Text(
+            "left: ${widget.testProcedure.learningTree.untestedLearningGoals.length}")
+      ],
+    );
+  }
+
+  Widget _endTesting() {
+    return ElevatedButton(
+        onPressed: () {
+          testingActive = false;
+          widget.onTestingComplete(widget.testProcedure.learningTree);
+          // _createAnalysis();
+          _saveTestedTreeState();
+          LeanNavigator.pop(context);
+        },
+        child: const Text("end and save"));
   }
 
   Widget _learningTreeVisualWidget(double width, double height) {
@@ -102,7 +137,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
     );
   }
 
-  void _saveTestedTreeState(){
+  void _saveTestedTreeState() {
     MindBase.instance.addKnowledgeStateToTotalKnowledgeState(
         knowledgeState: widget.testProcedure.learningTree.toKnowledgeState(),
         studentMetadata: widget.studentMetadata);
@@ -115,8 +150,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
 
     Clipboard.setData(ClipboardData(
         text:
-        "${widget.testProcedure.learningTree.title.replaceAll(":", " ")}||||${widget.studentMetadata.name ?? "Max Muster"}||||${t.get()}")
-    );
+            "${widget.testProcedure.learningTree.title.replaceAll(":", " ")}||||${widget.studentMetadata.name ?? "Max Muster"}||||${t.get()}"));
   }
 
   Widget _buttonRow() {
@@ -124,11 +158,44 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
       TestProcedureControllerButton(
         onPressed: () {
           showFront = true;
+          widget.testProcedure.submitCurrentLearningGoal(1, increment: 1000);
+          setState(() {});
+        },
+        iconData: Icons.not_interested,
+        title: 'never test',
+        iconColor: Colors.green,
+      ),
+      TestProcedureControllerButton(
+        onPressed: () {
+          showFront = true;
+          widget.testProcedure.submitCurrentLearningGoal(1, increment: 3);
+          setState(() {});
+        },
+        iconData: Icons.check,
+        title:
+            'perfekt gekonnt + 3 (+${SpacedRepetitionEngine.instance.daysTillTestAgain(widget.testProcedure.currentLearningGoal.timesTestedCorrectlyStreak + 3)}d)',
+        iconColor: Colors.green,
+      ),
+      TestProcedureControllerButton(
+        onPressed: () {
+          showFront = true;
+          widget.testProcedure.submitCurrentLearningGoal(1, increment: 2);
+          setState(() {});
+        },
+        iconData: Icons.check,
+        title:
+            'sehr gut gekonnt + 2 (+${SpacedRepetitionEngine.instance.daysTillTestAgain(widget.testProcedure.currentLearningGoal.timesTestedCorrectlyStreak + 2)}d)',
+        iconColor: Colors.green,
+      ),
+      TestProcedureControllerButton(
+        onPressed: () {
+          showFront = true;
           widget.testProcedure.submitCurrentLearningGoal(1);
           setState(() {});
         },
         iconData: Icons.check,
-        title: 'gekonnt',
+        title:
+            'gekonnt (+${SpacedRepetitionEngine.instance.daysTillTestAgain(widget.testProcedure.currentLearningGoal.timesTestedCorrectlyStreak + 1)}d)',
         iconColor: Colors.green,
       ),
       TestProcedureControllerButton(
@@ -159,7 +226,6 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
     ]);
   }
 
-
   void _onNotRelevant(BuildContext context) {
     setState(() {
       LeanNavigator.pop(context);
@@ -168,7 +234,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
           Scaffold(
             body: TestProcedurePage(
               studentMetadata: widget.studentMetadata,
-              learningTree:_removeCurrentLearningGoal(),
+              learningTree: _removeCurrentLearningGoal(),
               title: widget.testProcedure.learningTree.title,
               onTestingComplete: (learningTree) {
                 // DatabaseAccess().addAssessmentToStudent(
@@ -181,7 +247,7 @@ class _TestProcedureWidgetV1State extends State<TestProcedureWidgetV1> {
 
   LearningTree _removeCurrentLearningGoal() {
     TreeBuilder treeBuilder =
-    TreeBuilder.byTree(learningTree: widget.testProcedure.learningTree);
+        TreeBuilder.byTree(learningTree: widget.testProcedure.learningTree);
     treeBuilder.removeGoal(
         learningGoal: widget.testProcedure.currentLearningGoal);
     treeBuilder.sort(10000);

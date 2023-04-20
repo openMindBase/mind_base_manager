@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:ini/ini.dart';
 import 'package:mind_base_manager/database/mind_base.dart';
 import 'package:mind_base_manager/database/mind_base_md_converter.dart';
@@ -50,6 +51,9 @@ class LocalMindBase extends MindBase {
     final List<FileSystemEntity> entities = await dir.list().toList();
     final Iterable<File> files = entities.whereType<File>();
     for (var v in files) {
+      if (!v.path.contains(".md")) {
+        continue;
+      }
       if (v.path.contains("/.md")) {
         v.delete();
         continue;
@@ -118,6 +122,7 @@ class LocalMindBase extends MindBase {
         "$pathAssessment/${studentMetadata.name}_${studentMetadata.id}.md")) {
       return null;
     }
+
     final String filePath =
         "$pathAssessment/${studentMetadata.name}_${studentMetadata.id}.md";
     File f = await openOrCreateFile(filePath);
@@ -166,6 +171,7 @@ class LocalMindBase extends MindBase {
     if (mdLines.isEmpty) {
       throw ArgumentError("$path does not exist");
     }
+
     return MindBaseMdConverter.instance.fromLearningGoalMd(mdLines,
         id.replaceAll("ä", "ä").replaceAll("ö", "ö").replaceAll("ü", "ü"));
   }
@@ -208,6 +214,15 @@ class LocalMindBase extends MindBase {
       config.set("config", "id", studentMetadata.id);
       File("userdata/config.ini").writeAsString(config.toString());
     });
+  }
+
+  @override
+  Image image(String id) {
+    return Image.file(
+        File(
+          "$pathMdFiles/$id",
+        ),
+        fit: BoxFit.fitWidth);
   }
 }
 

@@ -28,7 +28,7 @@ class Edge {
   /// Throws if [x1] == [x2].
   void _validate() {
     if (x1 == x2) {
-      throw ArgumentError("Edge: x1 should not equal x2");
+      throw ArgumentError("Edge: x1($x1) should not equal x2($x2)");
     }
   }
 

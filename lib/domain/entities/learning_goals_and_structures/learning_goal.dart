@@ -87,14 +87,15 @@ class LearningGoal extends Node{
   bool shouldBeImproved() => controlLevel == 0.5;
 
   /// Sets [_controlLevel] for [LearningGoal] to: "has been tested and is controlled".
-  void setAsControlled({bool incrementTimesTestedCorrectly = true}) {
+  void setAsControlled(
+      {bool incrementTimesTestedCorrectly = true, int increment = 1}) {
     assignControlLevel(controlLevel: 1);
-    _incrementCounter();
+    _incrementCounter(increment: increment);
   }
 
-  void _incrementCounter() {
+  void _incrementCounter({int increment = 1}) {
     if (_flagCanIncrementTimesTestedCorrectlyStreak) {
-      timesTestedCorrectlyStreak++;
+      timesTestedCorrectlyStreak += increment;
       lastCorrectlyTested = DateTime.now();
       _flagCanIncrementTimesTestedCorrectlyStreak = false;
     }

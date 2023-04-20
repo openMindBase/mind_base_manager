@@ -26,9 +26,9 @@ abstract class TestProcedure {
   double get totalControlLevel => learningTree.totalControlLevel;
 
   /// Sets the [LearningGoal.controlLevel] of the current [LearningGoal] to [controlLevel], if current [LearningGoal] has not been tested.
-  void assignCurrentControlLevel(double controlLevel) {
+  void assignCurrentControlLevel(double controlLevel, {int increment = 1}) {
     if (controlLevel == 1) {
-      currentLearningGoal.setAsControlled();
+      currentLearningGoal.setAsControlled(increment: increment);
     }
     currentLearningGoal.assignControlLevel(controlLevel: controlLevel);
   }
@@ -36,8 +36,7 @@ abstract class TestProcedure {
   /// Should be called when the current [LearningGoal] was tested.
   /// Returns [true] if there is another [LearningGoal] in [learningTree] to test.
   /// Returns [false] at the end of the [TestProcedure].
-  bool submitCurrentLearningGoal(double controlLevel);
-
+  bool submitCurrentLearningGoal(double controlLevel, {int increment = 1});
 
   int secondsPassed() {
     return startingTime.difference(DateTime.now()).inSeconds*-1;

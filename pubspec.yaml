@@ -37,11 +37,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   lean_ui_kit: ^1.2.9
   flutter_tex: ^4.0.3+4
-  knowledge_dependency_graph_manager:
-    git:
-      url: https://github.com/winfryed/knowledge_dependency_graph_manager.git
+  #  knowledge_dependency_graph_manager:
+  #    git:
+  #      url: https://github.com/winfryed/knowledge_dependency_graph_manager.git
   hive: ^2.2.3
   ini: ^2.1.0
+  flutter_math_fork: ^0.6.3+1
 
 dev_dependencies:
   flutter_test:

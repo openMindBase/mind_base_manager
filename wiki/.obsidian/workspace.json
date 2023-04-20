@@ -1,0 +1,179 @@
+{
+  "main": {
+    "id": "2eb6fc615e3530eb",
+    "type": "split",
+    "children": [
+      {
+        "id": "38c07d63bd216a72",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9574b2270bdbcbd6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "unsere Kerntechnologie.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5a11e9f4583b83c3",
+    "type": "split",
+    "children": [
+      {
+        "id": "525db02684c23ed1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b94f3242f34fcc79",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "614310bb6abe8f61",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a9617fa3c5743058",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6c085a380f8f3cce",
+    "type": "split",
+    "children": [
+      {
+        "id": "25a4c9ff18fa5bd9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "94e9c14ca02aef3e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "unsere Kerntechnologie.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8eece351e061cab0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "unsere Kerntechnologie.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f420dfb5052aeda6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1404295a9555159f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "unsere Kerntechnologie.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "9574b2270bdbcbd6",
+  "lastOpenFiles": [
+    "Lernziel-Depenenz-Struktur.md",
+    "unsere Kerntechnologie.md",
+    "Kante.md",
+    "Knoten.md",
+    "Graph.md",
+    "Dependenz Koeffizient.md",
+    "Pasted image 20230408185657.png",
+    "Lernbaum.md",
+    "Schlüssellernziel.md",
+    "Paul.md",
+    "Yuri.md",
+    "Keylink Software Engineering UG.md",
+    "Lernzweige.md",
+    "Mark.md",
+    "Lernziel.md",
+    "Knowledge Base.md",
+    "Kanten & Knoten UG.md",
+    "harte Dependenz.md",
+    "Aktueller Technischer Stand.md",
+    "Collin.md",
+    "Entstehungsgeschichte OpenMindBase.md",
+    "Matthias.md",
+    "OpenMindBase Wiki.md",
+    "OpenMindBase.md",
+    "Pasted image 20230406000603.jpg",
+    "Pasted image 20230405233112.jpg",
+    "Pasted image 20230405231343.jpg"
+  ]
+}

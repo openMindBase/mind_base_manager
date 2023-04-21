@@ -37,7 +37,6 @@ Wir entwickeln die Technologie weiter und versuchen erste Themen zu mappen.
 Wir haben unser Projekt auf einer Startup-Netzwerk-Seite vorgestellt und wurden von einem Interessierten angeschrieben.
 Daraufhin haben [[Mark]] und ich uns mit ihm in Berlin getroffen und zusammen Donuts gegessen. Zahlen im fünfstelligen Bereich flogen durch den Raum, trotz keiner konkreten Vorstellung, wie das Projekt seine Anwendung finden soll.
 
-
 Er wüsste nicht ganz wie man mit unserem Modell "gut Geld machen" könne...
 Wir haben uns auf Grund mangelnder Ziele und verschiedener Interessen vorübergehend gegen eine Zusammenarbeit entschieden.
 
@@ -77,8 +76,7 @@ Bewerbung abgeschickt: Abgelehnt.
 
 <!-- TODO: Nicht wichtig, nichts aussagend... Was waren die Gedanken damals?  -->
 Mit der Absage von BBA war die Stimmung etwas geknickt.
-Wir sind zusammen mit Oskar (hat ein Praktikum gemacht) in Hamburg zusammen essen gegangen und haben über die weitere
-Strategie geredet.
+Wir sind zusammen mit Oskar (hat ein Praktikum gemacht) in Hamburg zusammen essen gegangen und haben über die weitere Strategie geredet.
 
 ![[Pasted image 20230406000603.jpg]]
 
@@ -97,14 +95,12 @@ Einige Kontakte erweisen sich als vielversprechend.
 ### Hype Week
 
 Eine Woche um den 8. Dezember herum ist so viel passiert wie noch im keiner Woche zuvor.
-Ich habe mich in Berlin und Zürich mit potentiellen Investoren und Partnern getroffen und ein Unternehmen aus dem EdTech
-Bereich hat Interesse an unserer Technologie geäußert. Alle Gespräche liefen richtig gut.
+Ich habe mich in Berlin und Zürich mit potentiellen Investoren und Partnern getroffen und ein Unternehmen aus dem EdTech Bereich hat Interesse an unserer Technologie geäußert. Alle Gespräche liefen richtig gut.
 Ich erinnere mich, dass das eine sehr aufregende Woche war.
 
 ## Felix Phase
 
-Ich habe Felix kennengelernt, der viele Jahre Erfahrung im BWL Bereich hat sowie schon mehrere Projekte geleitet hat und
-Interesse geäußert hat, in einer führenden Position mitzuarbeiten.
+Ich habe Felix kennengelernt, der viele Jahre Erfahrung im BWL Bereich hat sowie schon mehrere Projekte geleitet hat und Interesse geäußert hat, in einer führenden Position mitzuarbeiten.
 Felix wurde Teil des Teams und wir haben etwa zwei Monate zusammen an einer Präsentation für Investoren gearbeitet.
 Leider hat sich am Ende herausgestellt, dass meine und seine Vorstellungen sich doch zu stark unterschieden und wir haben die Zusammenarbeit wieder eingestellt.
 

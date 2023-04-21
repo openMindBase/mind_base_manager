@@ -1,0 +1,2 @@
+Ein Graph, $G = (V,E)$, ist eine Ansammlung an [[Kante]]n und [[Knoten]] im Sinne der Graphentheorie.
+Den Graph den dieser Artikel beschreibt ist kein Graph im Sinne der Anaylsis in der Schule, auf dem beispielweise Funktionen graphisch dargestellt werden können, sondern ein Graph, der die Objekte und die Relationen zwischen diesen Objekten mathematisch exakt modelliert.
